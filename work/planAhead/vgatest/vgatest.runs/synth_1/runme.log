@@ -1,0 +1,210 @@
+
+*** Running xst
+    with args -ifn mojo_top_0.xst -ofn mojo_top_0.srp -intstyle ise
+
+Reading design: mojo_top_0.prj
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/user_2.v" into library work
+Parsing module <user_2>.
+Analyzing Verilog file "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/reset_conditioner_1.v" into library work
+Parsing module <reset_conditioner_1>.
+Analyzing Verilog file "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" into library work
+Parsing module <mojo_top_0>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <mojo_top_0>.
+
+Elaborating module <reset_conditioner_1>.
+
+Elaborating module <user_2>.
+WARNING:HDLCompiler:1127 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 62: Assignment to M_userChar_charXOut ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 63: Assignment to M_userChar_charYOut ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 69: Assignment to rst ignored, since the identifier is never used
+WARNING:Xst:2972 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" line 38. All outputs of instance <reset_cond> of block <reset_conditioner_1> are unconnected in block <mojo_top_0>. Underlying logic will be removed.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <mojo_top_0>.
+    Related source file is "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v".
+WARNING:Xst:647 - Input <cclk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <spi_ss> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <spi_mosi> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <spi_sck> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <avr_tx> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <avr_rx_busy> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" line 38: Output port <out> of the instance <reset_cond> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" line 57: Output port <charXOut> of the instance <userChar> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" line 57: Output port <charYOut> of the instance <userChar> is unconnected or connected to loadless signal.
+    Found 11-bit register for signal <M_line_q>.
+    Found 11-bit register for signal <M_x_q>.
+    Found 11-bit register for signal <M_y_q>.
+    Found 11-bit register for signal <M_pixel_q>.
+    Found 11-bit subtractor for signal <M_y_q[10]_GND_1_o_sub_2_OUT> created at line 88.
+    Found 11-bit subtractor for signal <M_x_q[10]_GND_1_o_sub_8_OUT> created at line 96.
+    Found 11-bit adder for signal <M_y_q[10]_GND_1_o_add_4_OUT> created at line 92.
+    Found 11-bit adder for signal <M_x_q[10]_GND_1_o_add_10_OUT> created at line 100.
+    Found 11-bit adder for signal <M_line_q[10]_GND_1_o_add_20_OUT> created at line 126.
+    Found 11-bit adder for signal <M_pixel_q[10]_GND_1_o_add_22_OUT> created at line 130.
+    Found 1-bit tristate buffer for signal <spi_miso> created at line 69
+    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 69
+    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 69
+    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 69
+    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 69
+    Found 1-bit tristate buffer for signal <avr_rx> created at line 69
+    Found 11-bit comparator greater for signal <M_pixel_q[10]_GND_1_o_LessThan_13_o> created at line 103
+    Found 11-bit comparator greater for signal <M_line_q[10]_GND_1_o_LessThan_14_o> created at line 103
+    Found 11-bit comparator lessequal for signal <n0019> created at line 112
+    Found 11-bit comparator lessequal for signal <n0021> created at line 112
+    Found 11-bit comparator lessequal for signal <n0024> created at line 117
+    Found 11-bit comparator lessequal for signal <n0026> created at line 117
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred  44 D-type flip-flop(s).
+	inferred   6 Comparator(s).
+	inferred   3 Multiplexer(s).
+	inferred   6 Tristate(s).
+Unit <mojo_top_0> synthesized.
+
+Synthesizing Unit <user_2>.
+    Related source file is "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/user_2.v".
+    Found 11-bit subtractor for signal <n0024> created at line 25.
+    Found 11-bit subtractor for signal <n0026> created at line 26.
+    Found 11-bit adder for signal <cursorX[10]_GND_3_o_add_1_OUT> created at line 25.
+    Found 11-bit adder for signal <cursorY[10]_GND_3_o_add_7_OUT> created at line 26.
+    Found 11-bit comparator greater for signal <GND_3_o_cursorX[10]_LessThan_3_o> created at line 25
+    Found 11-bit comparator greater for signal <cursorX[10]_GND_3_o_LessThan_6_o> created at line 25
+    Found 11-bit comparator greater for signal <GND_3_o_cursorY[10]_LessThan_9_o> created at line 26
+    Found 11-bit comparator greater for signal <cursorY[10]_GND_3_o_LessThan_12_o> created at line 26
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred   4 Comparator(s).
+	inferred   1 Multiplexer(s).
+Unit <user_2> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 8
+ 11-bit adder                                          : 4
+ 11-bit addsub                                         : 2
+ 11-bit subtractor                                     : 2
+# Registers                                            : 4
+ 11-bit register                                       : 4
+# Comparators                                          : 10
+ 11-bit comparator greater                             : 6
+ 11-bit comparator lessequal                           : 4
+# Multiplexers                                         : 4
+ 1-bit 2-to-1 multiplexer                              : 4
+# Tristates                                            : 6
+ 1-bit tristate buffer                                 : 6
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <mojo_top_0>.
+The following registers are absorbed into accumulator <M_y_q>: 1 register on signal <M_y_q>.
+The following registers are absorbed into accumulator <M_x_q>: 1 register on signal <M_x_q>.
+The following registers are absorbed into counter <M_pixel_q>: 1 register on signal <M_pixel_q>.
+The following registers are absorbed into counter <M_line_q>: 1 register on signal <M_line_q>.
+Unit <mojo_top_0> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 4
+ 11-bit adder                                          : 2
+ 11-bit subtractor                                     : 2
+# Counters                                             : 2
+ 11-bit up counter                                     : 2
+# Accumulators                                         : 2
+ 11-bit updown accumulator                             : 2
+# Comparators                                          : 10
+ 11-bit comparator greater                             : 6
+ 11-bit comparator lessequal                           : 4
+# Multiplexers                                         : 3
+ 1-bit 2-to-1 multiplexer                              : 3
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <mojo_top_0> ...
+WARNING:Xst:1293 - FF/Latch <M_y_q_1> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_y_q_0> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_x_q_1> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_x_q_0> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <user_2> ...
+WARNING:Xst:1293 - FF/Latch <M_y_q_1> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_y_q_0> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_x_q_1> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_x_q_0> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 2.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 40
+ Flip-Flops                                            : 40
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 40    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 4.879ns (Maximum Frequency: 204.960MHz)
+   Minimum input arrival time before clock: 4.202ns
+   Maximum output required time after clock: 9.715ns
+   Maximum combinational path delay: 5.421ns
+
+=========================================================================

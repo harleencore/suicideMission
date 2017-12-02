@@ -1,0 +1,34 @@
+module user (
+    input charX[11],
+    input charY[11],
+    input cursorX[11],
+    input cursorY[11],
+    
+    output charXOut[11],
+    output charYOut[11],
+    
+    output r,
+    output g,
+    output b
+  ) {
+
+  always {
+    r = 0;
+    g = 0;
+    b = 0;
+    if((cursorX - charX + 26) > 0 && (cursorX - charX + 26) < 50 ){
+      if((cursorY - charY + 26) > 0 && (cursorY - charY + 26) < 50){
+        r = 1;
+        g = 0;
+        b = 0;
+      }
+    } else {
+      r = 0 ;
+      g = 0;
+      b = 0;  
+    }
+    
+    charXOut = charX;
+    charYOut = charY;
+  }
+}

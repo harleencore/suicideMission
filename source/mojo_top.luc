@@ -27,6 +27,9 @@ module mojo_top (
   ) {
   
   sig rst;                  // reset signal
+
+  // User sprite    
+
   
   .clk(clk) {
     // The reset conditioner is used to synchronize the reset signal to the FPGA
@@ -34,46 +37,85 @@ module mojo_top (
     reset_conditioner reset_cond;
     dff pixel[11];
     dff line[11];
+    dff x[11];
+    dff y[11];
   }
   
+  user userChar;
+
+
   always {
+    // Initialize value
+    x.d = 300;
+    y.d = 200;
+    
     reset_cond.in = ~rst_n; // input raw inverted reset signal
     rst = reset_cond.out;   // conditioned reset
     
     led = 8h00;             // turn LEDs off
     spi_miso = bz;          // not using SPI
-    spi_channel = bzzzz;    // not using flags
+    spi_channel = bzzzz;   // not using flags
     avr_rx = bz;            // not using serial port
+
+    
+    userChar.charX = x.q;
+    userChar.charY = y.q;
+    userChar.cursorX = pixel.q;
+    userChar.cursorY = line.q;
+
+    
+    
+    // Button control
+    if(u_button == 1){
+      y.d = y.q - 20;
+      userChar.charY = y.q;
+    }
+    
+    if(d_button == 1){
+      y.d = y.q + 20;
+      userChar.charY = y.q;
+    }
+    
+    if(l_button == 1){
+      x.d = x.q - 20;
+      userChar.charX = x.q;
+    }
+    
+    if(r_button == 1){
+      x.d = x.q + 20;
+      userChar.charX = x.q;
+    }
+    
+    
     
     if (pixel.q < 800 && line.q < 600) {
-    // output test-pattern
-      sprite s;
-      s.charX = ??;
-      s.charY = ??;
-      s.posX = pixel.q;
-      s.posY = line.q;
-
-      red = s.rgb[0];
-      blue = s.rgb[1];
-      green = s.rgb[2];
-      
-      
-      
-      if ((pixel.q & 1) == 0) {
-        red = 0;
-        green = 0;
-        blue = 0;
-      } else {
-        red = 1;
-        green = 1;
-        blue = 1;
-      }
+      red = userChar.r;
+      green = userChar.g;
+      blue = userChar.b;
+          
     } else {
-      // always output 0 outside the visible frame
+      // outside visible frame
       red = 0;
-      green = 0;
       blue = 0;
+      green = 0;
     }
+      
+      
+//      if ((pixel.q & 1) == 0) {
+//        red = 0;
+//        green = 0;
+//        blue = 0;
+//      } else {
+//        red = 1;
+//        green = 1;
+//        blue = 1;
+//      }
+//   } else {
+//      // always output 0 outside the visible frame
+//      red = 0;
+//     green = 0;
+//      blue = 0;
+//    }
 
     // horizontal sync
   if (pixel.q >= 800+56-1 && pixel.q <= 800+56-1+119) {

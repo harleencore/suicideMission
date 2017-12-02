@@ -1,0 +1,15 @@
+NET "a_button" LOC = P2;
+NET "a_button" IOSTANDARD = LVTTL;
+NET "a_button" PULLDOWN;
+NET "r_button" LOC = P6;
+NET "r_button" IOSTANDARD = LVTTL;
+NET "r_button" PULLDOWN;
+NET "u_button" LOC = P8;
+NET "u_button" IOSTANDARD = LVTTL;
+NET "u_button" PULLDOWN;
+NET "d_button" LOC = P10;
+NET "d_button" IOSTANDARD = LVTTL;
+NET "d_button" PULLDOWN;
+NET "l_button" LOC = P12;
+NET "l_button" IOSTANDARD = LVTTL;
+NET "l_button" PULLDOWN;
