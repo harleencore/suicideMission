@@ -1,0 +1,106 @@
+module mojo_top (
+    input clk,              // 50MHz clock
+    input rst_n,            // reset button (active low)
+    output led [8],         // 8 user controllable LEDs
+    input cclk,             // configuration clock, AVR ready when high
+    output spi_miso,        // AVR SPI MISO
+    input spi_ss,           // AVR SPI Slave Select
+    input spi_mosi,         // AVR SPI MOSI
+    input spi_sck,          // AVR SPI Clock
+    output spi_channel [4], // AVR general purpose pins (used by default to select ADC channel)
+    input avr_tx,           // AVR TX (FPGA RX)
+    output avr_rx,          // AVR RX (FPGA TX)
+    input avr_rx_busy,       // AVR RX buffer full
+    
+    output red,
+    output green,
+    output blue,
+    output hsync,
+    output vsync,
+    
+    input a_button,
+    input u_button,
+    input d_button,
+    input r_button,
+    input l_button
+     
+  ) {
+  
+  sig rst;                  // reset signal
+  
+  .clk(clk) {
+    // The reset conditioner is used to synchronize the reset signal to the FPGA
+    // clock. This ensures the entire FPGA comes out of reset at the same time.
+    reset_conditioner reset_cond;
+    dff pixel[11];
+    dff line[11];
+  }
+  
+  always {
+    reset_cond.in = ~rst_n; // input raw inverted reset signal
+    rst = reset_cond.out;   // conditioned reset
+    
+    led = 8h00;             // turn LEDs off
+    spi_miso = bz;          // not using SPI
+    spi_channel = bzzzz;    // not using flags
+    avr_rx = bz;            // not using serial port
+    
+    if (pixel.q < 800 && line.q < 600) {
+    // output test-pattern
+      sprite s;
+      s.charX = ??;
+      s.charY = ??;
+      s.posX = pixel.q;
+      s.posY = line.q;
+
+      red = s.rgb[0];
+      blue = s.rgb[1];
+      green = s.rgb[2];
+      
+      
+      
+      if ((pixel.q & 1) == 0) {
+        red = 0;
+        green = 0;
+        blue = 0;
+      } else {
+        red = 1;
+        green = 1;
+        blue = 1;
+      }
+    } else {
+      // always output 0 outside the visible frame
+      red = 0;
+      green = 0;
+      blue = 0;
+    }
+
+    // horizontal sync
+  if (pixel.q >= 800+56-1 && pixel.q <= 800+56-1+119) {
+    hsync = 1;
+  } else {
+    hsync = 0;
+  }
+
+    // vertical refresh
+  if (line.q >= 600+37-1 && line.q <= 600+37-1+5) {
+    vsync = 1;
+  } else {
+    vsync = 0;
+  }
+
+  // advance pixel and line counters
+  if (pixel.q == 800+56+120+64-1) {
+    if (line.q == 600+37+6+23-1) {
+      line.d = 0;
+    } else {
+      line.d = line.q + 1;
+    }
+    pixel.d = 0;
+  } else {
+    pixel.d = pixel.q + 1;
+  }
+    
+  led[4:0] = c{u_button, d_button, l_button, r_button, a_button};
+  }
+}
