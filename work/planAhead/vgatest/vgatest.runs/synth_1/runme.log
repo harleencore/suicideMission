@@ -44,27 +44,27 @@ INFO:Xst:3210 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMissi
 INFO:Xst:3210 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" line 57: Output port <charXOut> of the instance <userChar> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" line 57: Output port <charYOut> of the instance <userChar> is unconnected or connected to loadless signal.
     Found 11-bit register for signal <M_line_q>.
-    Found 11-bit register for signal <M_x_q>.
-    Found 11-bit register for signal <M_y_q>.
+    Found 11-bit register for signal <M_userX_q>.
+    Found 11-bit register for signal <M_userY_q>.
     Found 11-bit register for signal <M_pixel_q>.
-    Found 11-bit subtractor for signal <M_y_q[10]_GND_1_o_sub_2_OUT> created at line 88.
-    Found 11-bit subtractor for signal <M_x_q[10]_GND_1_o_sub_8_OUT> created at line 96.
-    Found 11-bit adder for signal <M_y_q[10]_GND_1_o_add_4_OUT> created at line 92.
-    Found 11-bit adder for signal <M_x_q[10]_GND_1_o_add_10_OUT> created at line 100.
-    Found 11-bit adder for signal <M_line_q[10]_GND_1_o_add_20_OUT> created at line 126.
-    Found 11-bit adder for signal <M_pixel_q[10]_GND_1_o_add_22_OUT> created at line 130.
+    Found 11-bit subtractor for signal <M_userY_q[10]_GND_1_o_sub_2_OUT> created at line 84.
+    Found 11-bit subtractor for signal <M_userX_q[10]_GND_1_o_sub_9_OUT> created at line 91.
+    Found 11-bit adder for signal <M_userY_q[10]_GND_1_o_add_5_OUT> created at line 88.
+    Found 11-bit adder for signal <M_userX_q[10]_GND_1_o_add_11_OUT> created at line 94.
+    Found 11-bit adder for signal <M_line_q[10]_GND_1_o_add_21_OUT> created at line 121.
+    Found 11-bit adder for signal <M_pixel_q[10]_GND_1_o_add_23_OUT> created at line 125.
     Found 1-bit tristate buffer for signal <spi_miso> created at line 69
     Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 69
     Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 69
     Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 69
     Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 69
     Found 1-bit tristate buffer for signal <avr_rx> created at line 69
-    Found 11-bit comparator greater for signal <M_pixel_q[10]_GND_1_o_LessThan_13_o> created at line 103
-    Found 11-bit comparator greater for signal <M_line_q[10]_GND_1_o_LessThan_14_o> created at line 103
-    Found 11-bit comparator lessequal for signal <n0019> created at line 112
-    Found 11-bit comparator lessequal for signal <n0021> created at line 112
-    Found 11-bit comparator lessequal for signal <n0024> created at line 117
-    Found 11-bit comparator lessequal for signal <n0026> created at line 117
+    Found 11-bit comparator greater for signal <M_pixel_q[10]_GND_1_o_LessThan_14_o> created at line 98
+    Found 11-bit comparator greater for signal <M_line_q[10]_GND_1_o_LessThan_15_o> created at line 98
+    Found 11-bit comparator lessequal for signal <n0019> created at line 107
+    Found 11-bit comparator lessequal for signal <n0021> created at line 107
+    Found 11-bit comparator lessequal for signal <n0024> created at line 112
+    Found 11-bit comparator lessequal for signal <n0026> created at line 112
     Summary:
 	inferred   4 Adder/Subtractor(s).
 	inferred  44 D-type flip-flop(s).
@@ -115,8 +115,8 @@ Macro Statistics
 
 
 Synthesizing (advanced) Unit <mojo_top_0>.
-The following registers are absorbed into accumulator <M_y_q>: 1 register on signal <M_y_q>.
-The following registers are absorbed into accumulator <M_x_q>: 1 register on signal <M_x_q>.
+The following registers are absorbed into counter <M_userY_q>: 1 register on signal <M_userY_q>.
+The following registers are absorbed into counter <M_userX_q>: 1 register on signal <M_userX_q>.
 The following registers are absorbed into counter <M_pixel_q>: 1 register on signal <M_pixel_q>.
 The following registers are absorbed into counter <M_line_q>: 1 register on signal <M_line_q>.
 Unit <mojo_top_0> synthesized (advanced).
@@ -128,10 +128,9 @@ Macro Statistics
 # Adders/Subtractors                                   : 4
  11-bit adder                                          : 2
  11-bit subtractor                                     : 2
-# Counters                                             : 2
+# Counters                                             : 4
  11-bit up counter                                     : 2
-# Accumulators                                         : 2
- 11-bit updown accumulator                             : 2
+ 11-bit updown counter                                 : 2
 # Comparators                                          : 10
  11-bit comparator greater                             : 6
  11-bit comparator lessequal                           : 4
@@ -145,16 +144,8 @@ Macro Statistics
 =========================================================================
 
 Optimizing unit <mojo_top_0> ...
-WARNING:Xst:1293 - FF/Latch <M_y_q_1> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_y_q_0> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_x_q_1> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_x_q_0> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <user_2> ...
-WARNING:Xst:1293 - FF/Latch <M_y_q_1> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_y_q_0> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_x_q_1> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_x_q_0> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -166,8 +157,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 40
- Flip-Flops                                            : 40
+# Registers                                            : 44
+ Flip-Flops                                            : 44
 
 =========================================================================
 
@@ -191,7 +182,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 40    |
+clk                                | BUFGP                  | 44    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -202,9 +193,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 4.879ns (Maximum Frequency: 204.960MHz)
-   Minimum input arrival time before clock: 4.202ns
-   Maximum output required time after clock: 9.715ns
-   Maximum combinational path delay: 5.421ns
+   Minimum period: 4.639ns (Maximum Frequency: 215.564MHz)
+   Minimum input arrival time before clock: 4.049ns
+   Maximum output required time after clock: 9.747ns
+   Maximum combinational path delay: 5.366ns
 
 =========================================================================

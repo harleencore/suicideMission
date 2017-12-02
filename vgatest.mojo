@@ -6,6 +6,7 @@
     <ucf>button.ucf</ucf>
     <ucf lib="true">mojo.ucf</ucf>
     <ucf>vga.ucf</ucf>
+    <component>counter.luc</component>
     <component>reset_conditioner.luc</component>
   </files>
 </project>

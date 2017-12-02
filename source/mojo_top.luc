@@ -37,17 +37,14 @@ module mojo_top (
     reset_conditioner reset_cond;
     dff pixel[11];
     dff line[11];
-    dff x[11];
-    dff y[11];
+    
+    dff userX[11];
+    dff userY[11];
   }
   
   user userChar;
 
-
   always {
-    // Initialize value
-    x.d = 300;
-    y.d = 200;
     
     reset_cond.in = ~rst_n; // input raw inverted reset signal
     rst = reset_cond.out;   // conditioned reset
@@ -57,9 +54,6 @@ module mojo_top (
     spi_channel = bzzzz;   // not using flags
     avr_rx = bz;            // not using serial port
 
-    
-    userChar.charX = x.q;
-    userChar.charY = y.q;
     userChar.cursorX = pixel.q;
     userChar.cursorY = line.q;
 
@@ -67,25 +61,25 @@ module mojo_top (
     
     // Button control
     if(u_button == 1){
-      y.d = y.q - 20;
-      userChar.charY = y.q;
-    }
+      userY.d = userY.q - 1;
+      userChar.charY = userY.q;
+    } 
     
     if(d_button == 1){
-      y.d = y.q + 20;
-      userChar.charY = y.q;
-    }
+      userY.d = userY.q + 1;
+    } 
     
     if(l_button == 1){
-      x.d = x.q - 20;
-      userChar.charX = x.q;
-    }
+      userX.d = userX.q - 1;
+    } 
     
     if(r_button == 1){
-      x.d = x.q + 20;
-      userChar.charX = x.q;
-    }
+      userX.d = userX.q + 1;
+    } 
     
+  
+    userChar.charX = userX.q;
+    userChar.charY = userY.q;
     
     
     if (pixel.q < 800 && line.q < 600) {
