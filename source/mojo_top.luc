@@ -31,18 +31,23 @@ module mojo_top (
   // User sprite    
 
   
-  .clk(clk) {
+  .clk(clk){
     // The reset conditioner is used to synchronize the reset signal to the FPGA
     // clock. This ensures the entire FPGA comes out of reset at the same time.
     reset_conditioner reset_cond;
     dff pixel[11];
     dff line[11];
     
-    dff userX[11];
-    dff userY[11];
+    // this is for the user position
+    dff userX[11](#INIT(400), .rst(rst));
+    dff userY[11](#INIT(480), .rst(rst));
+    
+    
+    dff timer[18](.rst(rst));
   }
   
   user userChar;
+  enemy enemyChar;
 
   always {
     
@@ -54,39 +59,50 @@ module mojo_top (
     spi_channel = bzzzz;   // not using flags
     avr_rx = bz;            // not using serial port
 
+    
+    // Controlling Position enemy
+    enemyChar.cursorX = pixel.q;
+    enemyChar.cursorY = line.q;
+    enemyChar.clk = clk;
+    enemyChar.rst = rst;
+    
+    
+    // Controlling Position User
     userChar.cursorX = pixel.q;
     userChar.cursorY = line.q;
-
-    
     
     // Button control
-    if(u_button == 1){
-      userY.d = userY.q - 1;
-      userChar.charY = userY.q;
-    } 
-    
-    if(d_button == 1){
-      userY.d = userY.q + 1;
-    } 
-    
-    if(l_button == 1){
-      userX.d = userX.q - 1;
-    } 
-    
-    if(r_button == 1){
-      userX.d = userX.q + 1;
-    } 
-    
+    // Use timer to prevent the values from skyrocketting
+    // TODO: control boundaries
+    timer.d = timer.q + 1;
+    if(timer.q == 1){
+      if(u_button == 1){
+        userY.d = userY.q - 1;
+      } 
+      
+      if(d_button == 1){
+        userY.d = userY.q + 1;
+      } 
+      
+      if(l_button == 1){
+        userX.d = userX.q - 1;
+      } 
+      
+      if(r_button == 1){
+        userX.d = userX.q + 1;
+      } 
+    }
   
     userChar.charX = userX.q;
     userChar.charY = userY.q;
     
     
     if (pixel.q < 800 && line.q < 600) {
-      red = userChar.r;
-      green = userChar.g;
-      blue = userChar.b;
-          
+      red = userChar.r + enemyChar.r ;
+      green = userChar.g + enemyChar.g;
+      blue = userChar.b + enemyChar.b;
+
+
     } else {
       // outside visible frame
       red = 0;
@@ -95,30 +111,14 @@ module mojo_top (
     }
       
       
-//      if ((pixel.q & 1) == 0) {
-//        red = 0;
-//        green = 0;
-//        blue = 0;
-//      } else {
-//        red = 1;
-//        green = 1;
-//        blue = 1;
-//      }
-//   } else {
-//      // always output 0 outside the visible frame
-//      red = 0;
-//     green = 0;
-//      blue = 0;
-//    }
-
-    // horizontal sync
+  // horizontal sync
   if (pixel.q >= 800+56-1 && pixel.q <= 800+56-1+119) {
     hsync = 1;
   } else {
     hsync = 0;
   }
 
-    // vertical refresh
+  // vertical refresh
   if (line.q >= 600+37-1 && line.q <= 600+37-1+5) {
     vsync = 1;
   } else {

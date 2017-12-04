@@ -42,11 +42,10 @@ module mojo_top_0 (
   );
   reg [10:0] M_pixel_d, M_pixel_q = 1'h0;
   reg [10:0] M_line_d, M_line_q = 1'h0;
-  reg [10:0] M_userX_d, M_userX_q = 1'h0;
-  reg [10:0] M_userY_d, M_userY_q = 1'h0;
+  reg [10:0] M_userX_d, M_userX_q = 9'h190;
+  reg [10:0] M_userY_d, M_userY_q = 9'h1e0;
+  reg [17:0] M_timer_d, M_timer_q = 1'h0;
   
-  wire [11-1:0] M_userChar_charXOut;
-  wire [11-1:0] M_userChar_charYOut;
   wire [1-1:0] M_userChar_r;
   wire [1-1:0] M_userChar_g;
   wire [1-1:0] M_userChar_b;
@@ -59,14 +58,34 @@ module mojo_top_0 (
     .charY(M_userChar_charY),
     .cursorX(M_userChar_cursorX),
     .cursorY(M_userChar_cursorY),
-    .charXOut(M_userChar_charXOut),
-    .charYOut(M_userChar_charYOut),
     .r(M_userChar_r),
     .g(M_userChar_g),
     .b(M_userChar_b)
   );
   
+  wire [11-1:0] M_enemyChar_enemyPosX;
+  wire [11-1:0] M_enemyChar_enemyPosY;
+  wire [1-1:0] M_enemyChar_r;
+  wire [1-1:0] M_enemyChar_g;
+  wire [1-1:0] M_enemyChar_b;
+  reg [1-1:0] M_enemyChar_clk;
+  reg [1-1:0] M_enemyChar_rst;
+  reg [11-1:0] M_enemyChar_cursorX;
+  reg [11-1:0] M_enemyChar_cursorY;
+  enemy_3 enemyChar (
+    .clk(M_enemyChar_clk),
+    .rst(M_enemyChar_rst),
+    .cursorX(M_enemyChar_cursorX),
+    .cursorY(M_enemyChar_cursorY),
+    .enemyPosX(M_enemyChar_enemyPosX),
+    .enemyPosY(M_enemyChar_enemyPosY),
+    .r(M_enemyChar_r),
+    .g(M_enemyChar_g),
+    .b(M_enemyChar_b)
+  );
+  
   always @* begin
+    M_timer_d = M_timer_q;
     M_line_d = M_line_q;
     M_userY_d = M_userY_q;
     M_userX_d = M_userX_q;
@@ -78,27 +97,33 @@ module mojo_top_0 (
     spi_miso = 1'bz;
     spi_channel = 4'bzzzz;
     avr_rx = 1'bz;
+    M_enemyChar_cursorX = M_pixel_q;
+    M_enemyChar_cursorY = M_line_q;
+    M_enemyChar_clk = clk;
+    M_enemyChar_rst = rst;
     M_userChar_cursorX = M_pixel_q;
     M_userChar_cursorY = M_line_q;
-    if (u_button == 1'h1) begin
-      M_userY_d = M_userY_q - 1'h1;
-      M_userChar_charY = M_userY_q;
-    end
-    if (d_button == 1'h1) begin
-      M_userY_d = M_userY_q + 1'h1;
-    end
-    if (l_button == 1'h1) begin
-      M_userX_d = M_userX_q - 1'h1;
-    end
-    if (r_button == 1'h1) begin
-      M_userX_d = M_userX_q + 1'h1;
+    M_timer_d = M_timer_q + 1'h1;
+    if (M_timer_q == 1'h1) begin
+      if (u_button == 1'h1) begin
+        M_userY_d = M_userY_q - 1'h1;
+      end
+      if (d_button == 1'h1) begin
+        M_userY_d = M_userY_q + 1'h1;
+      end
+      if (l_button == 1'h1) begin
+        M_userX_d = M_userX_q - 1'h1;
+      end
+      if (r_button == 1'h1) begin
+        M_userX_d = M_userX_q + 1'h1;
+      end
     end
     M_userChar_charX = M_userX_q;
     M_userChar_charY = M_userY_q;
     if (M_pixel_q < 10'h320 && M_line_q < 10'h258) begin
-      red = M_userChar_r;
-      green = M_userChar_g;
-      blue = M_userChar_b;
+      red = M_userChar_r + M_enemyChar_r;
+      green = M_userChar_g + M_enemyChar_g;
+      blue = M_userChar_b + M_enemyChar_b;
     end else begin
       red = 1'h0;
       blue = 1'h0;
@@ -130,8 +155,24 @@ module mojo_top_0 (
   always @(posedge clk) begin
     M_pixel_q <= M_pixel_d;
     M_line_q <= M_line_d;
-    M_userX_q <= M_userX_d;
-    M_userY_q <= M_userY_d;
+    
+    if (rst == 1'b1) begin
+      M_userY_q <= 9'h1e0;
+    end else begin
+      M_userY_q <= M_userY_d;
+    end
+    
+    if (rst == 1'b1) begin
+      M_timer_q <= 1'h0;
+    end else begin
+      M_timer_q <= M_timer_d;
+    end
+    
+    if (rst == 1'b1) begin
+      M_userX_q <= 9'h190;
+    end else begin
+      M_userX_q <= M_userX_d;
+    end
   end
   
 endmodule

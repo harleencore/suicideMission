@@ -9,8 +9,6 @@ module user_2 (
     input [10:0] charY,
     input [10:0] cursorX,
     input [10:0] cursorY,
-    output reg [10:0] charXOut,
-    output reg [10:0] charYOut,
     output reg r,
     output reg g,
     output reg b
@@ -22,10 +20,10 @@ module user_2 (
     r = 1'h0;
     g = 1'h0;
     b = 1'h0;
-    if ((cursorX - charX + 5'h1a) > 1'h0 && (cursorX - charX + 5'h1a) < 6'h32) begin
+    if ((cursorX - charX + 5'h1a) > 1'h0 && (cursorX - charX + 5'h1a) < 6'h28) begin
       if ((cursorY - charY + 5'h1a) > 1'h0 && (cursorY - charY + 5'h1a) < 6'h32) begin
-        r = 1'h1;
-        g = 1'h0;
+        r = 1'h0;
+        g = 1'h1;
         b = 1'h0;
       end
     end else begin
@@ -33,7 +31,5 @@ module user_2 (
       g = 1'h0;
       b = 1'h0;
     end
-    charXOut = charX;
-    charYOut = charY;
   end
 endmodule
