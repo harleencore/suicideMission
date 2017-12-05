@@ -4,11 +4,11 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module aluSHIFT_8 (
-    input [7:0] a,
-    input [7:0] b,
+module aluSHIFT_9 (
+    input [31:0] a,
+    input [31:0] b,
     input [5:0] alufn,
-    output reg [7:0] out
+    output reg [31:0] out
   );
   
   

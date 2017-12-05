@@ -4,13 +4,11 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module enemy_4 (
+module background_5 (
     input clk,
     input rst,
     input [10:0] cursorX,
     input [10:0] cursorY,
-    output reg [10:0] enemyPosX,
-    output reg [10:0] enemyPosY,
     output reg r,
     output reg g,
     output reg b
@@ -27,7 +25,6 @@ module enemy_4 (
   
   reg [1:0] M_state_d, M_state_q = RANDOM_R_state;
   reg [17:0] M_timer_d, M_timer_q = 1'h0;
-  reg [19:0] M_statecounter_d, M_statecounter_q = 1'h0;
   reg [31:0] M_difficultyTimer_d, M_difficultyTimer_q = 1'h0;
   reg [19:0] M_difficultyLevel_d, M_difficultyLevel_q = 1'h0;
   
@@ -50,9 +47,9 @@ module enemy_4 (
     M_timer_d = M_timer_q;
     M_charX_d = M_charX_q;
     M_difficultyLevel_d = M_difficultyLevel_q;
-    M_statecounter_d = M_statecounter_q;
     M_difficultyTimer_d = M_difficultyTimer_q;
     
+    M_timer_d = M_timer_q + 1'h1;
     M_rand_seed = 11'h539;
     M_rand_next = M_timer_q[0+0-:1];
     M_rand_clk = clk;
@@ -77,12 +74,12 @@ module enemy_4 (
             g = 1'h0;
             b = 1'h1;
           end else begin
-            if (M_difficultyLevel_q >= 3'h4 && M_difficultyLevel_q < 3'h5) begin
+            if (M_difficultyLevel_q >= 3'h4 && M_difficultyLevel_q < 3'h6) begin
               r = 1'h1;
               g = 1'h1;
               b = 1'h0;
             end else begin
-              if (M_difficultyLevel_q >= 3'h5 && M_difficultyLevel_q < 3'h6) begin
+              if (M_difficultyLevel_q >= 3'h6 && M_difficultyLevel_q < 3'h7) begin
                 r = 1'h1;
                 g = 1'h0;
                 b = 1'h0;
@@ -100,62 +97,34 @@ module enemy_4 (
       g = 1'h0;
       b = 1'h0;
     end
-    M_timer_d = M_timer_q + 1'h1;
-    if (M_timer_q == 1'h1) begin
-      M_statecounter_d = M_statecounter_q + 1'h1;
-      if (M_statecounter_q >= 1'h0 && M_statecounter_q < 4'ha) begin
-        M_state_d = RANDOM_U_state;
-      end else begin
-        if (M_statecounter_q >= 4'ha && M_statecounter_q < 5'h14) begin
-          M_state_d = RANDOM_D_state;
-        end else begin
-          if (M_statecounter_q >= 5'h14 && M_statecounter_q < 5'h1e) begin
-            M_state_d = RANDOM_L_state;
-          end else begin
-            if (M_statecounter_q >= 5'h1e && M_statecounter_q < 6'h28) begin
-              M_state_d = RANDOM_R_state;
-            end else begin
-              M_statecounter_d = 1'h0;
-            end
-          end
-        end
+    if (M_rand_num[1+0-:1] == 1'h1) begin
+      M_state_d = RANDOM_U_state;
+    end
+    if (M_rand_num[2+0-:1] == 1'h1) begin
+      M_state_d = RANDOM_D_state;
+    end
+    if (M_rand_num[3+0-:1] == 1'h1) begin
+      M_state_d = RANDOM_L_state;
+    end
+    if (M_rand_num[4+0-:1] == 1'h1) begin
+      M_state_d = RANDOM_R_state;
+    end
+    
+    case (M_state_q)
+      RANDOM_U_state: begin
+        M_charY_d = M_charY_q - M_rand_num[0+1-:2] - M_difficultyLevel_q;
       end
-      
-      case (M_state_q)
-        RANDOM_U_state: begin
-          if (M_charY_q >= 6'h28) begin
-            M_charY_d = M_charY_q - M_rand_num[0+0-:1] - M_difficultyLevel_q;
-          end
-        end
-        RANDOM_D_state: begin
-          if (M_charY_q <= 10'h212) begin
-            M_charY_d = M_charY_q + M_rand_num[0+0-:1] + M_difficultyLevel_q;
-          end
-        end
-        RANDOM_L_state: begin
-          if (M_charX_q >= 6'h2d) begin
-            M_charX_d = M_charX_q + M_rand_num[0+0-:1] + M_difficultyLevel_q;
-          end
-        end
-        RANDOM_R_state: begin
-          if (M_charX_q <= 10'h30c) begin
-            M_charX_d = M_charX_q - M_rand_num[0+0-:1] - M_difficultyLevel_q;
-          end
-        end
-      endcase
-    end
-    enemyPosX = M_charX_q;
-    enemyPosY = M_charY_q;
+      RANDOM_D_state: begin
+        M_charY_d = M_charY_q + M_rand_num[0+1-:2] + M_difficultyLevel_q;
+      end
+      RANDOM_L_state: begin
+        M_charX_d = M_charX_q + M_rand_num[0+1-:2] + M_difficultyLevel_q;
+      end
+      RANDOM_R_state: begin
+        M_charX_d = M_charX_q - M_rand_num[0+1-:2] - M_difficultyLevel_q;
+      end
+    endcase
   end
-  
-  always @(posedge clk) begin
-    if (rst == 1'b1) begin
-      M_state_q <= 1'h0;
-    end else begin
-      M_state_q <= M_state_d;
-    end
-  end
-  
   
   always @(posedge clk) begin
     M_difficultyLevel_q <= M_difficultyLevel_d;
@@ -164,14 +133,21 @@ module enemy_4 (
       M_charX_q <= 9'h190;
       M_charY_q <= 7'h6e;
       M_timer_q <= 1'h0;
-      M_statecounter_q <= 1'h0;
       M_difficultyTimer_q <= 1'h0;
     end else begin
       M_charX_q <= M_charX_d;
       M_charY_q <= M_charY_d;
       M_timer_q <= M_timer_d;
-      M_statecounter_q <= M_statecounter_d;
       M_difficultyTimer_q <= M_difficultyTimer_d;
+    end
+  end
+  
+  
+  always @(posedge clk) begin
+    if (rst == 1'b1) begin
+      M_state_q <= 1'h0;
+    end else begin
+      M_state_q <= M_state_d;
     end
   end
   

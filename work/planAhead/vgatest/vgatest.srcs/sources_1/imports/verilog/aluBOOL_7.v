@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module aluBOOL_6 (
+module aluBOOL_7 (
     input [31:0] a,
     input [31:0] b,
     input [5:0] alufn,

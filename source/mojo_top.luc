@@ -48,7 +48,8 @@ module mojo_top (
   
   aluLogic alu;               // alu
   user userChar;              // user sprite
-  enemy enemyChar;            // enemy sprite
+  enemy enemyChar;
+  background bg;            // enemy sprite
 
   always {
     alu.a = 0;
@@ -72,6 +73,12 @@ module mojo_top (
     scheduler.d = scheduler.q + 1; 
     //}
     
+    // BG element
+    bg.clk = clk;
+    bg.rst = rst;
+    bg.cursorX = 300;
+    bg.cursorY = 300;
+    
     // Controlling Position enemy
     enemyChar.cursorX = pixel.q;
     enemyChar.cursorY = line.q;
@@ -88,8 +95,10 @@ module mojo_top (
     userChar.charX = userX.q;
     userChar.charY = userY.q;
     
+    
+    
     //if(timer.q[22] == 1){
-      // Scheduler 1
+    // Scheduler M.1
     if(scheduler.q == 524288){
       if(u_button == 1 && userY.q >= 340){
         // userY.d = userY.q - 1;
@@ -101,7 +110,7 @@ module mojo_top (
       }
     }
       
-    // Scheduler 2
+    // Scheduler M.2
     if(scheduler.q == 524287){
       if(d_button == 1 && userY.q <= 550){
         //userY.d = userY.q + 1;
@@ -139,9 +148,9 @@ module mojo_top (
   
     
     if (pixel.q < 800 && line.q < 600) {
-      red = userChar.r || enemyChar.r ;
-      green = userChar.g || enemyChar.g;
-      blue = userChar.b || enemyChar.b;
+      red = bg.r || userChar.r || enemyChar.r;
+      green = bg.g || userChar.g || enemyChar.g;
+      blue = bg.b || userChar.b || enemyChar.b;
 
 
     } else {

@@ -102,6 +102,23 @@ module mojo_top_0 (
     .b(M_enemyChar_b)
   );
   
+  wire [1-1:0] M_bg_r;
+  wire [1-1:0] M_bg_g;
+  wire [1-1:0] M_bg_b;
+  reg [1-1:0] M_bg_clk;
+  reg [1-1:0] M_bg_rst;
+  reg [11-1:0] M_bg_cursorX;
+  reg [11-1:0] M_bg_cursorY;
+  background_5 bg (
+    .clk(M_bg_clk),
+    .rst(M_bg_rst),
+    .cursorX(M_bg_cursorX),
+    .cursorY(M_bg_cursorY),
+    .r(M_bg_r),
+    .g(M_bg_g),
+    .b(M_bg_b)
+  );
+  
   always @* begin
     M_scheduler_d = M_scheduler_q;
     M_timer_d = M_timer_q;
@@ -120,6 +137,10 @@ module mojo_top_0 (
     spi_channel = 4'bzzzz;
     avr_rx = 1'bz;
     M_scheduler_d = M_scheduler_q + 1'h1;
+    M_bg_clk = clk;
+    M_bg_rst = rst;
+    M_bg_cursorX = 9'h12c;
+    M_bg_cursorY = 9'h12c;
     M_enemyChar_cursorX = M_pixel_q;
     M_enemyChar_cursorY = M_line_q;
     M_enemyChar_clk = clk;
@@ -166,9 +187,9 @@ module mojo_top_0 (
       end
     end
     if (M_pixel_q < 10'h320 && M_line_q < 10'h258) begin
-      red = M_userChar_r || M_enemyChar_r;
-      green = M_userChar_g || M_enemyChar_g;
-      blue = M_userChar_b || M_enemyChar_b;
+      red = M_bg_r || M_userChar_r || M_enemyChar_r;
+      green = M_bg_g || M_userChar_g || M_enemyChar_g;
+      blue = M_bg_b || M_userChar_b || M_enemyChar_b;
     end else begin
       red = 1'h0;
       blue = 1'h0;
@@ -208,12 +229,6 @@ module mojo_top_0 (
     end
     
     if (rst == 1'b1) begin
-      M_userY_q <= 9'h1e0;
-    end else begin
-      M_userY_q <= M_userY_d;
-    end
-    
-    if (rst == 1'b1) begin
       M_scheduler_q <= 1'h0;
     end else begin
       M_scheduler_q <= M_scheduler_d;
@@ -223,6 +238,12 @@ module mojo_top_0 (
       M_userX_q <= 9'h190;
     end else begin
       M_userX_q <= M_userX_d;
+    end
+    
+    if (rst == 1'b1) begin
+      M_userY_q <= 9'h1e0;
+    end else begin
+      M_userY_q <= M_userY_d;
     end
   end
   

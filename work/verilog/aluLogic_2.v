@@ -23,7 +23,7 @@ module aluLogic_2 (
   reg [32-1:0] M_add_a;
   reg [32-1:0] M_add_b;
   reg [6-1:0] M_add_alufn;
-  aluADD_5 add (
+  aluADD_6 add (
     .a(M_add_a),
     .b(M_add_b),
     .alufn(M_add_alufn),
@@ -37,7 +37,7 @@ module aluLogic_2 (
   reg [32-1:0] M_bool_a;
   reg [32-1:0] M_bool_b;
   reg [6-1:0] M_bool_alufn;
-  aluBOOL_6 bool (
+  aluBOOL_7 bool (
     .a(M_bool_a),
     .b(M_bool_b),
     .alufn(M_bool_alufn),
@@ -49,7 +49,7 @@ module aluLogic_2 (
   reg [1-1:0] M_comp_z;
   reg [1-1:0] M_comp_n;
   reg [1-1:0] M_comp_v;
-  aluCOMP_7 comp (
+  aluCOMP_8 comp (
     .alufn(M_comp_alufn),
     .z(M_comp_z),
     .n(M_comp_n),
@@ -57,11 +57,11 @@ module aluLogic_2 (
     .out(M_comp_out)
   );
   
-  wire [8-1:0] M_shift_out;
-  reg [8-1:0] M_shift_a;
-  reg [8-1:0] M_shift_b;
+  wire [32-1:0] M_shift_out;
+  reg [32-1:0] M_shift_a;
+  reg [32-1:0] M_shift_b;
   reg [6-1:0] M_shift_alufn;
-  aluSHIFT_8 shift (
+  aluSHIFT_9 shift (
     .a(M_shift_a),
     .b(M_shift_b),
     .alufn(M_shift_alufn),

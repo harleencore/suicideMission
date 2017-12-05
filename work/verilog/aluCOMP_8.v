@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module aluCOMP_7 (
+module aluCOMP_8 (
     input [5:0] alufn,
     input [0:0] z,
     input [0:0] n,

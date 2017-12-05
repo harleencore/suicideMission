@@ -9,10 +9,12 @@
     <src>user.luc</src>
     <src>aluADD.luc</src>
     <src>aluCOMP.luc</src>
+    <src>background.luc</src>
     <ucf>button.ucf</ucf>
     <ucf lib="true">mojo.ucf</ucf>
     <ucf>vga.ucf</ucf>
     <component>counter.luc</component>
+    <component>pn_gen.luc</component>
     <component>reset_conditioner.luc</component>
   </files>
 </project>

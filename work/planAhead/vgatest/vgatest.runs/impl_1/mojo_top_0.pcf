@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Tue Dec 05 20:15:43 2017
+// Written by: Map P.20131013 on Tue Dec 05 23:38:08 2017
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -30,45 +30,171 @@ COMP "spi_ss" LOCATE = SITE "P48" LEVEL 1;
 COMP "r_button" LOCATE = SITE "P6" LEVEL 1;
 COMP "u_button" LOCATE = SITE "P8" LEVEL 1;
 COMP "spi_mosi" LOCATE = SITE "P44" LEVEL 1;
-TIMEGRP clk = BEL "M_line_q_10" BEL "clk_BUFGP/BUFG" BEL
-        "reset_cond/M_stage_q_3" BEL "reset_cond/M_stage_q_2" BEL
-        "reset_cond/M_stage_q_1" BEL "reset_cond/M_stage_q_0" BEL
-        "M_pixel_q_0" BEL "M_pixel_q_1" BEL "M_pixel_q_2" BEL "M_pixel_q_3"
-        BEL "M_pixel_q_4" BEL "M_pixel_q_5" BEL "M_pixel_q_6" BEL
-        "M_pixel_q_7" BEL "M_pixel_q_8" BEL "M_pixel_q_9" BEL "M_line_q_0" BEL
-        "M_line_q_1" BEL "M_line_q_2" BEL "M_line_q_3" BEL "M_line_q_4" BEL
-        "M_line_q_5" BEL "M_line_q_6" BEL "M_line_q_7" BEL "M_line_q_8" BEL
-        "M_line_q_9" BEL "M_userY_q_1" BEL "M_userY_q_2" BEL "M_userY_q_3" BEL
-        "M_userY_q_4" BEL "M_userY_q_5" BEL "M_userY_q_6" BEL "M_userY_q_7"
-        BEL "M_userY_q_8" BEL "M_scheduler_q_0" BEL "M_scheduler_q_1" BEL
-        "M_scheduler_q_2" BEL "M_scheduler_q_3" BEL "M_scheduler_q_4" BEL
-        "M_scheduler_q_5" BEL "M_scheduler_q_6" BEL "M_scheduler_q_7" BEL
-        "M_scheduler_q_8" BEL "M_pixel_q_10" BEL "M_scheduler_q_9" BEL
-        "M_scheduler_q_10" BEL "M_scheduler_q_11" BEL "M_scheduler_q_12" BEL
-        "M_scheduler_q_13" BEL "M_scheduler_q_14" BEL "M_scheduler_q_15" BEL
-        "M_scheduler_q_16" BEL "M_scheduler_q_17" BEL "M_scheduler_q_18" BEL
-        "M_scheduler_q_19" BEL "enemyChar/M_charY_q_9" BEL
-        "enemyChar/M_charY_q_8" BEL "enemyChar/M_charY_q_10" BEL
-        "enemyChar/M_charY_q_7" BEL "enemyChar/M_charY_q_6" BEL
-        "enemyChar/M_charY_q_5" BEL "enemyChar/M_charY_q_4" BEL
-        "enemyChar/M_charY_q_3" BEL "enemyChar/M_charY_q_2" BEL
-        "enemyChar/M_charY_q_1" BEL "enemyChar/M_charY_q_0" BEL
-        "enemyChar/M_timer_q_15" BEL "enemyChar/M_timer_q_14" BEL
-        "enemyChar/M_timer_q_13" BEL "enemyChar/M_timer_q_12" BEL
-        "enemyChar/M_timer_q_11" BEL "enemyChar/M_timer_q_10" BEL
-        "enemyChar/M_timer_q_9" BEL "enemyChar/M_timer_q_8" BEL
-        "enemyChar/M_timer_q_7" BEL "enemyChar/M_timer_q_6" BEL
-        "enemyChar/M_timer_q_5" BEL "enemyChar/M_timer_q_4" BEL
-        "enemyChar/M_timer_q_3" BEL "enemyChar/M_timer_q_2" BEL
-        "enemyChar/M_timer_q_1" BEL "enemyChar/M_charX_q_10" BEL
-        "enemyChar/M_charX_q_8" BEL "enemyChar/M_charX_q_7" BEL
-        "enemyChar/M_charX_q_9" BEL "enemyChar/M_charX_q_6" BEL
-        "enemyChar/M_charX_q_5" BEL "enemyChar/M_charX_q_4" BEL
-        "enemyChar/M_charX_q_3" BEL "enemyChar/M_charX_q_2" BEL
-        "enemyChar/M_charX_q_1" BEL "enemyChar/M_charX_q_0" BEL "M_userX_q_1"
-        BEL "M_userX_q_2" BEL "M_userX_q_3" BEL "M_userX_q_4" BEL
-        "M_userX_q_5" BEL "M_userX_q_6" BEL "M_userX_q_7" BEL "M_userX_q_8"
-        BEL "M_userX_q_9";
+TIMEGRP clk = BEL "bg/M_charY_q_10" BEL "bg/M_charY_q_9" BEL "bg/M_charY_q_8"
+        BEL "bg/M_charY_q_7" BEL "bg/M_charY_q_6" BEL "bg/M_charY_q_5" BEL
+        "bg/M_charY_q_4" BEL "bg/M_charY_q_3" BEL "bg/M_charY_q_2" BEL
+        "bg/M_charY_q_1" BEL "bg/M_charY_q_0" BEL "bg/M_charX_q_10" BEL
+        "bg/M_charX_q_9" BEL "bg/M_charX_q_8" BEL "bg/M_charX_q_7" BEL
+        "bg/M_charX_q_6" BEL "bg/M_charX_q_5" BEL "bg/M_charX_q_4" BEL
+        "bg/M_charX_q_3" BEL "bg/M_charX_q_2" BEL "bg/M_charX_q_1" BEL
+        "bg/M_charX_q_0" BEL "bg/M_state_q_1" BEL "bg/M_state_q_0" BEL
+        "M_line_q_10" BEL "clk_BUFGP/BUFG" BEL "reset_cond/M_stage_q_3" BEL
+        "reset_cond/M_stage_q_2" BEL "reset_cond/M_stage_q_1" BEL
+        "reset_cond/M_stage_q_0" BEL "M_pixel_q_0" BEL "M_pixel_q_1" BEL
+        "M_pixel_q_2" BEL "M_pixel_q_3" BEL "M_pixel_q_4" BEL "M_pixel_q_5"
+        BEL "M_pixel_q_6" BEL "M_pixel_q_7" BEL "M_pixel_q_8" BEL
+        "M_pixel_q_9" BEL "M_line_q_0" BEL "M_line_q_1" BEL "M_line_q_2" BEL
+        "M_line_q_3" BEL "M_line_q_4" BEL "M_line_q_5" BEL "M_line_q_6" BEL
+        "M_line_q_7" BEL "M_line_q_8" BEL "M_line_q_9" BEL "M_userY_q_1" BEL
+        "M_userY_q_2" BEL "M_userY_q_3" BEL "M_userY_q_4" BEL "M_userY_q_5"
+        BEL "M_userY_q_6" BEL "M_userY_q_7" BEL "M_userY_q_8" BEL
+        "M_scheduler_q_0" BEL "M_scheduler_q_1" BEL "M_scheduler_q_2" BEL
+        "M_scheduler_q_3" BEL "M_scheduler_q_4" BEL "M_scheduler_q_5" BEL
+        "M_scheduler_q_6" BEL "M_scheduler_q_7" BEL "M_scheduler_q_8" BEL
+        "M_pixel_q_10" BEL "M_scheduler_q_9" BEL "M_scheduler_q_10" BEL
+        "M_scheduler_q_11" BEL "M_scheduler_q_12" BEL "M_scheduler_q_13" BEL
+        "M_scheduler_q_14" BEL "M_scheduler_q_15" BEL "M_scheduler_q_16" BEL
+        "M_scheduler_q_0_1" BEL "M_scheduler_q_17" BEL "M_scheduler_q_18" BEL
+        "M_scheduler_q_19" BEL "enemyChar/rand/M_z_q_0" BEL
+        "enemyChar/rand/M_z_q_3" BEL "enemyChar/rand/M_z_q_4" BEL
+        "enemyChar/rand/M_z_q_7" BEL "enemyChar/rand/M_z_q_9" BEL
+        "enemyChar/rand/M_z_q_10" BEL "enemyChar/rand/M_z_q_14" BEL
+        "enemyChar/rand/M_z_q_15" BEL "enemyChar/rand/M_z_q_17" BEL
+        "enemyChar/rand/M_z_q_18" BEL "enemyChar/rand/M_z_q_19" BEL
+        "enemyChar/rand/M_z_q_20" BEL "enemyChar/rand/M_z_q_23" BEL
+        "enemyChar/rand/M_z_q_24" BEL "enemyChar/rand/M_z_q_26" BEL
+        "enemyChar/rand/M_z_q_30" BEL "enemyChar/rand/M_z_q_31" BEL
+        "enemyChar/rand/M_y_q_1" BEL "enemyChar/rand/M_y_q_3" BEL
+        "enemyChar/rand/M_y_q_4" BEL "enemyChar/rand/M_y_q_6" BEL
+        "enemyChar/rand/M_y_q_7" BEL "enemyChar/rand/M_y_q_8" BEL
+        "enemyChar/rand/M_y_q_10" BEL "enemyChar/rand/M_y_q_11" BEL
+        "enemyChar/rand/M_y_q_12" BEL "enemyChar/rand/M_y_q_15" BEL
+        "enemyChar/rand/M_y_q_18" BEL "enemyChar/rand/M_y_q_22" BEL
+        "enemyChar/rand/M_y_q_23" BEL "enemyChar/rand/M_y_q_24" BEL
+        "enemyChar/rand/M_y_q_26" BEL "enemyChar/rand/M_y_q_27" BEL
+        "enemyChar/rand/M_y_q_28" BEL "enemyChar/rand/M_y_q_29" BEL
+        "enemyChar/rand/M_y_q_31" BEL "enemyChar/rand/M_x_q_0" BEL
+        "enemyChar/rand/M_x_q_2" BEL "enemyChar/rand/M_x_q_3" BEL
+        "enemyChar/rand/M_x_q_4" BEL "enemyChar/rand/M_x_q_7" BEL
+        "enemyChar/rand/M_x_q_8" BEL "enemyChar/rand/M_x_q_9" BEL
+        "enemyChar/rand/M_x_q_12" BEL "enemyChar/rand/M_x_q_14" BEL
+        "enemyChar/rand/M_x_q_15" BEL "enemyChar/rand/M_x_q_17" BEL
+        "enemyChar/rand/M_x_q_18" BEL "enemyChar/rand/M_x_q_21" BEL
+        "enemyChar/rand/M_x_q_23" BEL "enemyChar/rand/M_x_q_24" BEL
+        "enemyChar/rand/M_x_q_26" BEL "enemyChar/rand/M_x_q_27" BEL
+        "enemyChar/rand/M_x_q_28" BEL "enemyChar/rand/M_x_q_31" BEL
+        "enemyChar/rand/M_w_q_0" BEL "enemyChar/rand/M_w_q_1" BEL
+        "enemyChar/rand/M_w_q_2" BEL "enemyChar/rand/M_w_q_3" BEL
+        "enemyChar/rand/M_w_q_4" BEL "enemyChar/rand/M_w_q_5" BEL
+        "enemyChar/rand/M_w_q_6" BEL "enemyChar/rand/M_w_q_7" BEL
+        "enemyChar/rand/M_w_q_8" BEL "enemyChar/rand/M_w_q_9" BEL
+        "enemyChar/rand/M_w_q_10" BEL "enemyChar/rand/M_w_q_11" BEL
+        "enemyChar/rand/M_w_q_12" BEL "enemyChar/rand/M_w_q_13" BEL
+        "enemyChar/rand/M_w_q_14" BEL "enemyChar/rand/M_w_q_15" BEL
+        "enemyChar/rand/M_w_q_16" BEL "enemyChar/rand/M_w_q_17" BEL
+        "enemyChar/rand/M_w_q_18" BEL "enemyChar/rand/M_w_q_19" BEL
+        "enemyChar/rand/M_w_q_20" BEL "enemyChar/rand/M_w_q_21" BEL
+        "enemyChar/rand/M_w_q_22" BEL "enemyChar/rand/M_w_q_23" BEL
+        "enemyChar/rand/M_w_q_24" BEL "enemyChar/rand/M_w_q_25" BEL
+        "enemyChar/rand/M_w_q_26" BEL "enemyChar/rand/M_w_q_27" BEL
+        "enemyChar/rand/M_w_q_28" BEL "enemyChar/rand/M_w_q_29" BEL
+        "enemyChar/rand/M_w_q_30" BEL "enemyChar/rand/M_w_q_31" BEL
+        "enemyChar/rand/M_z_q_1" BEL "enemyChar/rand/M_z_q_2" BEL
+        "enemyChar/rand/M_z_q_5" BEL "enemyChar/rand/M_z_q_6" BEL
+        "enemyChar/rand/M_z_q_8" BEL "enemyChar/rand/M_z_q_11" BEL
+        "enemyChar/rand/M_z_q_12" BEL "enemyChar/rand/M_z_q_13" BEL
+        "enemyChar/rand/M_z_q_16" BEL "enemyChar/rand/M_z_q_21" BEL
+        "enemyChar/rand/M_z_q_22" BEL "enemyChar/rand/M_z_q_25" BEL
+        "enemyChar/rand/M_z_q_27" BEL "enemyChar/rand/M_z_q_28" BEL
+        "enemyChar/rand/M_z_q_29" BEL "enemyChar/rand/M_y_q_0" BEL
+        "enemyChar/rand/M_y_q_2" BEL "enemyChar/rand/M_y_q_5" BEL
+        "enemyChar/rand/M_y_q_9" BEL "enemyChar/rand/M_y_q_13" BEL
+        "enemyChar/rand/M_y_q_14" BEL "enemyChar/rand/M_y_q_16" BEL
+        "enemyChar/rand/M_y_q_17" BEL "enemyChar/rand/M_y_q_19" BEL
+        "enemyChar/rand/M_y_q_20" BEL "enemyChar/rand/M_y_q_21" BEL
+        "enemyChar/rand/M_y_q_25" BEL "enemyChar/rand/M_y_q_30" BEL
+        "enemyChar/rand/M_x_q_1" BEL "enemyChar/rand/M_x_q_5" BEL
+        "enemyChar/rand/M_x_q_6" BEL "enemyChar/rand/M_x_q_10" BEL
+        "enemyChar/rand/M_x_q_11" BEL "enemyChar/rand/M_x_q_13" BEL
+        "enemyChar/rand/M_x_q_16" BEL "enemyChar/rand/M_x_q_19" BEL
+        "enemyChar/rand/M_x_q_20" BEL "enemyChar/rand/M_x_q_22" BEL
+        "enemyChar/rand/M_x_q_25" BEL "enemyChar/rand/M_x_q_29" BEL
+        "enemyChar/rand/M_x_q_30" BEL "enemyChar/M_difficultyTimer_q_0" BEL
+        "enemyChar/M_difficultyTimer_q_1" BEL
+        "enemyChar/M_difficultyTimer_q_2" BEL
+        "enemyChar/M_difficultyTimer_q_3" BEL
+        "enemyChar/M_difficultyTimer_q_4" BEL
+        "enemyChar/M_difficultyTimer_q_5" BEL
+        "enemyChar/M_difficultyTimer_q_6" BEL
+        "enemyChar/M_difficultyTimer_q_7" BEL
+        "enemyChar/M_difficultyTimer_q_8" BEL
+        "enemyChar/M_difficultyTimer_q_9" BEL "enemyChar/M_timer_q_10" BEL
+        "enemyChar/M_timer_q_11" BEL "enemyChar/M_timer_q_12" BEL
+        "enemyChar/M_timer_q_13" BEL "enemyChar/M_timer_q_14" BEL
+        "enemyChar/M_timer_q_15" BEL "enemyChar/M_timer_q_16" BEL
+        "enemyChar/M_timer_q_17" BEL "enemyChar/M_charY_q_0" BEL
+        "enemyChar/M_charY_q_1" BEL "enemyChar/M_charY_q_2" BEL
+        "enemyChar/M_charY_q_3" BEL "enemyChar/M_charY_q_4" BEL
+        "enemyChar/M_charY_q_5" BEL "enemyChar/M_charY_q_6" BEL
+        "enemyChar/M_charY_q_7" BEL "enemyChar/M_charY_q_8" BEL
+        "enemyChar/M_charY_q_9" BEL "enemyChar/M_difficultyTimer_q_10" BEL
+        "enemyChar/M_difficultyTimer_q_11" BEL
+        "enemyChar/M_difficultyTimer_q_12" BEL
+        "enemyChar/M_difficultyTimer_q_13" BEL
+        "enemyChar/M_difficultyTimer_q_14" BEL
+        "enemyChar/M_difficultyTimer_q_20" BEL
+        "enemyChar/M_difficultyTimer_q_15" BEL
+        "enemyChar/M_difficultyTimer_q_16" BEL
+        "enemyChar/M_difficultyTimer_q_21" BEL
+        "enemyChar/M_difficultyTimer_q_22" BEL
+        "enemyChar/M_difficultyTimer_q_17" BEL
+        "enemyChar/M_difficultyTimer_q_23" BEL
+        "enemyChar/M_difficultyTimer_q_18" BEL
+        "enemyChar/M_difficultyTimer_q_24" BEL
+        "enemyChar/M_difficultyTimer_q_19" BEL
+        "enemyChar/M_difficultyTimer_q_30" BEL
+        "enemyChar/M_difficultyTimer_q_25" BEL
+        "enemyChar/M_difficultyTimer_q_26" BEL
+        "enemyChar/M_difficultyTimer_q_31" BEL
+        "enemyChar/M_difficultyTimer_q_27" BEL
+        "enemyChar/M_difficultyTimer_q_28" BEL
+        "enemyChar/M_difficultyTimer_q_29" BEL "enemyChar/M_charX_q_0" BEL
+        "enemyChar/M_charX_q_1" BEL "enemyChar/M_charX_q_2" BEL
+        "enemyChar/M_charX_q_3" BEL "enemyChar/M_charX_q_4" BEL
+        "enemyChar/M_charX_q_5" BEL "enemyChar/M_charX_q_6" BEL
+        "enemyChar/M_charX_q_7" BEL "enemyChar/M_charX_q_8" BEL
+        "enemyChar/M_charX_q_9" BEL "enemyChar/M_statecounter_q_0" BEL
+        "enemyChar/M_statecounter_q_1" BEL "enemyChar/M_statecounter_q_2" BEL
+        "enemyChar/M_statecounter_q_3" BEL "enemyChar/M_statecounter_q_4" BEL
+        "enemyChar/M_statecounter_q_5" BEL "enemyChar/M_timer_q_1" BEL
+        "enemyChar/M_timer_q_2" BEL "enemyChar/M_timer_q_3" BEL
+        "enemyChar/M_timer_q_4" BEL "enemyChar/M_timer_q_5" BEL
+        "enemyChar/M_timer_q_6" BEL "enemyChar/M_timer_q_7" BEL
+        "enemyChar/M_timer_q_8" BEL "enemyChar/M_timer_q_9" BEL
+        "enemyChar/M_charX_q_10" BEL "enemyChar/M_state_q_0" BEL
+        "enemyChar/M_state_q_1" BEL "enemyChar/M_charY_q_10" BEL
+        "enemyChar/M_difficultyLevel_q_10" BEL
+        "enemyChar/M_difficultyLevel_q_11" BEL
+        "enemyChar/M_difficultyLevel_q_12" BEL
+        "enemyChar/M_difficultyLevel_q_13" BEL
+        "enemyChar/M_difficultyLevel_q_14" BEL
+        "enemyChar/M_difficultyLevel_q_15" BEL
+        "enemyChar/M_difficultyLevel_q_16" BEL
+        "enemyChar/M_difficultyLevel_q_17" BEL
+        "enemyChar/M_difficultyLevel_q_18" BEL
+        "enemyChar/M_difficultyLevel_q_19" BEL
+        "enemyChar/M_difficultyLevel_q_0" BEL
+        "enemyChar/M_difficultyLevel_q_1" BEL
+        "enemyChar/M_difficultyLevel_q_2" BEL
+        "enemyChar/M_difficultyLevel_q_3" BEL
+        "enemyChar/M_difficultyLevel_q_4" BEL
+        "enemyChar/M_difficultyLevel_q_5" BEL
+        "enemyChar/M_difficultyLevel_q_6" BEL
+        "enemyChar/M_difficultyLevel_q_7" BEL
+        "enemyChar/M_difficultyLevel_q_8" BEL
+        "enemyChar/M_difficultyLevel_q_9" BEL "M_userX_q_1" BEL "M_userX_q_2"
+        BEL "M_userX_q_3" BEL "M_userX_q_4" BEL "M_userX_q_5" BEL
+        "M_userX_q_6" BEL "M_userX_q_7" BEL "M_userX_q_8" BEL "M_userX_q_9";
 TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH 50%;
 SCHEMATIC END;
 

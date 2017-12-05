@@ -7,20 +7,24 @@ Reading design: mojo_top_0.prj
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluSHIFT_8.v" into library work
-Parsing module <aluSHIFT_8>.
-Analyzing Verilog file "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluCOMP_7.v" into library work
-Parsing module <aluCOMP_7>.
-Analyzing Verilog file "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluBOOL_6.v" into library work
-Parsing module <aluBOOL_6>.
-Analyzing Verilog file "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluADD_5.v" into library work
-Parsing module <aluADD_5>.
+Analyzing Verilog file "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/pn_gen_10.v" into library work
+Parsing module <pn_gen_10>.
+Analyzing Verilog file "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluSHIFT_9.v" into library work
+Parsing module <aluSHIFT_9>.
+Analyzing Verilog file "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluCOMP_8.v" into library work
+Parsing module <aluCOMP_8>.
+Analyzing Verilog file "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluBOOL_7.v" into library work
+Parsing module <aluBOOL_7>.
+Analyzing Verilog file "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluADD_6.v" into library work
+Parsing module <aluADD_6>.
 Analyzing Verilog file "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/user_3.v" into library work
 Parsing module <user_3>.
 Analyzing Verilog file "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/reset_conditioner_1.v" into library work
 Parsing module <reset_conditioner_1>.
 Analyzing Verilog file "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/enemy_4.v" into library work
 Parsing module <enemy_4>.
+Analyzing Verilog file "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/background_5.v" into library work
+Parsing module <background_5>.
 Analyzing Verilog file "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluLogic_2.v" into library work
 Parsing module <aluLogic_2>.
 Analyzing Verilog file "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" into library work
@@ -36,15 +40,13 @@ Elaborating module <reset_conditioner_1>.
 
 Elaborating module <aluLogic_2>.
 
-Elaborating module <aluADD_5>.
+Elaborating module <aluADD_6>.
 
-Elaborating module <aluBOOL_6>.
+Elaborating module <aluBOOL_7>.
 
-Elaborating module <aluCOMP_7>.
+Elaborating module <aluCOMP_8>.
 
-Elaborating module <aluSHIFT_8>.
-WARNING:HDLCompiler:413 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluLogic_2.v" Line 82: Result of 32-bit expression is truncated to fit in 8-bit target.
-WARNING:HDLCompiler:413 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluLogic_2.v" Line 83: Result of 32-bit expression is truncated to fit in 8-bit target.
+Elaborating module <aluSHIFT_9>.
 WARNING:HDLCompiler:1127 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 62: Assignment to M_alu_z ignored, since the identifier is never used
 WARNING:HDLCompiler:1127 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 63: Assignment to M_alu_v ignored, since the identifier is never used
 WARNING:HDLCompiler:1127 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 64: Assignment to M_alu_n ignored, since the identifier is never used
@@ -52,8 +54,20 @@ WARNING:HDLCompiler:1127 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/s
 Elaborating module <user_3>.
 
 Elaborating module <enemy_4>.
+
+Elaborating module <pn_gen_10>.
+WARNING:HDLCompiler:413 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/enemy_4.v" Line 127: Result of 20-bit expression is truncated to fit in 11-bit target.
+WARNING:HDLCompiler:413 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/enemy_4.v" Line 132: Result of 20-bit expression is truncated to fit in 11-bit target.
+WARNING:HDLCompiler:413 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/enemy_4.v" Line 137: Result of 20-bit expression is truncated to fit in 11-bit target.
+WARNING:HDLCompiler:413 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/enemy_4.v" Line 142: Result of 20-bit expression is truncated to fit in 11-bit target.
 WARNING:HDLCompiler:1127 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 98: Assignment to M_enemyChar_enemyPosX ignored, since the identifier is never used
 WARNING:HDLCompiler:1127 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 99: Assignment to M_enemyChar_enemyPosY ignored, since the identifier is never used
+
+Elaborating module <background_5>.
+WARNING:HDLCompiler:413 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/background_5.v" Line 115: Result of 20-bit expression is truncated to fit in 11-bit target.
+WARNING:HDLCompiler:413 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/background_5.v" Line 118: Result of 20-bit expression is truncated to fit in 11-bit target.
+WARNING:HDLCompiler:413 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/background_5.v" Line 121: Result of 20-bit expression is truncated to fit in 11-bit target.
+WARNING:HDLCompiler:413 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/background_5.v" Line 124: Result of 20-bit expression is truncated to fit in 11-bit target.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -73,29 +87,29 @@ INFO:Xst:3210 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMissi
 INFO:Xst:3210 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" line 93: Output port <enemyPosX> of the instance <enemyChar> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" line 93: Output port <enemyPosY> of the instance <enemyChar> is unconnected or connected to loadless signal.
     Found 11-bit register for signal <M_line_q>.
-    Found 11-bit register for signal <M_userY_q>.
     Found 20-bit register for signal <M_scheduler_q>.
     Found 11-bit register for signal <M_userX_q>.
+    Found 11-bit register for signal <M_userY_q>.
     Found 11-bit register for signal <M_pixel_q>.
-    Found 20-bit adder for signal <M_scheduler_q[19]_GND_1_o_add_0_OUT> created at line 122.
-    Found 11-bit adder for signal <M_line_q[10]_GND_1_o_add_62_OUT> created at line 191.
-    Found 11-bit adder for signal <M_pixel_q[10]_GND_1_o_add_64_OUT> created at line 195.
-    Found 1-bit tristate buffer for signal <spi_miso> created at line 105
-    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 105
-    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 105
-    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 105
-    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 105
-    Found 1-bit tristate buffer for signal <avr_rx> created at line 105
-    Found 11-bit comparator lessequal for signal <n0004> created at line 133
-    Found 11-bit comparator lessequal for signal <n0019> created at line 142
-    Found 11-bit comparator lessequal for signal <n0034> created at line 151
-    Found 11-bit comparator lessequal for signal <n0049> created at line 160
-    Found 11-bit comparator greater for signal <M_pixel_q[10]_GND_1_o_LessThan_55_o> created at line 168
-    Found 11-bit comparator greater for signal <M_line_q[10]_GND_1_o_LessThan_56_o> created at line 168
-    Found 11-bit comparator lessequal for signal <n0071> created at line 177
-    Found 11-bit comparator lessequal for signal <n0073> created at line 177
-    Found 11-bit comparator lessequal for signal <n0076> created at line 182
-    Found 11-bit comparator lessequal for signal <n0078> created at line 182
+    Found 20-bit adder for signal <M_scheduler_q[19]_GND_1_o_add_0_OUT> created at line 139.
+    Found 11-bit adder for signal <M_line_q[10]_GND_1_o_add_62_OUT> created at line 212.
+    Found 11-bit adder for signal <M_pixel_q[10]_GND_1_o_add_64_OUT> created at line 216.
+    Found 1-bit tristate buffer for signal <spi_miso> created at line 122
+    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 122
+    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 122
+    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 122
+    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 122
+    Found 1-bit tristate buffer for signal <avr_rx> created at line 122
+    Found 11-bit comparator lessequal for signal <n0004> created at line 154
+    Found 11-bit comparator lessequal for signal <n0019> created at line 163
+    Found 11-bit comparator lessequal for signal <n0034> created at line 172
+    Found 11-bit comparator lessequal for signal <n0049> created at line 181
+    Found 11-bit comparator greater for signal <M_pixel_q[10]_GND_1_o_LessThan_55_o> created at line 189
+    Found 11-bit comparator greater for signal <M_line_q[10]_GND_1_o_LessThan_56_o> created at line 189
+    Found 11-bit comparator lessequal for signal <n0074> created at line 198
+    Found 11-bit comparator lessequal for signal <n0076> created at line 198
+    Found 11-bit comparator lessequal for signal <n0079> created at line 203
+    Found 11-bit comparator lessequal for signal <n0081> created at line 203
     Summary:
 	inferred   3 Adder/Subtractor(s).
 	inferred  64 D-type flip-flop(s).
@@ -118,8 +132,8 @@ Synthesizing Unit <aluLogic_2>.
 	inferred   1 Multiplexer(s).
 Unit <aluLogic_2> synthesized.
 
-Synthesizing Unit <aluADD_5>.
-    Related source file is "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluADD_5.v".
+Synthesizing Unit <aluADD_6>.
+    Related source file is "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluADD_6.v".
 WARNING:Xst:647 - Input <alufn<5:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 33-bit subtractor for signal <over> created at line 31.
     Found 33-bit subtractor for signal <GND_4_o_a[31]_sub_9_OUT> created at line 39.
@@ -131,7 +145,7 @@ WARNING:Xst:647 - Input <alufn<5:2>> is never used. This port will be preserved 
 	inferred   2 Multiplier(s).
 	inferred   2 Adder/Subtractor(s).
 	inferred   6 Multiplexer(s).
-Unit <aluADD_5> synthesized.
+Unit <aluADD_6> synthesized.
 
 Synthesizing Unit <div_32u_32u>.
     Related source file is "".
@@ -238,16 +252,16 @@ Synthesizing Unit <div_32u_32u>.
 	inferred 993 Multiplexer(s).
 Unit <div_32u_32u> synthesized.
 
-Synthesizing Unit <aluBOOL_6>.
-    Related source file is "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluBOOL_6.v".
+Synthesizing Unit <aluBOOL_7>.
+    Related source file is "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluBOOL_7.v".
 WARNING:Xst:647 - Input <alufn<5:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 32-bit 16-to-1 multiplexer for signal <out> created at line 18.
     Summary:
 	inferred   1 Multiplexer(s).
-Unit <aluBOOL_6> synthesized.
+Unit <aluBOOL_7> synthesized.
 
-Synthesizing Unit <aluCOMP_7>.
-    Related source file is "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluCOMP_7.v".
+Synthesizing Unit <aluCOMP_8>.
+    Related source file is "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluCOMP_8.v".
 WARNING:Xst:647 - Input <alufn<0:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <alufn<5:3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 1-bit adder for signal <z[0]_n[0]_add_0_OUT<0>> created at line 28.
@@ -255,20 +269,20 @@ WARNING:Xst:647 - Input <alufn<5:3>> is never used. This port will be preserved 
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred   1 Multiplexer(s).
-Unit <aluCOMP_7> synthesized.
+Unit <aluCOMP_8> synthesized.
 
-Synthesizing Unit <aluSHIFT_8>.
-    Related source file is "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluSHIFT_8.v".
-WARNING:Xst:647 - Input <b<7:3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+Synthesizing Unit <aluSHIFT_9>.
+    Related source file is "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluSHIFT_9.v".
+WARNING:Xst:647 - Input <b<31:3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <alufn<5:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 8-bit shifter logical left for signal <a[7]_b[2]_shift_left_0_OUT> created at line 20
-    Found 8-bit shifter logical right for signal <a[7]_b[2]_shift_right_1_OUT> created at line 23
-    Found 8-bit shifter arithmetic right for signal <a[7]_b[2]_shift_right_2_OUT> created at line 26
-    Found 8-bit 4-to-1 multiplexer for signal <out> created at line 18.
+    Found 32-bit shifter logical left for signal <a[31]_b[2]_shift_left_0_OUT> created at line 20
+    Found 32-bit shifter logical right for signal <a[31]_b[2]_shift_right_1_OUT> created at line 23
+    Found 32-bit shifter arithmetic right for signal <a[31]_b[2]_shift_right_2_OUT> created at line 26
+    Found 32-bit 4-to-1 multiplexer for signal <out> created at line 18.
     Summary:
 	inferred   1 Multiplexer(s).
 	inferred   3 Combinational logic shifter(s).
-Unit <aluSHIFT_8> synthesized.
+Unit <aluSHIFT_9> synthesized.
 
 Synthesizing Unit <user_3>.
     Related source file is "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/user_3.v".
@@ -288,26 +302,98 @@ Unit <user_3> synthesized.
 
 Synthesizing Unit <enemy_4>.
     Related source file is "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/enemy_4.v".
-    Found 11-bit register for signal <M_charY_q>.
-    Found 16-bit register for signal <M_timer_q>.
+    Found 20-bit register for signal <M_difficultyLevel_q>.
     Found 11-bit register for signal <M_charX_q>.
-    Found 11-bit subtractor for signal <n0051> created at line 33.
-    Found 11-bit subtractor for signal <n0053> created at line 34.
-    Found 11-bit adder for signal <cursorX[10]_GND_11_o_add_1_OUT> created at line 33.
-    Found 11-bit adder for signal <cursorY[10]_GND_11_o_add_7_OUT> created at line 34.
-    Found 11-bit adder for signal <M_charX_q[10]_GND_11_o_add_13_OUT> created at line 45.
-    Found 11-bit adder for signal <M_charY_q[10]_GND_11_o_add_14_OUT> created at line 46.
-    Found 16-bit adder for signal <M_timer_d> created at line 52.
-    Found 11-bit comparator greater for signal <GND_11_o_cursorX[10]_LessThan_3_o> created at line 33
-    Found 11-bit comparator greater for signal <cursorX[10]_GND_11_o_LessThan_6_o> created at line 33
-    Found 11-bit comparator greater for signal <GND_11_o_cursorY[10]_LessThan_9_o> created at line 34
-    Found 11-bit comparator greater for signal <cursorY[10]_GND_11_o_LessThan_12_o> created at line 34
+    Found 11-bit register for signal <M_charY_q>.
+    Found 18-bit register for signal <M_timer_q>.
+    Found 20-bit register for signal <M_statecounter_q>.
+    Found 32-bit register for signal <M_difficultyTimer_q>.
+    Found 2-bit register for signal <M_state_q>.
+    Found 11-bit subtractor for signal <n0185> created at line 68.
+    Found 11-bit subtractor for signal <n0187> created at line 69.
+    Found 12-bit subtractor for signal <GND_11_o_GND_11_o_sub_44_OUT> created at line 127.
+    Found 12-bit subtractor for signal <GND_11_o_GND_11_o_sub_56_OUT> created at line 142.
+    Found 32-bit adder for signal <M_difficultyTimer_q[31]_GND_11_o_add_0_OUT> created at line 60.
+    Found 20-bit adder for signal <M_difficultyLevel_q[19]_GND_11_o_add_2_OUT> created at line 62.
+    Found 11-bit adder for signal <cursorX[10]_GND_11_o_add_6_OUT> created at line 68.
+    Found 11-bit adder for signal <cursorY[10]_GND_11_o_add_12_OUT> created at line 69.
+    Found 18-bit adder for signal <M_timer_d> created at line 103.
+    Found 20-bit adder for signal <M_statecounter_q[19]_GND_11_o_add_26_OUT> created at line 105.
+    Found 12-bit adder for signal <n0195[11:0]> created at line 132.
+    Found 20-bit adder for signal <n0155> created at line 132.
+    Found 12-bit adder for signal <n0201[11:0]> created at line 137.
+    Found 20-bit adder for signal <n0158> created at line 137.
+    Found 11-bit subtractor for signal <GND_11_o_M_difficultyLevel_q[19]_sub_45_OUT<10:0>> created at line 127.
+    Found 11-bit subtractor for signal <GND_11_o_M_difficultyLevel_q[19]_sub_57_OUT<10:0>> created at line 142.
+    Found 11-bit comparator greater for signal <GND_11_o_cursorX[10]_LessThan_8_o> created at line 68
+    Found 11-bit comparator greater for signal <cursorX[10]_GND_11_o_LessThan_11_o> created at line 68
+    Found 11-bit comparator greater for signal <GND_11_o_cursorY[10]_LessThan_14_o> created at line 69
+    Found 11-bit comparator greater for signal <cursorY[10]_GND_11_o_LessThan_17_o> created at line 69
+    Found 20-bit comparator greater for signal <M_difficultyLevel_q[19]_GND_11_o_LessThan_18_o> created at line 70
+    Found 20-bit comparator greater for signal <M_difficultyLevel_q[19]_GND_11_o_LessThan_20_o> created at line 75
+    Found 20-bit comparator greater for signal <M_difficultyLevel_q[19]_GND_11_o_LessThan_22_o> created at line 80
+    Found 20-bit comparator greater for signal <M_difficultyLevel_q[19]_GND_11_o_LessThan_24_o> created at line 85
+    Found 20-bit comparator greater for signal <M_statecounter_q[19]_GND_11_o_LessThan_28_o> created at line 106
+    Found 20-bit comparator greater for signal <M_statecounter_q[19]_GND_11_o_LessThan_30_o> created at line 109
+    Found 20-bit comparator greater for signal <M_statecounter_q[19]_GND_11_o_LessThan_32_o> created at line 112
+    Found 20-bit comparator greater for signal <M_statecounter_q[19]_GND_11_o_LessThan_34_o> created at line 115
+    Found 11-bit comparator greater for signal <n0070> created at line 126
+    Found 11-bit comparator greater for signal <n0075> created at line 131
+    Found 11-bit comparator greater for signal <n0080> created at line 136
+    Found 11-bit comparator greater for signal <n0085> created at line 141
     Summary:
-	inferred   7 Adder/Subtractor(s).
-	inferred  38 D-type flip-flop(s).
-	inferred   4 Comparator(s).
-	inferred   1 Multiplexer(s).
+	inferred  16 Adder/Subtractor(s).
+	inferred 114 D-type flip-flop(s).
+	inferred  16 Comparator(s).
+	inferred  21 Multiplexer(s).
 Unit <enemy_4> synthesized.
+
+Synthesizing Unit <pn_gen_10>.
+    Related source file is "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/pn_gen_10.v".
+    Found 32-bit register for signal <M_y_q>.
+    Found 32-bit register for signal <M_z_q>.
+    Found 32-bit register for signal <M_w_q>.
+    Found 32-bit register for signal <M_x_q>.
+    Summary:
+	inferred 128 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <pn_gen_10> synthesized.
+
+Synthesizing Unit <background_5>.
+    Related source file is "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/background_5.v".
+    Found 11-bit register for signal <M_charX_q>.
+    Found 11-bit register for signal <M_charY_q>.
+    Found 18-bit register for signal <M_timer_q>.
+    Found 32-bit register for signal <M_difficultyTimer_q>.
+    Found 2-bit register for signal <M_state_q>.
+    Found 20-bit register for signal <M_difficultyLevel_q>.
+    Found 12-bit subtractor for signal <GND_13_o_GND_13_o_sub_34_OUT> created at line 115.
+    Found 12-bit subtractor for signal <GND_13_o_GND_13_o_sub_40_OUT> created at line 124.
+    Found 18-bit adder for signal <M_timer_d> created at line 52.
+    Found 32-bit adder for signal <M_difficultyTimer_q[31]_GND_13_o_add_1_OUT> created at line 57.
+    Found 20-bit adder for signal <M_difficultyLevel_q[19]_GND_13_o_add_3_OUT> created at line 59.
+    Found 12-bit adder for signal <n0141[11:0]> created at line 118.
+    Found 20-bit adder for signal <n0109> created at line 118.
+    Found 12-bit adder for signal <n0147[11:0]> created at line 121.
+    Found 20-bit adder for signal <n0111> created at line 121.
+    Found 11-bit subtractor for signal <GND_13_o_M_difficultyLevel_q[19]_sub_35_OUT<10:0>> created at line 115.
+    Found 11-bit subtractor for signal <GND_13_o_M_difficultyLevel_q[19]_sub_41_OUT<10:0>> created at line 124.
+    Found 11-bit subtractor for signal <cursorY[10]_GND_13_o_add_13_OUT> created at line 66.
+    Found 11-bit subtractor for signal <cursorX[10]_GND_13_o_add_7_OUT> created at line 65.
+    Found 11-bit comparator greater for signal <GND_13_o_cursorX[10]_LessThan_9_o> created at line 65
+    Found 11-bit comparator greater for signal <cursorX[10]_GND_13_o_LessThan_12_o> created at line 65
+    Found 11-bit comparator greater for signal <GND_13_o_cursorY[10]_LessThan_15_o> created at line 66
+    Found 11-bit comparator greater for signal <cursorY[10]_GND_13_o_LessThan_18_o> created at line 66
+    Found 20-bit comparator greater for signal <M_difficultyLevel_q[19]_GND_13_o_LessThan_19_o> created at line 67
+    Found 20-bit comparator greater for signal <M_difficultyLevel_q[19]_GND_13_o_LessThan_21_o> created at line 72
+    Found 20-bit comparator greater for signal <M_difficultyLevel_q[19]_GND_13_o_LessThan_23_o> created at line 77
+    Found 20-bit comparator greater for signal <M_difficultyLevel_q[19]_GND_13_o_LessThan_25_o> created at line 82
+    Summary:
+	inferred  13 Adder/Subtractor(s).
+	inferred  94 D-type flip-flop(s).
+	inferred   8 Comparator(s).
+	inferred  21 Multiplexer(s).
+Unit <background_5> synthesized.
 
 =========================================================================
 HDL Synthesis Report
@@ -315,12 +401,15 @@ HDL Synthesis Report
 Macro Statistics
 # Multipliers                                          : 2
  32x32-bit multiplier                                  : 2
-# Adders/Subtractors                                   : 81
+# Adders/Subtractors                                   : 103
  1-bit adder                                           : 1
- 11-bit adder                                          : 8
- 11-bit subtractor                                     : 4
- 16-bit adder                                          : 1
- 20-bit adder                                          : 1
+ 11-bit adder                                          : 6
+ 11-bit subtractor                                     : 10
+ 12-bit adder                                          : 4
+ 12-bit subtractor                                     : 4
+ 18-bit adder                                          : 2
+ 20-bit adder                                          : 8
+ 32-bit adder                                          : 2
  33-bit adder                                          : 2
  33-bit addsub                                         : 1
  33-bit subtractor                                     : 1
@@ -355,14 +444,17 @@ Macro Statistics
  62-bit adder                                          : 2
  63-bit adder                                          : 2
  64-bit adder                                          : 2
-# Registers                                            : 9
- 11-bit register                                       : 6
- 16-bit register                                       : 1
- 20-bit register                                       : 1
+# Registers                                            : 27
+ 11-bit register                                       : 8
+ 18-bit register                                       : 2
+ 2-bit register                                        : 2
+ 20-bit register                                       : 4
+ 32-bit register                                       : 10
  4-bit register                                        : 1
-# Comparators                                          : 51
- 11-bit comparator greater                             : 10
+# Comparators                                          : 71
+ 11-bit comparator greater                             : 18
  11-bit comparator lessequal                           : 8
+ 20-bit comparator greater                             : 12
  32-bit comparator lessequal                           : 1
  33-bit comparator lessequal                           : 1
  34-bit comparator lessequal                           : 1
@@ -396,24 +488,26 @@ Macro Statistics
  62-bit comparator lessequal                           : 1
  63-bit comparator lessequal                           : 1
  64-bit comparator lessequal                           : 1
-# Multiplexers                                         : 1036
- 1-bit 2-to-1 multiplexer                              : 997
+# Multiplexers                                         : 1079
+ 1-bit 2-to-1 multiplexer                              : 1032
+ 11-bit 2-to-1 multiplexer                             : 4
+ 2-bit 2-to-1 multiplexer                              : 2
  20-bit 2-to-1 multiplexer                             : 6
  32-bit 16-to-1 multiplexer                            : 1
- 32-bit 2-to-1 multiplexer                             : 16
- 32-bit 4-to-1 multiplexer                             : 2
+ 32-bit 2-to-1 multiplexer                             : 18
+ 32-bit 4-to-1 multiplexer                             : 3
  33-bit 2-to-1 multiplexer                             : 6
  6-bit 2-to-1 multiplexer                              : 7
- 8-bit 4-to-1 multiplexer                              : 1
 # Logic shifters                                       : 3
- 8-bit shifter arithmetic right                        : 1
- 8-bit shifter logical left                            : 1
- 8-bit shifter logical right                           : 1
+ 32-bit shifter arithmetic right                       : 1
+ 32-bit shifter logical left                           : 1
+ 32-bit shifter logical right                          : 1
 # Tristates                                            : 6
  1-bit tristate buffer                                 : 6
-# Xors                                                 : 2
+# Xors                                                 : 8
  1-bit xor2                                            : 1
- 32-bit xor2                                           : 1
+ 32-bit xor2                                           : 5
+ 32-bit xor4                                           : 2
 
 =========================================================================
 INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
@@ -423,10 +517,19 @@ INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmet
 =========================================================================
 
 
-Synthesizing (advanced) Unit <enemy_4>.
+Synthesizing (advanced) Unit <background_5>.
+The following registers are absorbed into counter <M_difficultyTimer_q>: 1 register on signal <M_difficultyTimer_q>.
 The following registers are absorbed into counter <M_timer_q>: 1 register on signal <M_timer_q>.
-The following registers are absorbed into counter <M_charY_q>: 1 register on signal <M_charY_q>.
-The following registers are absorbed into counter <M_charX_q>: 1 register on signal <M_charX_q>.
+The following registers are absorbed into counter <M_difficultyLevel_q>: 1 register on signal <M_difficultyLevel_q>.
+Unit <background_5> synthesized (advanced).
+
+Synthesizing (advanced) Unit <enemy_4>.
+The following registers are absorbed into accumulator <M_charX_q>: 1 register on signal <M_charX_q>.
+The following registers are absorbed into accumulator <M_charY_q>: 1 register on signal <M_charY_q>.
+The following registers are absorbed into counter <M_difficultyTimer_q>: 1 register on signal <M_difficultyTimer_q>.
+The following registers are absorbed into counter <M_timer_q>: 1 register on signal <M_timer_q>.
+The following registers are absorbed into counter <M_difficultyLevel_q>: 1 register on signal <M_difficultyLevel_q>.
+The following registers are absorbed into counter <M_statecounter_q>: 1 register on signal <M_statecounter_q>.
 Unit <enemy_4> synthesized (advanced).
 
 Synthesizing (advanced) Unit <mojo_top_0>.
@@ -440,22 +543,27 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # Multipliers                                          : 2
  32x32-bit multiplier                                  : 2
-# Adders/Subtractors                                   : 44
+# Adders/Subtractors                                   : 58
  1-bit adder                                           : 1
- 11-bit adder                                          : 4
- 11-bit subtractor                                     : 4
+ 11-bit adder                                          : 8
+ 11-bit subtractor                                     : 14
  20-bit adder                                          : 1
  32-bit adder carry in                                 : 32
  33-bit addsub                                         : 1
  33-bit subtractor                                     : 1
-# Counters                                             : 5
- 11-bit up counter                                     : 4
- 16-bit up counter                                     : 1
-# Registers                                            : 46
- Flip-Flops                                            : 46
-# Comparators                                          : 51
- 11-bit comparator greater                             : 10
+# Counters                                             : 9
+ 11-bit up counter                                     : 2
+ 18-bit up counter                                     : 2
+ 20-bit up counter                                     : 3
+ 32-bit up counter                                     : 2
+# Accumulators                                         : 2
+ 11-bit up loadable accumulator cin                    : 2
+# Registers                                            : 328
+ Flip-Flops                                            : 328
+# Comparators                                          : 71
+ 11-bit comparator greater                             : 18
  11-bit comparator lessequal                           : 8
+ 20-bit comparator greater                             : 12
  32-bit comparator lessequal                           : 1
  33-bit comparator lessequal                           : 1
  34-bit comparator lessequal                           : 1
@@ -489,59 +597,275 @@ Macro Statistics
  62-bit comparator lessequal                           : 1
  63-bit comparator lessequal                           : 1
  64-bit comparator lessequal                           : 1
-# Multiplexers                                         : 1034
- 1-bit 2-to-1 multiplexer                              : 995
+# Multiplexers                                         : 1076
+ 1-bit 2-to-1 multiplexer                              : 1031
+ 11-bit 2-to-1 multiplexer                             : 2
+ 2-bit 2-to-1 multiplexer                              : 2
  20-bit 2-to-1 multiplexer                             : 6
  32-bit 16-to-1 multiplexer                            : 1
- 32-bit 2-to-1 multiplexer                             : 16
- 32-bit 4-to-1 multiplexer                             : 2
+ 32-bit 2-to-1 multiplexer                             : 18
+ 32-bit 4-to-1 multiplexer                             : 3
  33-bit 2-to-1 multiplexer                             : 6
  6-bit 2-to-1 multiplexer                              : 7
- 8-bit 4-to-1 multiplexer                              : 1
 # Logic shifters                                       : 3
- 8-bit shifter arithmetic right                        : 1
- 8-bit shifter logical left                            : 1
- 8-bit shifter logical right                           : 1
-# Xors                                                 : 2
+ 32-bit shifter arithmetic right                       : 1
+ 32-bit shifter logical left                           : 1
+ 32-bit shifter logical right                          : 1
+# Xors                                                 : 8
  1-bit xor2                                            : 1
- 32-bit xor2                                           : 1
+ 32-bit xor2                                           : 5
+ 32-bit xor4                                           : 2
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:2677 - Node <Mmult_n00273> of sequential type is unconnected in block <aluADD_5>.
-WARNING:Xst:2677 - Node <Mmult_n00293> of sequential type is unconnected in block <aluADD_5>.
-WARNING:Xst:2973 - All outputs of instance <alu/bool> of block <aluBOOL_6> are unconnected in block <mojo_top_0>. Underlying logic will be removed.
+WARNING:Xst:2677 - Node <Mmult_n00273> of sequential type is unconnected in block <aluADD_6>.
+WARNING:Xst:2677 - Node <Mmult_n00293> of sequential type is unconnected in block <aluADD_6>.
+WARNING:Xst:2677 - Node <M_timer_q_1> of sequential type is unconnected in block <background_5>.
+WARNING:Xst:2677 - Node <M_timer_q_2> of sequential type is unconnected in block <background_5>.
+WARNING:Xst:2677 - Node <M_timer_q_3> of sequential type is unconnected in block <background_5>.
+WARNING:Xst:2677 - Node <M_timer_q_4> of sequential type is unconnected in block <background_5>.
+WARNING:Xst:2677 - Node <M_timer_q_5> of sequential type is unconnected in block <background_5>.
+WARNING:Xst:2677 - Node <M_timer_q_6> of sequential type is unconnected in block <background_5>.
+WARNING:Xst:2677 - Node <M_timer_q_7> of sequential type is unconnected in block <background_5>.
+WARNING:Xst:2677 - Node <M_timer_q_8> of sequential type is unconnected in block <background_5>.
+WARNING:Xst:2677 - Node <M_timer_q_9> of sequential type is unconnected in block <background_5>.
+WARNING:Xst:2677 - Node <M_timer_q_10> of sequential type is unconnected in block <background_5>.
+WARNING:Xst:2677 - Node <M_timer_q_11> of sequential type is unconnected in block <background_5>.
+WARNING:Xst:2677 - Node <M_timer_q_12> of sequential type is unconnected in block <background_5>.
+WARNING:Xst:2677 - Node <M_timer_q_13> of sequential type is unconnected in block <background_5>.
+WARNING:Xst:2677 - Node <M_timer_q_14> of sequential type is unconnected in block <background_5>.
+WARNING:Xst:2677 - Node <M_timer_q_15> of sequential type is unconnected in block <background_5>.
+WARNING:Xst:2677 - Node <M_timer_q_16> of sequential type is unconnected in block <background_5>.
+WARNING:Xst:2677 - Node <M_timer_q_17> of sequential type is unconnected in block <background_5>.
+WARNING:Xst:2973 - All outputs of instance <alu/bool> of block <aluBOOL_7> are unconnected in block <mojo_top_0>. Underlying logic will be removed.
 
 Optimizing unit <mojo_top_0> ...
 
 Optimizing unit <enemy_4> ...
 
+Optimizing unit <background_5> ...
+
 Optimizing unit <user_3> ...
 
-Optimizing unit <aluADD_5> ...
+Optimizing unit <aluADD_6> ...
 
 Optimizing unit <div_32u_32u> ...
 
-Optimizing unit <aluBOOL_6> ...
+Optimizing unit <aluBOOL_7> ...
 WARNING:Xst:2677 - Node <alu/add/Mmult_n00292> of sequential type is unconnected in block <mojo_top_0>.
 WARNING:Xst:2677 - Node <alu/add/Mmult_n00291> of sequential type is unconnected in block <mojo_top_0>.
 WARNING:Xst:2677 - Node <alu/add/Mmult_n00272> of sequential type is unconnected in block <mojo_top_0>.
 WARNING:Xst:2677 - Node <alu/add/Mmult_n00271> of sequential type is unconnected in block <mojo_top_0>.
 WARNING:Xst:1898 - Due to constant pushing, FF/Latch <alu/add/Mmult_n0029> is unconnected in block <mojo_top_0>.
 WARNING:Xst:2677 - Node <alu/add/Mmult_n0027> of sequential type is unconnected in block <mojo_top_0>.
-WARNING:Xst:1293 - FF/Latch <M_userX_q_0> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <enemyChar/M_statecounter_q_6> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <enemyChar/M_statecounter_q_7> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <enemyChar/M_statecounter_q_8> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <enemyChar/M_statecounter_q_9> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <enemyChar/M_statecounter_q_10> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <enemyChar/M_statecounter_q_11> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <enemyChar/M_statecounter_q_12> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <enemyChar/M_statecounter_q_15> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <enemyChar/M_statecounter_q_13> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <enemyChar/M_statecounter_q_14> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <enemyChar/M_statecounter_q_16> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <enemyChar/M_statecounter_q_17> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <enemyChar/M_statecounter_q_18> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <enemyChar/M_statecounter_q_19> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_userX_q_10> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_userY_q_0> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_userX_q_0> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_userY_q_10> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <M_scheduler_q_0> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <enemyChar/M_timer_q_0> 
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_userY_q_0> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_y_q_10> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_y_q_10> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_y_q_11> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_y_q_11> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_y_q_12> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_y_q_12> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_y_q_13> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_y_q_13> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_y_q_14> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_y_q_14> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_y_q_15> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_y_q_15> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_y_q_20> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_y_q_20> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_y_q_16> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_y_q_16> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_y_q_21> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_y_q_21> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_y_q_17> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_y_q_17> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_y_q_22> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_y_q_22> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_y_q_18> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_y_q_18> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_y_q_23> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_y_q_23> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_y_q_19> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_y_q_19> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_y_q_24> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_y_q_24> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_y_q_25> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_y_q_25> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_y_q_30> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_y_q_30> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_y_q_26> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_y_q_26> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_y_q_31> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_y_q_31> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_y_q_27> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_y_q_27> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_y_q_28> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_y_q_28> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_y_q_29> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_y_q_29> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyLevel_q_0> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyLevel_q_0> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyLevel_q_1> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyLevel_q_1> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyLevel_q_2> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyLevel_q_2> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_y_q_0> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_y_q_0> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyLevel_q_3> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyLevel_q_3> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_y_q_1> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_y_q_1> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyLevel_q_4> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyLevel_q_4> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_y_q_2> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_y_q_2> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyLevel_q_5> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyLevel_q_5> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_y_q_3> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_y_q_3> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyLevel_q_6> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyLevel_q_6> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_y_q_4> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_y_q_4> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyLevel_q_7> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyLevel_q_7> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_y_q_5> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_y_q_5> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyLevel_q_8> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyLevel_q_8> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_y_q_6> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_y_q_6> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyLevel_q_9> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyLevel_q_9> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_y_q_7> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_y_q_7> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_y_q_8> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_y_q_8> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_y_q_9> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_y_q_9> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_z_q_10> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_z_q_10> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_z_q_11> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_z_q_11> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_z_q_12> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_z_q_12> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_z_q_13> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_z_q_13> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_z_q_14> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_z_q_14> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_z_q_15> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_z_q_15> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_z_q_20> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_z_q_20> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_z_q_16> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_z_q_16> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_z_q_21> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_z_q_21> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_z_q_17> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_z_q_17> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_z_q_22> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_z_q_22> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_z_q_18> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_z_q_18> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_z_q_23> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_z_q_23> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_z_q_19> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_z_q_19> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_z_q_24> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_z_q_24> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_z_q_25> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_z_q_25> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_z_q_30> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_z_q_30> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyTimer_q_10> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyTimer_q_10> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_z_q_31> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_z_q_31> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_z_q_26> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_z_q_26> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyTimer_q_11> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyTimer_q_11> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_z_q_27> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_z_q_27> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyTimer_q_12> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyTimer_q_12> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_z_q_28> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_z_q_28> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyTimer_q_13> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyTimer_q_13> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_z_q_29> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_z_q_29> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyTimer_q_14> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyTimer_q_14> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyTimer_q_20> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyTimer_q_20> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyTimer_q_15> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyTimer_q_15> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyTimer_q_21> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyTimer_q_21> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyTimer_q_16> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyTimer_q_16> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyTimer_q_22> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyTimer_q_22> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyTimer_q_17> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyTimer_q_17> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyTimer_q_23> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyTimer_q_23> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyTimer_q_18> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyTimer_q_18> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyTimer_q_24> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyTimer_q_24> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyTimer_q_19> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyTimer_q_19> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyTimer_q_30> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyTimer_q_30> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyTimer_q_25> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyTimer_q_25> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyTimer_q_31> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyTimer_q_31> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyTimer_q_26> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyTimer_q_26> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyTimer_q_27> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyTimer_q_27> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyTimer_q_28> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyTimer_q_28> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyTimer_q_29> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyTimer_q_29> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_z_q_0> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_z_q_0> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_z_q_1> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_z_q_1> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_z_q_2> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_z_q_2> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_z_q_3> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_z_q_3> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_z_q_4> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_z_q_4> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_z_q_5> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_z_q_5> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_z_q_6> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_z_q_6> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_z_q_7> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_z_q_7> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_z_q_8> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_z_q_8> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_z_q_9> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_z_q_9> 
+INFO:Xst:2261 - The FF/Latch <M_scheduler_q_0> in Unit <mojo_top_0> is equivalent to the following 2 FFs/Latches, which will be removed : <enemyChar/M_timer_q_0> <bg/M_timer_q_0> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_w_q_10> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_w_q_10> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_w_q_11> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_w_q_11> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_w_q_0> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_w_q_0> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_w_q_12> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_w_q_12> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_w_q_1> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_w_q_1> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_w_q_13> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_w_q_13> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_w_q_2> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_w_q_2> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_w_q_14> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_w_q_14> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_w_q_3> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_w_q_3> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_w_q_20> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_w_q_20> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_w_q_15> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_w_q_15> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_w_q_4> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_w_q_4> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_w_q_21> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_w_q_21> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_w_q_16> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_w_q_16> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_w_q_5> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_w_q_5> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_w_q_22> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_w_q_22> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_w_q_17> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_w_q_17> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_w_q_6> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_w_q_6> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_w_q_23> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_w_q_23> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_w_q_18> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_w_q_18> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_w_q_7> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_w_q_7> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_w_q_24> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_w_q_24> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_w_q_19> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_w_q_19> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_w_q_8> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_w_q_8> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_w_q_30> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_w_q_30> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_w_q_25> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_w_q_25> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_w_q_9> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_w_q_9> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_w_q_31> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_w_q_31> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_w_q_26> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_w_q_26> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_w_q_27> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_w_q_27> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_w_q_28> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_w_q_28> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_w_q_29> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_w_q_29> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyTimer_q_0> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyTimer_q_0> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyTimer_q_1> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyTimer_q_1> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyTimer_q_2> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyTimer_q_2> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyTimer_q_3> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyTimer_q_3> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyTimer_q_4> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyTimer_q_4> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyTimer_q_5> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyTimer_q_5> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyTimer_q_6> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyTimer_q_6> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_x_q_10> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_x_q_10> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyTimer_q_7> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyTimer_q_7> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_x_q_11> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_x_q_11> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyTimer_q_8> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyTimer_q_8> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_x_q_12> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_x_q_12> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyTimer_q_9> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyTimer_q_9> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_x_q_13> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_x_q_13> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyLevel_q_10> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyLevel_q_10> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_x_q_14> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_x_q_14> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyLevel_q_11> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyLevel_q_11> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_x_q_20> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_x_q_20> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_x_q_15> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_x_q_15> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyLevel_q_12> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyLevel_q_12> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_x_q_21> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_x_q_21> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_x_q_16> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_x_q_16> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyLevel_q_13> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyLevel_q_13> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_x_q_22> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_x_q_22> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_x_q_17> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_x_q_17> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyLevel_q_14> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyLevel_q_14> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_x_q_23> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_x_q_23> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_x_q_18> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_x_q_18> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyLevel_q_15> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyLevel_q_15> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_x_q_24> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_x_q_24> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_x_q_19> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_x_q_19> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyLevel_q_16> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyLevel_q_16> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_x_q_30> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_x_q_30> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_x_q_25> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_x_q_25> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyLevel_q_17> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyLevel_q_17> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_x_q_31> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_x_q_31> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_x_q_26> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_x_q_26> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_x_q_0> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_x_q_0> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyLevel_q_18> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyLevel_q_18> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_x_q_27> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_x_q_27> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_x_q_1> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_x_q_1> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/M_difficultyLevel_q_19> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/M_difficultyLevel_q_19> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_x_q_28> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_x_q_28> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_x_q_2> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_x_q_2> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_x_q_3> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_x_q_3> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_x_q_29> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_x_q_29> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_x_q_4> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_x_q_4> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_x_q_5> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_x_q_5> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_x_q_6> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_x_q_6> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_x_q_7> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_x_q_7> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_x_q_8> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_x_q_8> 
+INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_x_q_9> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_x_q_9> 
 INFO:Xst:3203 - The FF/Latch <M_userY_q_8> in Unit <mojo_top_0> is the opposite to the following FF/Latch, which will be removed : <M_userY_q_9> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 6.
+Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 14.
+FlipFlop M_scheduler_q_0 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -553,8 +877,8 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 100
- Flip-Flops                                            : 100
+# Registers                                            : 315
+ Flip-Flops                                            : 315
 
 =========================================================================
 
@@ -578,7 +902,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 100   |
+clk                                | BUFGP                  | 315   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -589,9 +913,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 9.221ns (Maximum Frequency: 108.442MHz)
-   Minimum input arrival time before clock: 9.848ns
-   Maximum output required time after clock: 10.209ns
+   Minimum period: 9.123ns (Maximum Frequency: 109.607MHz)
+   Minimum input arrival time before clock: 9.911ns
+   Maximum output required time after clock: 11.180ns
    Maximum combinational path delay: 5.005ns
 
 =========================================================================
