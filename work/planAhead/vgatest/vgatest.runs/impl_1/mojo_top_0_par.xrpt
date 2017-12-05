@@ -1,72 +1,55 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<document OS="nt64" product="ISE" version="14.7">
+<document OS="lin64" product="ISE" version="14.7">
 
   <!--The data in this file is primarily intended for consumption by Xilinx tools.
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-<<<<<<< HEAD
-  <application stringID="par" timeStamp="Tue Dec  5 23:38:13 2017">
-=======
-<<<<<<< HEAD
-  <application stringID="par" timeStamp="Tue Dec 05 22:53:24 2017">
-=======
-  <application stringID="par" timeStamp="Tue Dec  5 20:15:47 2017">
->>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
->>>>>>> b05042131424c56b29116a4c0f45329ed8e5fc44
+  <application stringID="par" timeStamp="Wed Dec  6 00:03:02 2017">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
         <column stringID="value"/>
         <row stringID="row" value="0">
-          <item stringID="variable" value="Path"/>
-          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\ISE\\lib\nt64;C:\Xilinx\14.7\ISE_DS\ISE\\bin\nt64;C:/Xilinx/14.7/ISE_DS/EDK/bin/nt64;C:/Xilinx/14.7/ISE_DS/EDK/lib/nt64;C:/Xilinx/14.7/ISE_DS/ISE/bin/nt64;C:/Xilinx/14.7/ISE_DS/ISE/lib/nt64;C:/Xilinx/14.7/ISE_DS/common/bin/nt64;C:/Xilinx/14.7/ISE_DS/common/lib/nt64;C:/Xilinx/14.7/ISE_DS/PlanAhead/bin;C:/Xilinx/14.7/ISE_DS/PlanAhead/lib/win64.o;C:/Xilinx/14.7/ISE_DS/PlanAhead/tps/win64/jre/bin/server;C:/Xilinx/14.7/ISE_DS/PlanAhead/tps/win64/jre/bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Broadcom\Broadcom 802.11\Driver;c:\Program Files (x86)\Intel\iCLS Client\;c:\Program Files\Intel\iCLS Client\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\MATLAB\R2013b\bin;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\Mojo IDE\java\bin"/>
+          <item stringID="variable" value="XILINX_PLANAHEAD"/>
+          <item stringID="value" value="/home/ada/Documents/SUTD/Term4/compstruc/fpga/ise/14.7/ISE_DS/PlanAhead"/>
         </row>
         <row stringID="row" value="1">
-          <item stringID="variable" value="PATHEXT"/>
-          <item stringID="value" value=".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC"/>
+          <item stringID="variable" value="LD_LIBRARY_PATH"/>
+          <item stringID="value" value="/home/ada/Documents/SUTD/Term4/compstruc/fpga/ise/14.7/ISE_DS/ISE//lib/lin64:/home/ada/Documents/SUTD/Term4/compstruc/fpga/ise/14.7/ISE_DS/EDK/lib/lin64:/home/ada/Documents/SUTD/Term4/compstruc/fpga/ise/14.7/ISE_DS/ISE/lib/lin64:/home/ada/Documents/SUTD/Term4/compstruc/fpga/ise/14.7/ISE_DS/common/lib/lin64:/home/ada/Documents/SUTD/Term4/compstruc/fpga/mojo-ide-B1.3.6/lib:/usr/local/cuda-8.0/lib64"/>
         </row>
         <row stringID="row" value="2">
-          <item stringID="variable" value="XILINX"/>
-          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\ISE\"/>
+          <item stringID="variable" value="XILINX_COMMON_TOOLS"/>
+          <item stringID="value" value="/home/ada/Documents/SUTD/Term4/compstruc/fpga/ise/14.7/ISE_DS/common"/>
         </row>
         <row stringID="row" value="3">
-          <item stringID="variable" value="XILINX_COMMON_TOOLS"/>
-          <item stringID="value" value="C:/Xilinx/14.7/ISE_DS/common"/>
+          <item stringID="variable" value="XILINX_EDK"/>
+          <item stringID="value" value="/home/ada/Documents/SUTD/Term4/compstruc/fpga/ise/14.7/ISE_DS/EDK"/>
         </row>
         <row stringID="row" value="4">
-          <item stringID="variable" value="XILINX_DSP"/>
-          <item stringID="value" value="C:/Xilinx/14.7/ISE_DS/ISE"/>
+          <item stringID="variable" value="XILINX"/>
+          <item stringID="value" value="/home/ada/Documents/SUTD/Term4/compstruc/fpga/ise/14.7/ISE_DS/ISE/"/>
         </row>
         <row stringID="row" value="5">
-          <item stringID="variable" value="XILINX_EDK"/>
-          <item stringID="value" value="C:/Xilinx/14.7/ISE_DS/EDK"/>
+          <item stringID="variable" value="PATH"/>
+          <item stringID="value" value="/home/ada/Documents/SUTD/Term4/compstruc/fpga/ise/14.7/ISE_DS/ISE//bin/lin64:/home/ada/Documents/SUTD/Term4/compstruc/fpga/ise/14.7/ISE_DS/EDK/bin/lin64:/home/ada/Documents/SUTD/Term4/compstruc/fpga/ise/14.7/ISE_DS/ISE/bin/lin64:/home/ada/Documents/SUTD/Term4/compstruc/fpga/ise/14.7/ISE_DS/common/bin/lin64:/home/ada/Documents/SUTD/Term4/compstruc/fpga/ise/14.7/ISE_DS/PlanAhead/bin:/home/ada/Documents/SUTD/Term4/compstruc/fpga/mojo-ide-B1.3.6/java/bin:~/.pyenv/shims:~/.pyenv/bin:/usr/local/cuda-8.0/bin:/home/ada/anaconda3/bin:/home/ada/anaconda3/pkgs:/home/ada/anaconda3/lib:/home/ada/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/ada/Android/Sdk/tools:/home/ada/Android/Sdk/platform-tools:/home/ada/genymotion"/>
         </row>
         <row stringID="row" value="6">
-          <item stringID="variable" value="XILINX_PLANAHEAD"/>
-          <item stringID="value" value="C:/Xilinx/14.7/ISE_DS/PlanAhead"/>
+          <item stringID="variable" value="XILINX_DSP"/>
+          <item stringID="value" value="/home/ada/Documents/SUTD/Term4/compstruc/fpga/ise/14.7/ISE_DS/ISE"/>
         </row>
       </table>
       <item stringID="User_EnvOs" value="OS Information">
-        <item stringID="User_EnvOsname" value="Microsoft Windows 7 , 64-bit"/>
-        <item stringID="User_EnvOsrelease" value="Service Pack 1  (build 7601)"/>
+        <item stringID="User_EnvOsname" value="Ubuntu"/>
+        <item stringID="User_EnvOsrelease" value="Ubuntu 16.04.3 LTS"/>
       </item>
-      <item stringID="User_EnvHost" value="ISTDLAB21-PC"/>
+      <item stringID="User_EnvHost" value="ada-UX302LG"/>
       <table stringID="User_EnvCpu">
         <column stringID="arch"/>
         <column stringID="speed"/>
         <row stringID="row" value="0">
-<<<<<<< HEAD
-          <item stringID="arch" value="Intel(R) Core(TM) i7-4790 CPU @ 3.60GHz"/>
-          <item stringID="speed" value="3591 MHz"/>
-=======
           <item stringID="arch" value="Intel(R) Core(TM) i7-4500U CPU @ 1.80GHz"/>
-<<<<<<< HEAD
-          <item stringID="speed" value="2820.750 MHz"/>
-=======
-          <item stringID="speed" value="2868.656 MHz"/>
->>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
->>>>>>> b05042131424c56b29116a4c0f45329ed8e5fc44
+          <item stringID="speed" value="2943.562 MHz"/>
         </row>
       </table>
     </section>
@@ -79,21 +62,12 @@
     </task>
     <task stringID="PAR_PAR">
       <section stringID="PAR_DESIGN_SUMMARY">
-<<<<<<< HEAD
         <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="5 secs "/>
         <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="6 secs "/>
         <item dataType="int" stringID="PAR_UNROUTES" value="0"/>
         <item dataType="float" stringID="PAR_TIMING_SCORE" value="0.000000"/>
         <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="6 secs "/>
         <item stringID="PAR_CPU_TIME_COMPLETION_PAR" value="6 secs "/>
-=======
-        <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="3 secs "/>
-        <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="3 secs "/>
-        <item dataType="int" stringID="PAR_UNROUTES" value="0"/>
-        <item dataType="float" stringID="PAR_TIMING_SCORE" value="0.000000"/>
-        <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="3 secs "/>
-        <item stringID="PAR_CPU_TIME_COMPLETION_PAR" value="3 secs "/>
->>>>>>> b05042131424c56b29116a4c0f45329ed8e5fc44
       </section>
     </task>
     <task stringID="PAR_par">
@@ -112,21 +86,9 @@
             <item label="Routed" stringID="ROUTED" value="ROUTED"/>
             <item label="Resource" stringID="RESOURCE" value="BUFGMUX_X2Y11"/>
             <item label="Locked" stringID="LOCKED" value="No"/>
-<<<<<<< HEAD
-            <item dataType="float" label="Fanout" stringID="FANOUT" value="92.000000"/>
-            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.110000"/>
-            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="1.501000"/>
-=======
-<<<<<<< HEAD
-            <item dataType="float" label="Fanout" stringID="FANOUT" value="44.000000"/>
-            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.690000"/>
+            <item dataType="float" label="Fanout" stringID="FANOUT" value="104.000000"/>
+            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.694000"/>
             <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="2.086000"/>
-=======
-            <item dataType="float" label="Fanout" stringID="FANOUT" value="28.000000"/>
-            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.086000"/>
-            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="1.508000"/>
->>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
->>>>>>> b05042131424c56b29116a4c0f45329ed8e5fc44
           </row>
         </table>
       </section>
@@ -1250,108 +1212,66 @@
     </task>
   </application>
 
-<<<<<<< HEAD
-  <application stringID="Par" timeStamp="Tue Dec  5 23:38:13 2017">
-=======
-<<<<<<< HEAD
-  <application stringID="Par" timeStamp="Tue Dec 05 22:53:25 2017">
-=======
-  <application stringID="Par" timeStamp="Tue Dec  5 20:15:48 2017">
->>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
->>>>>>> b05042131424c56b29116a4c0f45329ed8e5fc44
+  <application stringID="Par" timeStamp="Wed Dec  6 00:03:03 2017">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
         <column stringID="value"/>
         <row stringID="row" value="0">
-          <item stringID="variable" value="Path"/>
-          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\ISE\\lib\nt64;C:\Xilinx\14.7\ISE_DS\ISE\\bin\nt64;C:/Xilinx/14.7/ISE_DS/EDK/bin/nt64;C:/Xilinx/14.7/ISE_DS/EDK/lib/nt64;C:/Xilinx/14.7/ISE_DS/ISE/bin/nt64;C:/Xilinx/14.7/ISE_DS/ISE/lib/nt64;C:/Xilinx/14.7/ISE_DS/common/bin/nt64;C:/Xilinx/14.7/ISE_DS/common/lib/nt64;C:/Xilinx/14.7/ISE_DS/PlanAhead/bin;C:/Xilinx/14.7/ISE_DS/PlanAhead/lib/win64.o;C:/Xilinx/14.7/ISE_DS/PlanAhead/tps/win64/jre/bin/server;C:/Xilinx/14.7/ISE_DS/PlanAhead/tps/win64/jre/bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Broadcom\Broadcom 802.11\Driver;c:\Program Files (x86)\Intel\iCLS Client\;c:\Program Files\Intel\iCLS Client\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\MATLAB\R2013b\bin;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\Mojo IDE\java\bin"/>
+          <item stringID="variable" value="XILINX_PLANAHEAD"/>
+          <item stringID="value" value="/home/ada/Documents/SUTD/Term4/compstruc/fpga/ise/14.7/ISE_DS/PlanAhead"/>
         </row>
         <row stringID="row" value="1">
-          <item stringID="variable" value="PATHEXT"/>
-          <item stringID="value" value=".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC"/>
+          <item stringID="variable" value="LD_LIBRARY_PATH"/>
+          <item stringID="value" value="/home/ada/Documents/SUTD/Term4/compstruc/fpga/ise/14.7/ISE_DS/ISE//lib/lin64:/home/ada/Documents/SUTD/Term4/compstruc/fpga/ise/14.7/ISE_DS/EDK/lib/lin64:/home/ada/Documents/SUTD/Term4/compstruc/fpga/ise/14.7/ISE_DS/ISE/lib/lin64:/home/ada/Documents/SUTD/Term4/compstruc/fpga/ise/14.7/ISE_DS/common/lib/lin64:/home/ada/Documents/SUTD/Term4/compstruc/fpga/mojo-ide-B1.3.6/lib:/usr/local/cuda-8.0/lib64"/>
         </row>
         <row stringID="row" value="2">
-          <item stringID="variable" value="XILINX"/>
-          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\ISE\"/>
+          <item stringID="variable" value="XILINX_COMMON_TOOLS"/>
+          <item stringID="value" value="/home/ada/Documents/SUTD/Term4/compstruc/fpga/ise/14.7/ISE_DS/common"/>
         </row>
         <row stringID="row" value="3">
-          <item stringID="variable" value="XILINX_COMMON_TOOLS"/>
-          <item stringID="value" value="C:/Xilinx/14.7/ISE_DS/common"/>
+          <item stringID="variable" value="XILINX_EDK"/>
+          <item stringID="value" value="/home/ada/Documents/SUTD/Term4/compstruc/fpga/ise/14.7/ISE_DS/EDK"/>
         </row>
         <row stringID="row" value="4">
-          <item stringID="variable" value="XILINX_DSP"/>
-          <item stringID="value" value="C:/Xilinx/14.7/ISE_DS/ISE"/>
+          <item stringID="variable" value="XILINX"/>
+          <item stringID="value" value="/home/ada/Documents/SUTD/Term4/compstruc/fpga/ise/14.7/ISE_DS/ISE/"/>
         </row>
         <row stringID="row" value="5">
-          <item stringID="variable" value="XILINX_EDK"/>
-          <item stringID="value" value="C:/Xilinx/14.7/ISE_DS/EDK"/>
+          <item stringID="variable" value="PATH"/>
+          <item stringID="value" value="/home/ada/Documents/SUTD/Term4/compstruc/fpga/ise/14.7/ISE_DS/ISE//bin/lin64:/home/ada/Documents/SUTD/Term4/compstruc/fpga/ise/14.7/ISE_DS/EDK/bin/lin64:/home/ada/Documents/SUTD/Term4/compstruc/fpga/ise/14.7/ISE_DS/ISE/bin/lin64:/home/ada/Documents/SUTD/Term4/compstruc/fpga/ise/14.7/ISE_DS/common/bin/lin64:/home/ada/Documents/SUTD/Term4/compstruc/fpga/ise/14.7/ISE_DS/PlanAhead/bin:/home/ada/Documents/SUTD/Term4/compstruc/fpga/mojo-ide-B1.3.6/java/bin:~/.pyenv/shims:~/.pyenv/bin:/usr/local/cuda-8.0/bin:/home/ada/anaconda3/bin:/home/ada/anaconda3/pkgs:/home/ada/anaconda3/lib:/home/ada/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/ada/Android/Sdk/tools:/home/ada/Android/Sdk/platform-tools:/home/ada/genymotion"/>
         </row>
         <row stringID="row" value="6">
-          <item stringID="variable" value="XILINX_PLANAHEAD"/>
-          <item stringID="value" value="C:/Xilinx/14.7/ISE_DS/PlanAhead"/>
+          <item stringID="variable" value="XILINX_DSP"/>
+          <item stringID="value" value="/home/ada/Documents/SUTD/Term4/compstruc/fpga/ise/14.7/ISE_DS/ISE"/>
         </row>
       </table>
       <item stringID="User_EnvOs" value="OS Information">
-        <item stringID="User_EnvOsname" value="Microsoft Windows 7 , 64-bit"/>
-        <item stringID="User_EnvOsrelease" value="Service Pack 1  (build 7601)"/>
+        <item stringID="User_EnvOsname" value="Ubuntu"/>
+        <item stringID="User_EnvOsrelease" value="Ubuntu 16.04.3 LTS"/>
       </item>
-      <item stringID="User_EnvHost" value="ISTDLAB21-PC"/>
+      <item stringID="User_EnvHost" value="ada-UX302LG"/>
       <table stringID="User_EnvCpu">
         <column stringID="arch"/>
         <column stringID="speed"/>
         <row stringID="row" value="0">
-<<<<<<< HEAD
-          <item stringID="arch" value="Intel(R) Core(TM) i7-4790 CPU @ 3.60GHz"/>
-          <item stringID="speed" value="3591 MHz"/>
-=======
           <item stringID="arch" value="Intel(R) Core(TM) i7-4500U CPU @ 1.80GHz"/>
-<<<<<<< HEAD
-          <item stringID="speed" value="2918.437 MHz"/>
-=======
-          <item stringID="speed" value="2700.093 MHz"/>
->>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
->>>>>>> b05042131424c56b29116a4c0f45329ed8e5fc44
+          <item stringID="speed" value="2994.281 MHz"/>
         </row>
       </table>
     </section>
     <task label="Device Utilization Summary" stringID="PAR_DEVICE_UTLIZATION">
       <section stringID="PAR_SLICE_REPORTING">
-<<<<<<< HEAD
-        <item AVAILABLE="11440" dataType="int" label="Number of Slice Registers" stringID="PAR_SLICE_REGISTERS" value="395">
-          <item dataType="int" stringID="PAR_NUM_SLICE_FF" value="315"/>
+        <item AVAILABLE="11440" dataType="int" label="Number of Slice Registers" stringID="PAR_SLICE_REGISTERS" value="449">
+          <item dataType="int" stringID="PAR_NUM_SLICE_FF" value="353"/>
           <item dataType="int" stringID="PAR_NUM_SLICE_LATCH" value="0"/>
           <item dataType="int" stringID="PAR_NUM_SLICE_LATCHTHRU" value="0"/>
-          <item dataType="int" stringID="PAR_NUM_SLICE_LATCHLOGIC" value="80"/>
+          <item dataType="int" stringID="PAR_NUM_SLICE_LATCHLOGIC" value="96"/>
         </item>
-        <item AVAILABLE="5720" dataType="int" label="Number of Slice LUTS" stringID="PAR_SLICE_LUTS" value="507">
-          <item dataType="int" stringID="PAR_NUM_LOGIC_O5ONLY" value="104"/>
-          <item dataType="int" stringID="PAR_NUM_LOGIC_O6ONLY" value="219"/>
-          <item dataType="int" stringID="PAR_NUM_LOGIC_O5ANDO6" value="161"/>
-=======
-<<<<<<< HEAD
-        <item AVAILABLE="11440" dataType="int" label="Number of Slice Registers" stringID="PAR_SLICE_REGISTERS" value="161">
-          <item dataType="int" stringID="PAR_NUM_SLICE_FF" value="121"/>
-=======
-        <item AVAILABLE="11440" dataType="int" label="Number of Slice Registers" stringID="PAR_SLICE_REGISTERS" value="132">
-          <item dataType="int" stringID="PAR_NUM_SLICE_FF" value="100"/>
->>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
-          <item dataType="int" stringID="PAR_NUM_SLICE_LATCH" value="0"/>
-          <item dataType="int" stringID="PAR_NUM_SLICE_LATCHTHRU" value="0"/>
-          <item dataType="int" stringID="PAR_NUM_SLICE_LATCHLOGIC" value="40"/>
-        </item>
-<<<<<<< HEAD
-        <item AVAILABLE="5720" dataType="int" label="Number of Slice LUTS" stringID="PAR_SLICE_LUTS" value="301">
-          <item dataType="int" stringID="PAR_NUM_LOGIC_O5ONLY" value="68"/>
-          <item dataType="int" stringID="PAR_NUM_LOGIC_O6ONLY" value="157"/>
-          <item dataType="int" stringID="PAR_NUM_LOGIC_O5ANDO6" value="70"/>
-=======
-        <item AVAILABLE="5720" dataType="int" label="Number of Slice LUTS" stringID="PAR_SLICE_LUTS" value="238">
-          <item dataType="int" stringID="PAR_NUM_LOGIC_O5ONLY" value="68"/>
-          <item dataType="int" stringID="PAR_NUM_LOGIC_O6ONLY" value="102"/>
-          <item dataType="int" stringID="PAR_NUM_LOGIC_O5ANDO6" value="61"/>
->>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
->>>>>>> b05042131424c56b29116a4c0f45329ed8e5fc44
+        <item AVAILABLE="5720" dataType="int" label="Number of Slice LUTS" stringID="PAR_SLICE_LUTS" value="577">
+          <item dataType="int" stringID="PAR_NUM_LOGIC_O5ONLY" value="120"/>
+          <item dataType="int" stringID="PAR_NUM_LOGIC_O6ONLY" value="249"/>
+          <item dataType="int" stringID="PAR_NUM_LOGIC_O5ANDO6" value="183"/>
           <item dataType="int" stringID="PAR_NUM_ROM_O5ONLY" value="0"/>
           <item dataType="int" stringID="PAR_NUM_ROM_O6ONLY" value="0"/>
           <item dataType="int" stringID="PAR_NUM_ROM_O5ANDO6" value="0"/>
@@ -1364,46 +1284,22 @@
           <item dataType="int" stringID="PAR_NUM_SRL_O5ONLY" value="0"/>
           <item dataType="int" stringID="PAR_NUM_SRL_O6ONLY" value="0"/>
           <item dataType="int" stringID="PAR_NUM_SRL_O5ANDO6" value="0"/>
-          <item dataType="int" stringID="PAR_NUM_LUT_RT_EXO6" value="7"/>
-          <item dataType="int" stringID="PAR_NUM_LUT_RT_EXO5" value="16"/>
+          <item dataType="int" stringID="PAR_NUM_LUT_RT_EXO6" value="8"/>
+          <item dataType="int" stringID="PAR_NUM_LUT_RT_EXO5" value="17"/>
           <item dataType="int" stringID="PAR_NUM_LUT_RT_O5ANDO6" value="0"/>
-          <item dataType="int" stringID="PAR_NUM_LUT_RT_DRIVES_FLOP" value="16"/>
-          <item dataType="int" stringID="PAR_NUM_LUT_RT_DRIVES_CARRY4" value="7"/>
+          <item dataType="int" stringID="PAR_NUM_LUT_RT_DRIVES_FLOP" value="17"/>
+          <item dataType="int" stringID="PAR_NUM_LUT_RT_DRIVES_CARRY4" value="8"/>
           <item dataType="int" stringID="PAR_NUM_LUT_RT_DRIVES_OTHERS" value="0"/>
         </item>
-<<<<<<< HEAD
-        <item AVAILABLE="1430" dataType="int" stringID="PAR_OCCUPIED_SLICES" value="179">
-          <item AVAILABLE="355" dataType="int" stringID="PAR_NUM_SLICEL" value="73"/>
-=======
-<<<<<<< HEAD
-        <item AVAILABLE="1430" dataType="int" stringID="PAR_OCCUPIED_SLICES" value="103">
-          <item AVAILABLE="355" dataType="int" stringID="PAR_NUM_SLICEL" value="46"/>
+        <item AVAILABLE="1430" dataType="int" stringID="PAR_OCCUPIED_SLICES" value="205">
+          <item AVAILABLE="355" dataType="int" stringID="PAR_NUM_SLICEL" value="84"/>
           <item AVAILABLE="360" dataType="int" stringID="PAR_NUM_SLICEM" value="0"/>
-          <item AVAILABLE="715" dataType="int" stringID="PAR_NUM_SLICEX" value="57"/>
+          <item AVAILABLE="715" dataType="int" stringID="PAR_NUM_SLICEX" value="121"/>
         </item>
-        <item dataType="int" stringID="PAR_OCCUPIED_LUT_AND_FF" value="304">
-          <item dataType="int" stringID="PAR_OCCUPIED_LUT_ONLY" value="144"/>
-          <item dataType="int" stringID="PAR_OCCUPIED_FF_ONLY" value="3"/>
-          <item dataType="int" stringID="PAR_OCCUPIED_FF_AND_LUT" value="157"/>
-=======
-        <item AVAILABLE="1430" dataType="int" stringID="PAR_OCCUPIED_SLICES" value="73">
-          <item AVAILABLE="355" dataType="int" stringID="PAR_NUM_SLICEL" value="39"/>
->>>>>>> b05042131424c56b29116a4c0f45329ed8e5fc44
-          <item AVAILABLE="360" dataType="int" stringID="PAR_NUM_SLICEM" value="0"/>
-          <item AVAILABLE="715" dataType="int" stringID="PAR_NUM_SLICEX" value="106"/>
-        </item>
-<<<<<<< HEAD
-        <item dataType="int" stringID="PAR_OCCUPIED_LUT_AND_FF" value="538">
-          <item dataType="int" stringID="PAR_OCCUPIED_LUT_ONLY" value="186"/>
-          <item dataType="int" stringID="PAR_OCCUPIED_FF_ONLY" value="31"/>
-          <item dataType="int" stringID="PAR_OCCUPIED_FF_AND_LUT" value="321"/>
-=======
-        <item dataType="int" stringID="PAR_OCCUPIED_LUT_AND_FF" value="243">
-          <item dataType="int" stringID="PAR_OCCUPIED_LUT_ONLY" value="120"/>
-          <item dataType="int" stringID="PAR_OCCUPIED_FF_ONLY" value="5"/>
-          <item dataType="int" stringID="PAR_OCCUPIED_FF_AND_LUT" value="118"/>
->>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
->>>>>>> b05042131424c56b29116a4c0f45329ed8e5fc44
+        <item dataType="int" stringID="PAR_OCCUPIED_LUT_AND_FF" value="615">
+          <item dataType="int" stringID="PAR_OCCUPIED_LUT_ONLY" value="210"/>
+          <item dataType="int" stringID="PAR_OCCUPIED_FF_ONLY" value="38"/>
+          <item dataType="int" stringID="PAR_OCCUPIED_FF_AND_LUT" value="367"/>
         </item>
       </section>
       <section stringID="PAR_IOB_REPORTING">

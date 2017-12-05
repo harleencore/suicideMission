@@ -5,6 +5,7 @@
     <src>aluSHIFT.luc</src>
     <src top="true">mojo_top.luc</src>
     <src>aluLogic.luc</src>
+    <src>projectile.luc</src>
     <src>aluBOOL.luc</src>
     <src>user.luc</src>
     <src>aluADD.luc</src>
@@ -16,5 +17,6 @@
     <component>counter.luc</component>
     <component>pn_gen.luc</component>
     <component>reset_conditioner.luc</component>
+    <component>edge_detector.luc</component>
   </files>
 </project>

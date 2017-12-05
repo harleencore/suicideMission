@@ -1,8 +1,8 @@
 INTSTYLE=pa
-INFILE=C:\Users\1001819\Downloads\PortableGit\suicideMission\work\planAhead\vgatest\vgatest.runs\impl_1\mojo_top_0_routed.ncd
-OUTFILE=C:\Users\1001819\Downloads\PortableGit\suicideMission\work\planAhead\vgatest\vgatest.runs\impl_1\mojo_top_0.bit
+INFILE=/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.runs/impl_1/mojo_top_0_routed.ncd
+OUTFILE=/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.runs/impl_1/mojo_top_0.bit
 FAMILY=Spartan6
 PART=xc6slx9-2tqg144
-WORKINGDIR=C:\Users\1001819\Downloads\PortableGit\suicideMission\work\planAhead\vgatest\vgatest.runs\impl_1
+WORKINGDIR=/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.runs/impl_1
 LICENSE=WebPack
-USER_INFO=210774588_0_0_156
+USER_INFO=211410142_0_0_871
