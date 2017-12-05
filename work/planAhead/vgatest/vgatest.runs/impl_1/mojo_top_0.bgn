@@ -1,13 +1,17 @@
-Release 14.7 - Bitgen P.20131013 (lin64)
+Release 14.7 - Bitgen P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Loading device for application Rf_Device from file '6slx9.nph' in environment
-/home/ada/Documents/SUTD/Term4/compstruc/fpga/ise/14.7/ISE_DS/ISE/.
+C:\Xilinx\14.7\ISE_DS\ISE\.
    "mojo_top_0" is an NCD, version 3.2, device xc6slx9, package tqg144, speed -2
 Opened constraints file mojo_top_0.pcf.
 
+<<<<<<< HEAD
+Tue Dec 05 22:53:36 2017
+=======
 Tue Dec  5 20:16:00 2017
+>>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
 
-/home/ada/Documents/SUTD/Term4/compstruc/fpga/ise/14.7/ISE_DS/ISE/bin/lin64/unwrapped/bitgen -g Binary:Yes -g Compress -w -intstyle pa mojo_top_0_routed.ncd mojo_top_0.bit mojo_top_0.pcf 
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\bitgen.exe -g Binary:Yes -g Compress -w -intstyle pa mojo_top_0_routed.ncd mojo_top_0.bit mojo_top_0.pcf 
 
 Summary of Bitgen Options:
 +----------------------+----------------------+
@@ -132,6 +136,10 @@ Running DRC.
 DRC detected 0 errors and 0 warnings.
 Creating bit map...
 Saving bit stream in "mojo_top_0.bit".
+<<<<<<< HEAD
+Bitstream compression saved 1243632 bits.
+=======
 Bitstream compression saved 1372128 bits.
+>>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
 Saving bit stream in "mojo_top_0.bin".
 Bitstream generation is complete.
