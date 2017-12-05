@@ -17,6 +17,8 @@ module enemy (
   .clk(clk), .rst(rst){
     dff charX[11](#INIT(400));
     dff charY[11](#INIT(110));
+
+    fsm state(.clk(clk), #INIT(RIGHT)) = {RIGHT, LEFT};
     
     fsm state(.clk(clk), #INIT(RIGHT)) = {RIGHT, LEFT};
     
@@ -46,6 +48,7 @@ module enemy (
       
 
     
+<<<<<<< HEAD
     // Maybe use some fsm to determine movement?
     //if(timer.q == 1){
       // Need to find some way to randomly generate numbers 
@@ -79,6 +82,38 @@ module enemy (
           charX.d = charX.q + 1; 
         }
       
+=======
+
+
+    // // Maybe use some fsm to determine movement?
+    // if(timer.q == 1){
+    //   // Need to find some way to randomly generate numbers 
+    //   charX.d = charX.q + 1; // + ?
+    //   charY.d = charY.q + 1; // + ?
+    // }
+    
+    // if(timer.q == 2){
+    //   charX.d = charX.q + 0;
+    //   charY.d = charY.q + 1;
+      
+    // }
+    
+    // timer.d = timer.q + 1;
+
+    if((state.q == state.RIGHT) && (charX.d == 720)){
+      state.d = state.LEFT;
+    }
+
+    if((state.q == state.LEFT) && (charX.d == 80)){
+      state.d = state.RIGHT;
+    }
+
+    if(state.q == state.LEFT){
+      charX.d = charX.q - 1; 
+    }
+    if(state.q == state.RIGHT){
+      charX.d = charX.q + 1; 
+>>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
     }
     
     enemyPosX = charX.q;

@@ -2,8 +2,8 @@
 <project name="vgatest" board="Mojo V3" language="Lucid">
   <files>
     <src>enemy.luc</src>
-    <src top="true">mojo_top.luc</src>
     <src>projectile.luc</src>
+    <src top="true">mojo_top.luc</src>
     <src>user.luc</src>
     <ucf>button.ucf</ucf>
     <ucf lib="true">mojo.ucf</ucf>
