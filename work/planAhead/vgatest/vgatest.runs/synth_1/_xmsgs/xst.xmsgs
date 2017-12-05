@@ -5,7 +5,26 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<<<<<<< HEAD
 <msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 62: Assignment to <arg fmt="%s" index="1">M_alu_z</arg> ignored, since the identifier is never used
+=======
+<<<<<<< HEAD
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/enemy_4.v" Line 22: Net &lt;<arg fmt="%s" index="1">M_charY_d[10]</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 87: Assignment to <arg fmt="%s" index="1">M_enemyChar_enemyPosX</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 88: Assignment to <arg fmt="%s" index="1">M_enemyChar_enemyPosY</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 116: Assignment to <arg fmt="%s" index="1">M_projChar_enemyPosX</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 117: Assignment to <arg fmt="%s" index="1">M_projChar_enemyPosY</arg> ignored, since the identifier is never used
+=======
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluLogic_2.v" Line 82: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">8</arg>-bit target.
+>>>>>>> b05042131424c56b29116a4c0f45329ed8e5fc44
 </msg>
 
 <msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 63: Assignment to <arg fmt="%s" index="1">M_alu_v</arg> ignored, since the identifier is never used
@@ -30,6 +49,7 @@
 </msg>
 
 <msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 99: Assignment to <arg fmt="%s" index="1">M_enemyChar_enemyPosY</arg> ignored, since the identifier is never used
+>>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
 </msg>
 
 <msg type="warning" file="HDLCompiler" num="413" delta="new" >"/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/background_5.v" Line 115: Result of <arg fmt="%d" index="1">20</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">11</arg>-bit target.
@@ -62,6 +82,45 @@
 <msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">avr_rx_busy</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
+<<<<<<< HEAD
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v</arg>&quot; line <arg fmt="%s" index="2">82</arg>: Output port &lt;<arg fmt="%s" index="3">enemyPosX</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">enemyChar</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v</arg>&quot; line <arg fmt="%s" index="2">82</arg>: Output port &lt;<arg fmt="%s" index="3">enemyPosY</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">enemyChar</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v</arg>&quot; line <arg fmt="%s" index="2">107</arg>: Output port &lt;<arg fmt="%s" index="3">enemyPosX</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">projChar</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v</arg>&quot; line <arg fmt="%s" index="2">107</arg>: Output port &lt;<arg fmt="%s" index="3">enemyPosY</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">projChar</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">M_charY_d</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">M_charY_q_0</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">enemy_4</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">M_charY_q_4</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">enemy_4</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">M_charY_q_7</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">enemy_4</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">M_charY_q_8</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">enemy_4</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">M_charY_q_9</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">enemy_4</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">M_charY_q_10</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">enemy_4</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">M_charY_q_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">enemy_4</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">4 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;M_charY_q_2&gt; &lt;M_charY_q_3&gt; &lt;M_charY_q_5&gt; &lt;M_charY_q_6&gt; </arg>
+</msg>
+
+<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">projChar/M_charY_q_0</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">mojo_top_0</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+=======
 <msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v</arg>&quot; line <arg fmt="%s" index="2">57</arg>: Output port &lt;<arg fmt="%s" index="3">z</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">alu</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
@@ -93,6 +152,7 @@
 </msg>
 
 <msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">alufn&lt;5:2&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+>>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
 </msg>
 
 <msg type="info" file="Xst" num="1767" delta="new" >HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
@@ -774,6 +834,15 @@
 </msg>
 
 <msg type="info" file="Xst" num="3203" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">M_userY_q_8</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">mojo_top_0</arg>&gt; is the opposite to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;M_userY_q_9&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">M_timer_q_16</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">mojo_top_0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;enemyChar/M_timer_q_16&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">M_timer_q_17</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">mojo_top_0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;enemyChar/M_timer_q_17&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="3203" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">enemyChar/M_charY_q_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">mojo_top_0</arg>&gt; is the opposite to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;projChar/M_start_q&gt; </arg>
 </msg>
 
 <msg type="info" file="Xst" num="741" delta="new" >HDL ADVISOR - A <arg fmt="%d" index="1">4</arg>-bit shift register was found for signal &lt;<arg fmt="%s" index="2">reset_cond/M_stage_q_3</arg>&gt; and currently occupies <arg fmt="%d" index="3">4</arg> logic cells (<arg fmt="%d" index="4">2</arg> slices). Removing the set/reset logic would take advantage of SRL<arg fmt="%d" index="5">32</arg> (and derived) primitives and reduce this to 1 logic cells (1 slices). Evaluate if the set/reset can be removed for this simple shift register. The majority of simple pipeline structures do not need to be set/reset operationally.

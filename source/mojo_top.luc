@@ -36,6 +36,7 @@ module mojo_top (
     dff pixel[11];
     dff line[11];
     
+    edge_detector edge_detector(#RISE(1), #FALL(0));
     // this is for the user position
     dff userX[11](#INIT(400), .rst(rst));
     dff userY[11](#INIT(480), .rst(rst));
@@ -46,10 +47,20 @@ module mojo_top (
     //fsm scheduler(#INIT(U_BUTTON)) = {U_BUTTON, D_BUTTON, L_BUTTON, R_BUTTON};
   }
   
+<<<<<<< HEAD
+  user userChar;
+  enemy enemyChar;
+  projectile projChar;
+=======
   aluLogic alu;               // alu
   user userChar;              // user sprite
+<<<<<<< HEAD
   enemy enemyChar;
   background bg;            // enemy sprite
+=======
+  enemy enemyChar;            // enemy sprite
+>>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
+>>>>>>> b05042131424c56b29116a4c0f45329ed8e5fc44
 
   always {
     alu.a = 0;
@@ -73,11 +84,16 @@ module mojo_top (
     scheduler.d = scheduler.q + 1; 
     //}
     
+<<<<<<< HEAD
     // BG element
     bg.clk = clk;
     bg.rst = rst;
     bg.cursorX = 300;
     bg.cursorY = 300;
+=======
+    // prepare edge detector for a_button
+    edge_detector.in = a_button;
+>>>>>>> b05042131424c56b29116a4c0f45329ed8e5fc44
     
     // Controlling Position enemy
     enemyChar.cursorX = pixel.q;
@@ -86,12 +102,38 @@ module mojo_top (
     enemyChar.rst = rst;
     
     
+<<<<<<< HEAD
+    //Projectile Parameters
+    projChar.clk = clk;
+    projChar.rst = rst;
+    projChar.cursorX = pixel.q;
+    projChar.cursorY = line.q;
+    projChar.hit = 0;
+    projChar.shot = 0;
+
+    
+    
+    // Controlling Position User
+=======
     // User Controls
+>>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
     userChar.cursorX = pixel.q;
     userChar.cursorY = line.q;
     timer.d = timer.q + 1;          // Use timer to prevent the values from skyrocketting
 
     
+<<<<<<< HEAD
+    
+    
+    // Button control
+    // Use timer to prevent the values from skyrocketting
+    // TODO: control boundaries
+    timer.d = timer.q + 1;
+    if(timer.q == 1){
+      if(u_button == 1){
+        userY.d = userY.q - 1;
+      } 
+=======
     userChar.charX = userX.q;
     userChar.charY = userY.q;
     
@@ -109,6 +151,7 @@ module mojo_top (
         scheduler.d = 11;
       }
     }
+>>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
       
     // Scheduler M.2
     if(scheduler.q == 524287){
@@ -145,12 +188,33 @@ module mojo_top (
         scheduler.d = 8;
       } 
     }
+    
+    projChar.startX = userX.q;
+    projChar.startY = userY.q;
+
+    if(edge_detector.out){
+      projChar.shot = 1;
+    }
+    
+
   
     
     if (pixel.q < 800 && line.q < 600) {
+<<<<<<< HEAD
       red = bg.r || userChar.r || enemyChar.r;
       green = bg.g || userChar.g || enemyChar.g;
       blue = bg.b || userChar.b || enemyChar.b;
+=======
+<<<<<<< HEAD
+      red = userChar.r + enemyChar.r + projChar.r;
+      green = userChar.g + enemyChar.g + projChar.g;
+      blue = userChar.b + enemyChar.b + projChar.b;
+=======
+      red = userChar.r || enemyChar.r ;
+      green = userChar.g || enemyChar.g;
+      blue = userChar.b || enemyChar.b;
+>>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
+>>>>>>> b05042131424c56b29116a4c0f45329ed8e5fc44
 
 
     } else {

@@ -1,5 +1,13 @@
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
+<<<<<<< HEAD
     <Process Command="trce" Owner="ada" Host="" Pid="8339">
+=======
+<<<<<<< HEAD
+    <Process Command="trce" Owner="1001819" Host="ISTDLAB21-PC" Pid="8936">
+=======
+    <Process Command="trce" Owner="ada" Host="" Pid="22496">
+>>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
+>>>>>>> b05042131424c56b29116a4c0f45329ed8e5fc44
     </Process>
 </ProcessHandle>

@@ -1,17 +1,15 @@
-Release 14.7 ngdbuild P.20131013 (lin64)
+Release 14.7 ngdbuild P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Command Line:
-/home/ada/Documents/SUTD/Term4/compstruc/fpga/ise/14.7/ISE_DS/ISE/bin/lin64/unwr
-apped/ngdbuild -intstyle ise -p xc6slx9tqg144-2 -dd _ngo -uc mojo_top_0.ucf
-mojo_top_0.edf
+Command Line: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
+-intstyle ise -p xc6slx9tqg144-2 -dd _ngo -uc mojo_top_0.ucf mojo_top_0.edf
 
-Executing edif2ngd -quiet "mojo_top_0.edf" "_ngo/mojo_top_0.ngo"
-Release 14.7 - edif2ngd P.20131013 (lin64)
+Executing edif2ngd -quiet "mojo_top_0.edf" "_ngo\mojo_top_0.ngo"
+Release 14.7 - edif2ngd P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Reading NGO file
-"/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhea
-d/vgatest/vgatest.runs/impl_1/_ngo/mojo_top_0.ngo" ...
+"C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vg
+atest.runs/impl_1/_ngo/mojo_top_0.ngo" ...
 Gathering constraint information from source properties...
 Done.
 
@@ -33,10 +31,18 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
+<<<<<<< HEAD
 Total memory usage is 406304 kilobytes
+=======
+<<<<<<< HEAD
+Total memory usage is 166644 kilobytes
+=======
+Total memory usage is 404384 kilobytes
+>>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
+>>>>>>> b05042131424c56b29116a4c0f45329ed8e5fc44
 
 Writing NGD file "mojo_top_0.ngd" ...
-Total REAL time to NGDBUILD completion:  6 sec
+Total REAL time to NGDBUILD completion:  5 sec
 Total CPU time to NGDBUILD completion:   2 sec
 
 Writing NGDBUILD log file "mojo_top_0.bld"...

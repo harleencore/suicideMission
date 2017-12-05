@@ -1,11 +1,27 @@
+<<<<<<< HEAD
 verilog work "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/pn_gen_10.v"
 verilog work "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluSHIFT_9.v"
 verilog work "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluCOMP_8.v"
 verilog work "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluBOOL_7.v"
 verilog work "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluADD_6.v"
+=======
+<<<<<<< HEAD
+verilog work "C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/user_3.v"
+verilog work "C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/reset_conditioner_1.v"
+verilog work "C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/projectile_5.v"
+verilog work "C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/enemy_4.v"
+verilog work "C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/edge_detector_2.v"
+verilog work "C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v"
+=======
+verilog work "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluSHIFT_8.v"
+verilog work "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluCOMP_7.v"
+verilog work "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluBOOL_6.v"
+verilog work "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluADD_5.v"
+>>>>>>> b05042131424c56b29116a4c0f45329ed8e5fc44
 verilog work "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/user_3.v"
 verilog work "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/reset_conditioner_1.v"
 verilog work "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/enemy_4.v"
 verilog work "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/background_5.v"
 verilog work "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluLogic_2.v"
 verilog work "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v"
+>>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b

@@ -1,12 +1,13 @@
 
 *** Running xst
-    with args -ifn mojo_top_0.xst -ofn mojo_top_0.srp -intstyle ise
+    with args -ifn "mojo_top_0.xst" -ofn "mojo_top_0.srp" -intstyle ise
 
 Reading design: mojo_top_0.prj
 
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
+<<<<<<< HEAD
 Analyzing Verilog file "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/pn_gen_10.v" into library work
 Parsing module <pn_gen_10>.
 Analyzing Verilog file "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluSHIFT_9.v" into library work
@@ -17,6 +18,29 @@ Analyzing Verilog file "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suici
 Parsing module <aluBOOL_7>.
 Analyzing Verilog file "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluADD_6.v" into library work
 Parsing module <aluADD_6>.
+=======
+<<<<<<< HEAD
+Analyzing Verilog file "C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/user_3.v" into library work
+Parsing module <user_3>.
+Analyzing Verilog file "C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/reset_conditioner_1.v" into library work
+Parsing module <reset_conditioner_1>.
+Analyzing Verilog file "C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/projectile_5.v" into library work
+Parsing module <projectile_5>.
+Analyzing Verilog file "C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/enemy_4.v" into library work
+Parsing module <enemy_4>.
+Analyzing Verilog file "C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/edge_detector_2.v" into library work
+Parsing module <edge_detector_2>.
+Analyzing Verilog file "C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" into library work
+=======
+Analyzing Verilog file "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluSHIFT_8.v" into library work
+Parsing module <aluSHIFT_8>.
+Analyzing Verilog file "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluCOMP_7.v" into library work
+Parsing module <aluCOMP_7>.
+Analyzing Verilog file "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluBOOL_6.v" into library work
+Parsing module <aluBOOL_6>.
+Analyzing Verilog file "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluADD_5.v" into library work
+Parsing module <aluADD_5>.
+>>>>>>> b05042131424c56b29116a4c0f45329ed8e5fc44
 Analyzing Verilog file "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/user_3.v" into library work
 Parsing module <user_3>.
 Analyzing Verilog file "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/reset_conditioner_1.v" into library work
@@ -28,6 +52,7 @@ Parsing module <background_5>.
 Analyzing Verilog file "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluLogic_2.v" into library work
 Parsing module <aluLogic_2>.
 Analyzing Verilog file "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" into library work
+>>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
 Parsing module <mojo_top_0>.
 
 =========================================================================
@@ -38,6 +63,20 @@ Elaborating module <mojo_top_0>.
 
 Elaborating module <reset_conditioner_1>.
 
+<<<<<<< HEAD
+Elaborating module <edge_detector_2>.
+
+Elaborating module <user_3>.
+
+Elaborating module <enemy_4>.
+WARNING:HDLCompiler:634 - "C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/enemy_4.v" Line 22: Net <M_charY_d[10]> does not have a driver.
+WARNING:HDLCompiler:1127 - "C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 87: Assignment to M_enemyChar_enemyPosX ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 88: Assignment to M_enemyChar_enemyPosY ignored, since the identifier is never used
+
+Elaborating module <projectile_5>.
+WARNING:HDLCompiler:1127 - "C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 116: Assignment to M_projChar_enemyPosX ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 117: Assignment to M_projChar_enemyPosY ignored, since the identifier is never used
+=======
 Elaborating module <aluLogic_2>.
 
 Elaborating module <aluADD_6>.
@@ -62,6 +101,7 @@ WARNING:HDLCompiler:413 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/su
 WARNING:HDLCompiler:413 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/enemy_4.v" Line 142: Result of 20-bit expression is truncated to fit in 11-bit target.
 WARNING:HDLCompiler:1127 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 98: Assignment to M_enemyChar_enemyPosX ignored, since the identifier is never used
 WARNING:HDLCompiler:1127 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 99: Assignment to M_enemyChar_enemyPosY ignored, since the identifier is never used
+>>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
 
 Elaborating module <background_5>.
 WARNING:HDLCompiler:413 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/background_5.v" Line 115: Result of 20-bit expression is truncated to fit in 11-bit target.
@@ -74,13 +114,54 @@ WARNING:HDLCompiler:413 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/su
 =========================================================================
 
 Synthesizing Unit <mojo_top_0>.
-    Related source file is "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v".
+    Related source file is "C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v".
 WARNING:Xst:647 - Input <cclk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <spi_ss> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <spi_mosi> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <spi_sck> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <avr_tx> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <avr_rx_busy> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<<<<<<< HEAD
+INFO:Xst:3210 - "C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" line 82: Output port <enemyPosX> of the instance <enemyChar> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" line 82: Output port <enemyPosY> of the instance <enemyChar> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" line 107: Output port <enemyPosX> of the instance <projChar> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" line 107: Output port <enemyPosY> of the instance <projChar> is unconnected or connected to loadless signal.
+    Found 11-bit register for signal <M_pixel_q>.
+    Found 11-bit register for signal <M_line_q>.
+    Found 11-bit register for signal <M_userX_q>.
+    Found 18-bit register for signal <M_timer_q>.
+    Found 11-bit register for signal <M_userY_q>.
+    Found 11-bit subtractor for signal <M_userY_q[10]_GND_1_o_sub_4_OUT> created at line 152.
+    Found 11-bit subtractor for signal <M_userX_q[10]_GND_1_o_sub_10_OUT> created at line 158.
+    Found 18-bit adder for signal <M_timer_d> created at line 149.
+    Found 11-bit adder for signal <M_userY_q[10]_GND_1_o_add_6_OUT> created at line 155.
+    Found 11-bit adder for signal <M_userX_q[10]_GND_1_o_add_12_OUT> created at line 161.
+    Found 1-bit adder for signal <n0120> created at line 172.
+    Found 1-bit adder for signal <M_userChar_r[0]_M_projChar_r[0]_add_19_OUT<0>> created at line 172.
+    Found 1-bit adder for signal <n0126> created at line 173.
+    Found 1-bit adder for signal <M_userChar_g[0]_M_projChar_g[0]_add_21_OUT<0>> created at line 173.
+    Found 1-bit adder for signal <n0132> created at line 174.
+    Found 1-bit adder for signal <M_userChar_b[0]_M_projChar_b[0]_add_23_OUT<0>> created at line 174.
+    Found 11-bit adder for signal <M_line_q[10]_GND_1_o_add_30_OUT> created at line 194.
+    Found 11-bit adder for signal <M_pixel_q[10]_GND_1_o_add_32_OUT> created at line 198.
+    Found 1-bit tristate buffer for signal <spi_miso> created at line 123
+    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 123
+    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 123
+    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 123
+    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 123
+    Found 1-bit tristate buffer for signal <avr_rx> created at line 123
+    Found 11-bit comparator greater for signal <M_pixel_q[10]_GND_1_o_LessThan_17_o> created at line 171
+    Found 11-bit comparator greater for signal <M_line_q[10]_GND_1_o_LessThan_18_o> created at line 171
+    Found 11-bit comparator lessequal for signal <n0029> created at line 180
+    Found 11-bit comparator lessequal for signal <n0031> created at line 180
+    Found 11-bit comparator lessequal for signal <n0034> created at line 185
+    Found 11-bit comparator lessequal for signal <n0036> created at line 185
+    Summary:
+	inferred  11 Adder/Subtractor(s).
+	inferred  62 D-type flip-flop(s).
+	inferred   6 Comparator(s).
+	inferred   3 Multiplexer(s).
+=======
 INFO:Xst:3210 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" line 57: Output port <z> of the instance <alu> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" line 57: Output port <v> of the instance <alu> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/mojo_top_0.v" line 57: Output port <n> of the instance <alu> is unconnected or connected to loadless signal.
@@ -115,16 +196,36 @@ INFO:Xst:3210 - "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMissi
 	inferred  64 D-type flip-flop(s).
 	inferred  10 Comparator(s).
 	inferred  31 Multiplexer(s).
+>>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
 	inferred   6 Tristate(s).
 Unit <mojo_top_0> synthesized.
 
 Synthesizing Unit <reset_conditioner_1>.
-    Related source file is "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/reset_conditioner_1.v".
+    Related source file is "C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/reset_conditioner_1.v".
     Found 4-bit register for signal <M_stage_q>.
     Summary:
 	inferred   4 D-type flip-flop(s).
 Unit <reset_conditioner_1> synthesized.
 
+<<<<<<< HEAD
+Synthesizing Unit <edge_detector_2>.
+    Related source file is "C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/edge_detector_2.v".
+    Found 1-bit register for signal <M_last_q>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <edge_detector_2> synthesized.
+
+Synthesizing Unit <user_3>.
+    Related source file is "C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/user_3.v".
+    Found 11-bit subtractor for signal <n0020> created at line 23.
+    Found 11-bit subtractor for signal <n0022> created at line 24.
+    Found 11-bit adder for signal <cursorX[10]_GND_4_o_add_1_OUT> created at line 23.
+    Found 11-bit adder for signal <cursorY[10]_GND_4_o_add_7_OUT> created at line 24.
+    Found 11-bit comparator greater for signal <GND_4_o_cursorX[10]_LessThan_3_o> created at line 23
+    Found 11-bit comparator greater for signal <cursorX[10]_GND_4_o_LessThan_6_o> created at line 23
+    Found 11-bit comparator greater for signal <GND_4_o_cursorY[10]_LessThan_9_o> created at line 24
+    Found 11-bit comparator greater for signal <cursorY[10]_GND_4_o_LessThan_12_o> created at line 24
+=======
 Synthesizing Unit <aluLogic_2>.
     Related source file is "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/aluLogic_2.v".
     Found 32-bit 4-to-1 multiplexer for signal <aluOUT> created at line 86.
@@ -294,6 +395,7 @@ Synthesizing Unit <user_3>.
     Found 11-bit comparator greater for signal <cursorX[10]_GND_10_o_LessThan_6_o> created at line 23
     Found 11-bit comparator greater for signal <GND_10_o_cursorY[10]_LessThan_9_o> created at line 24
     Found 11-bit comparator greater for signal <cursorY[10]_GND_10_o_LessThan_12_o> created at line 24
+>>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
     Summary:
 	inferred   4 Adder/Subtractor(s).
 	inferred   4 Comparator(s).
@@ -301,9 +403,29 @@ Synthesizing Unit <user_3>.
 Unit <user_3> synthesized.
 
 Synthesizing Unit <enemy_4>.
+<<<<<<< HEAD
+    Related source file is "C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/enemy_4.v".
+WARNING:Xst:653 - Signal <M_charY_d> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 11-bit register for signal <M_charX_q>.
+    Found 11-bit register for signal <M_charY_q>.
+    Found 20-bit register for signal <M_timer_q>.
+    Found 1-bit register for signal <M_state_q>.
+    Found 11-bit subtractor for signal <n0059> created at line 37.
+    Found 11-bit subtractor for signal <n0061> created at line 38.
+    Found 11-bit subtractor for signal <M_charX_q[10]_GND_5_o_sub_20_OUT> created at line 57.
+    Found 11-bit adder for signal <cursorX[10]_GND_5_o_add_1_OUT> created at line 37.
+    Found 11-bit adder for signal <cursorY[10]_GND_5_o_add_7_OUT> created at line 38.
+    Found 20-bit adder for signal <M_timer_d> created at line 48.
+    Found 11-bit adder for signal <M_charX_q[10]_GND_5_o_add_22_OUT> created at line 60.
+    Found 11-bit comparator greater for signal <GND_5_o_cursorX[10]_LessThan_3_o> created at line 37
+    Found 11-bit comparator greater for signal <cursorX[10]_GND_5_o_LessThan_6_o> created at line 37
+    Found 11-bit comparator greater for signal <GND_5_o_cursorY[10]_LessThan_9_o> created at line 38
+    Found 11-bit comparator greater for signal <cursorY[10]_GND_5_o_LessThan_12_o> created at line 38
+=======
     Related source file is "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/enemy_4.v".
     Found 20-bit register for signal <M_difficultyLevel_q>.
     Found 11-bit register for signal <M_charX_q>.
+<<<<<<< HEAD
     Found 11-bit register for signal <M_charY_q>.
     Found 18-bit register for signal <M_timer_q>.
     Found 20-bit register for signal <M_statecounter_q>.
@@ -346,7 +468,55 @@ Synthesizing Unit <enemy_4>.
 	inferred 114 D-type flip-flop(s).
 	inferred  16 Comparator(s).
 	inferred  21 Multiplexer(s).
+=======
+    Found 11-bit subtractor for signal <n0051> created at line 33.
+    Found 11-bit subtractor for signal <n0053> created at line 34.
+    Found 11-bit adder for signal <cursorX[10]_GND_11_o_add_1_OUT> created at line 33.
+    Found 11-bit adder for signal <cursorY[10]_GND_11_o_add_7_OUT> created at line 34.
+    Found 11-bit adder for signal <M_charX_q[10]_GND_11_o_add_13_OUT> created at line 45.
+    Found 11-bit adder for signal <M_charY_q[10]_GND_11_o_add_14_OUT> created at line 46.
+    Found 16-bit adder for signal <M_timer_d> created at line 52.
+    Found 11-bit comparator greater for signal <GND_11_o_cursorX[10]_LessThan_3_o> created at line 33
+    Found 11-bit comparator greater for signal <cursorX[10]_GND_11_o_LessThan_6_o> created at line 33
+    Found 11-bit comparator greater for signal <GND_11_o_cursorY[10]_LessThan_9_o> created at line 34
+    Found 11-bit comparator greater for signal <cursorY[10]_GND_11_o_LessThan_12_o> created at line 34
+>>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
+    Summary:
+	inferred   6 Adder/Subtractor(s).
+	inferred  43 D-type flip-flop(s).
+	inferred   4 Comparator(s).
+	inferred   1 Multiplexer(s).
+>>>>>>> b05042131424c56b29116a4c0f45329ed8e5fc44
 Unit <enemy_4> synthesized.
+<<<<<<< HEAD
+
+Synthesizing Unit <projectile_5>.
+    Related source file is "C:/Users/1001819/Downloads/PortableGit/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/projectile_5.v".
+    Found 11-bit register for signal <M_charY_q>.
+    Found 1-bit register for signal <M_start_q>.
+    Found 18-bit register for signal <M_timer_q>.
+    Found 1-bit register for signal <M_state_q>.
+    Found 11-bit register for signal <M_charX_q>.
+    Found 11-bit subtractor for signal <n0087> created at line 53.
+    Found 11-bit subtractor for signal <n0089> created at line 54.
+    Found 11-bit subtractor for signal <M_charY_q[10]_GND_6_o_sub_29_OUT> created at line 82.
+    Found 1-bit adder for signal <M_start_q_PWR_7_o_add_1_OUT<0>> created at line 47.
+    Found 11-bit adder for signal <cursorX[10]_GND_6_o_add_6_OUT> created at line 53.
+    Found 11-bit adder for signal <cursorY[10]_GND_6_o_add_12_OUT> created at line 54.
+    Found 18-bit adder for signal <M_timer_q[17]_GND_6_o_add_17_OUT> created at line 69.
+    Found 11-bit comparator greater for signal <GND_6_o_cursorX[10]_LessThan_8_o> created at line 53
+    Found 11-bit comparator greater for signal <cursorX[10]_GND_6_o_LessThan_11_o> created at line 53
+    Found 11-bit comparator greater for signal <GND_6_o_cursorY[10]_LessThan_14_o> created at line 54
+    Found 11-bit comparator greater for signal <cursorY[10]_GND_6_o_LessThan_17_o> created at line 54
+    Found 11-bit comparator greater for signal <M_charY_q[10]_GND_6_o_LessThan_21_o> created at line 71
+    Summary:
+	inferred   7 Adder/Subtractor(s).
+	inferred  42 D-type flip-flop(s).
+	inferred   5 Comparator(s).
+	inferred   6 Multiplexer(s).
+Unit <projectile_5> synthesized.
+=======
+>>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
 
 Synthesizing Unit <pn_gen_10>.
     Related source file is "/home/ada/Documents/SUTD/Term4/compstruc/Workspace/suicideMission/work/planAhead/vgatest/vgatest.srcs/sources_1/imports/verilog/pn_gen_10.v".
@@ -399,6 +569,27 @@ Unit <background_5> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
+<<<<<<< HEAD
+# Adders/Subtractors                                   : 28
+ 1-bit adder                                           : 7
+ 11-bit adder                                          : 8
+ 11-bit addsub                                         : 3
+ 11-bit subtractor                                     : 7
+ 18-bit adder                                          : 2
+ 20-bit adder                                          : 1
+# Registers                                            : 16
+ 1-bit register                                        : 4
+ 11-bit register                                       : 8
+ 18-bit register                                       : 2
+ 20-bit register                                       : 1
+ 4-bit register                                        : 1
+# Comparators                                          : 19
+ 11-bit comparator greater                             : 15
+ 11-bit comparator lessequal                           : 4
+# Multiplexers                                         : 11
+ 1-bit 2-to-1 multiplexer                              : 9
+ 11-bit 2-to-1 multiplexer                             : 2
+=======
 # Multipliers                                          : 2
  32x32-bit multiplier                                  : 2
 # Adders/Subtractors                                   : 103
@@ -499,9 +690,16 @@ Macro Statistics
  33-bit 2-to-1 multiplexer                             : 6
  6-bit 2-to-1 multiplexer                              : 7
 # Logic shifters                                       : 3
+<<<<<<< HEAD
  32-bit shifter arithmetic right                       : 1
  32-bit shifter logical left                           : 1
  32-bit shifter logical right                          : 1
+=======
+ 8-bit shifter arithmetic right                        : 1
+ 8-bit shifter logical left                            : 1
+ 8-bit shifter logical right                           : 1
+>>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
+>>>>>>> b05042131424c56b29116a4c0f45329ed8e5fc44
 # Tristates                                            : 6
  1-bit tristate buffer                                 : 6
 # Xors                                                 : 8
@@ -528,19 +726,54 @@ The following registers are absorbed into accumulator <M_charX_q>: 1 register on
 The following registers are absorbed into accumulator <M_charY_q>: 1 register on signal <M_charY_q>.
 The following registers are absorbed into counter <M_difficultyTimer_q>: 1 register on signal <M_difficultyTimer_q>.
 The following registers are absorbed into counter <M_timer_q>: 1 register on signal <M_timer_q>.
+<<<<<<< HEAD
 The following registers are absorbed into counter <M_difficultyLevel_q>: 1 register on signal <M_difficultyLevel_q>.
 The following registers are absorbed into counter <M_statecounter_q>: 1 register on signal <M_statecounter_q>.
+=======
+The following registers are absorbed into counter <M_charX_q>: 1 register on signal <M_charX_q>.
+>>>>>>> b05042131424c56b29116a4c0f45329ed8e5fc44
 Unit <enemy_4> synthesized (advanced).
 
 Synthesizing (advanced) Unit <mojo_top_0>.
+<<<<<<< HEAD
+The following registers are absorbed into counter <M_userY_q>: 1 register on signal <M_userY_q>.
+The following registers are absorbed into counter <M_userX_q>: 1 register on signal <M_userX_q>.
+=======
+>>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
 The following registers are absorbed into counter <M_pixel_q>: 1 register on signal <M_pixel_q>.
+The following registers are absorbed into counter <M_timer_q>: 1 register on signal <M_timer_q>.
 The following registers are absorbed into counter <M_line_q>: 1 register on signal <M_line_q>.
 Unit <mojo_top_0> synthesized (advanced).
+
+Synthesizing (advanced) Unit <projectile_5>.
+The following registers are absorbed into counter <M_start_q>: 1 register on signal <M_start_q>.
+The following registers are absorbed into counter <M_timer_q>: 1 register on signal <M_timer_q>.
+Unit <projectile_5> synthesized (advanced).
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
+<<<<<<< HEAD
+# Adders/Subtractors                                   : 16
+ 1-bit adder carry in                                  : 3
+ 11-bit adder                                          : 6
+ 11-bit subtractor                                     : 7
+# Counters                                             : 9
+ 1-bit up counter                                      : 1
+ 11-bit up counter                                     : 2
+ 11-bit updown counter                                 : 3
+ 18-bit up counter                                     : 2
+ 20-bit up counter                                     : 1
+# Registers                                            : 40
+ Flip-Flops                                            : 40
+# Comparators                                          : 19
+ 11-bit comparator greater                             : 15
+ 11-bit comparator lessequal                           : 4
+# Multiplexers                                         : 9
+ 1-bit 2-to-1 multiplexer                              : 7
+ 11-bit 2-to-1 multiplexer                             : 2
+=======
 # Multipliers                                          : 2
  32x32-bit multiplier                                  : 2
 # Adders/Subtractors                                   : 58
@@ -613,14 +846,20 @@ Macro Statistics
  32-bit shifter logical right                          : 1
 # Xors                                                 : 8
  1-bit xor2                                            : 1
+<<<<<<< HEAD
  32-bit xor2                                           : 5
  32-bit xor4                                           : 2
+=======
+ 32-bit xor2                                           : 1
+>>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
+>>>>>>> b05042131424c56b29116a4c0f45329ed8e5fc44
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+<<<<<<< HEAD
 WARNING:Xst:2677 - Node <Mmult_n00273> of sequential type is unconnected in block <aluADD_6>.
 WARNING:Xst:2677 - Node <Mmult_n00293> of sequential type is unconnected in block <aluADD_6>.
 WARNING:Xst:2677 - Node <M_timer_q_1> of sequential type is unconnected in block <background_5>.
@@ -641,13 +880,56 @@ WARNING:Xst:2677 - Node <M_timer_q_15> of sequential type is unconnected in bloc
 WARNING:Xst:2677 - Node <M_timer_q_16> of sequential type is unconnected in block <background_5>.
 WARNING:Xst:2677 - Node <M_timer_q_17> of sequential type is unconnected in block <background_5>.
 WARNING:Xst:2973 - All outputs of instance <alu/bool> of block <aluBOOL_7> are unconnected in block <mojo_top_0>. Underlying logic will be removed.
+=======
+<<<<<<< HEAD
+WARNING:Xst:1293 - FF/Latch <M_charY_q_0> has a constant value of 0 in block <enemy_4>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_charY_q_4> has a constant value of 0 in block <enemy_4>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_charY_q_7> has a constant value of 0 in block <enemy_4>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_charY_q_8> has a constant value of 0 in block <enemy_4>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_charY_q_9> has a constant value of 0 in block <enemy_4>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_charY_q_10> has a constant value of 0 in block <enemy_4>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <M_charY_q_1> in Unit <enemy_4> is equivalent to the following 4 FFs/Latches, which will be removed : <M_charY_q_2> <M_charY_q_3> <M_charY_q_5> <M_charY_q_6> 
+=======
+WARNING:Xst:2677 - Node <Mmult_n00273> of sequential type is unconnected in block <aluADD_5>.
+WARNING:Xst:2677 - Node <Mmult_n00293> of sequential type is unconnected in block <aluADD_5>.
+WARNING:Xst:2973 - All outputs of instance <alu/bool> of block <aluBOOL_6> are unconnected in block <mojo_top_0>. Underlying logic will be removed.
+>>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
+>>>>>>> b05042131424c56b29116a4c0f45329ed8e5fc44
 
 Optimizing unit <mojo_top_0> ...
 
 Optimizing unit <enemy_4> ...
 
+<<<<<<< HEAD
 Optimizing unit <background_5> ...
 
+=======
+<<<<<<< HEAD
+Optimizing unit <projectile_5> ...
+
+Optimizing unit <user_3> ...
+WARNING:Xst:1293 - FF/Latch <projChar/M_charY_q_0> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <M_timer_q_0> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <enemyChar/M_timer_q_0> 
+INFO:Xst:2261 - The FF/Latch <M_timer_q_1> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <enemyChar/M_timer_q_1> 
+INFO:Xst:2261 - The FF/Latch <M_timer_q_2> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <enemyChar/M_timer_q_2> 
+INFO:Xst:2261 - The FF/Latch <M_timer_q_3> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <enemyChar/M_timer_q_3> 
+INFO:Xst:2261 - The FF/Latch <M_timer_q_4> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <enemyChar/M_timer_q_4> 
+INFO:Xst:2261 - The FF/Latch <M_timer_q_5> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <enemyChar/M_timer_q_5> 
+INFO:Xst:2261 - The FF/Latch <M_timer_q_6> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <enemyChar/M_timer_q_6> 
+INFO:Xst:2261 - The FF/Latch <M_timer_q_7> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <enemyChar/M_timer_q_7> 
+INFO:Xst:2261 - The FF/Latch <M_timer_q_8> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <enemyChar/M_timer_q_8> 
+INFO:Xst:2261 - The FF/Latch <M_timer_q_9> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <enemyChar/M_timer_q_9> 
+INFO:Xst:2261 - The FF/Latch <M_timer_q_10> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <enemyChar/M_timer_q_10> 
+INFO:Xst:2261 - The FF/Latch <M_timer_q_11> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <enemyChar/M_timer_q_11> 
+INFO:Xst:2261 - The FF/Latch <M_timer_q_12> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <enemyChar/M_timer_q_12> 
+INFO:Xst:2261 - The FF/Latch <M_timer_q_13> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <enemyChar/M_timer_q_13> 
+INFO:Xst:2261 - The FF/Latch <M_timer_q_14> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <enemyChar/M_timer_q_14> 
+INFO:Xst:2261 - The FF/Latch <M_timer_q_15> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <enemyChar/M_timer_q_15> 
+INFO:Xst:2261 - The FF/Latch <M_timer_q_16> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <enemyChar/M_timer_q_16> 
+INFO:Xst:2261 - The FF/Latch <M_timer_q_17> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <enemyChar/M_timer_q_17> 
+INFO:Xst:3203 - The FF/Latch <enemyChar/M_charY_q_1> in Unit <mojo_top_0> is the opposite to the following FF/Latch, which will be removed : <projChar/M_start_q> 
+=======
+>>>>>>> b05042131424c56b29116a4c0f45329ed8e5fc44
 Optimizing unit <user_3> ...
 
 Optimizing unit <aluADD_6> ...
@@ -861,6 +1143,7 @@ INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_x_q_7> in Unit <mojo_top_0> is eq
 INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_x_q_8> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_x_q_8> 
 INFO:Xst:2261 - The FF/Latch <enemyChar/rand/M_x_q_9> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <bg/rand/M_x_q_9> 
 INFO:Xst:3203 - The FF/Latch <M_userY_q_8> in Unit <mojo_top_0> is the opposite to the following FF/Latch, which will be removed : <M_userY_q_9> 
+>>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -877,8 +1160,18 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
+<<<<<<< HEAD
 # Registers                                            : 315
  Flip-Flops                                            : 315
+=======
+<<<<<<< HEAD
+# Registers                                            : 122
+ Flip-Flops                                            : 122
+=======
+# Registers                                            : 100
+ Flip-Flops                                            : 100
+>>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
+>>>>>>> b05042131424c56b29116a4c0f45329ed8e5fc44
 
 =========================================================================
 
@@ -902,7 +1195,15 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
+<<<<<<< HEAD
 clk                                | BUFGP                  | 315   |
+=======
+<<<<<<< HEAD
+clk                                | BUFGP                  | 122   |
+=======
+clk                                | BUFGP                  | 100   |
+>>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
+>>>>>>> b05042131424c56b29116a4c0f45329ed8e5fc44
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -913,9 +1214,22 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
+<<<<<<< HEAD
    Minimum period: 9.123ns (Maximum Frequency: 109.607MHz)
    Minimum input arrival time before clock: 9.911ns
    Maximum output required time after clock: 11.180ns
+=======
+<<<<<<< HEAD
+   Minimum period: 5.011ns (Maximum Frequency: 199.561MHz)
+   Minimum input arrival time before clock: 4.325ns
+   Maximum output required time after clock: 11.382ns
+   Maximum combinational path delay: 5.366ns
+=======
+   Minimum period: 9.221ns (Maximum Frequency: 108.442MHz)
+   Minimum input arrival time before clock: 9.848ns
+   Maximum output required time after clock: 10.209ns
+>>>>>>> b05042131424c56b29116a4c0f45329ed8e5fc44
    Maximum combinational path delay: 5.005ns
+>>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
 
 =========================================================================

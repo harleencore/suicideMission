@@ -1,4 +1,4 @@
-Release 14.7 Map P.20131013 (lin64)
+Release 14.7 Map P.20131013 (nt64)
 Xilinx Map Application Log File for Design 'mojo_top_0'
 
 Design Information
@@ -8,7 +8,15 @@ Target Device  : xc6slx9
 Target Package : tqg144
 Target Speed   : -2
 Mapper Version : spartan6 -- $Revision: 1.55 $
+<<<<<<< HEAD
 Mapped Date    : Tue Dec  5 23:38:00 2017
+=======
+<<<<<<< HEAD
+Mapped Date    : Tue Dec 05 22:53:16 2017
+=======
+Mapped Date    : Tue Dec  5 20:15:36 2017
+>>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
+>>>>>>> b05042131424c56b29116a4c0f45329ed8e5fc44
 
 Mapping design into LUTs...
 WARNING:MapLib:701 - Signal spi_channel[2] connected to top level port
@@ -29,22 +37,76 @@ Updating timing models...
 INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
    (.mrp).
 Running timing-driven placement...
-Total REAL time at the beginning of Placer: 4 secs 
-Total CPU  time at the beginning of Placer: 4 secs 
+Total REAL time at the beginning of Placer: 3 secs 
+Total CPU  time at the beginning of Placer: 3 secs 
 
 Phase 1.1  Initial Placement Analysis
+<<<<<<< HEAD
 Phase 1.1  Initial Placement Analysis (Checksum:c27520c0) REAL time: 5 secs 
+=======
+<<<<<<< HEAD
+Phase 1.1  Initial Placement Analysis (Checksum:195cb3f9) REAL time: 3 secs 
+
+Phase 2.7  Design Feasibility Check
+Phase 2.7  Design Feasibility Check (Checksum:195cb3f9) REAL time: 3 secs 
+
+Phase 3.31  Local Placement Optimization
+Phase 3.31  Local Placement Optimization (Checksum:195cb3f9) REAL time: 3 secs 
+=======
+Phase 1.1  Initial Placement Analysis (Checksum:f3c30dd2) REAL time: 4 secs 
+>>>>>>> b05042131424c56b29116a4c0f45329ed8e5fc44
 
 Phase 2.7  Design Feasibility Check
 Phase 2.7  Design Feasibility Check (Checksum:c27520c0) REAL time: 5 secs 
 
 Phase 3.31  Local Placement Optimization
+<<<<<<< HEAD
 Phase 3.31  Local Placement Optimization (Checksum:c27520c0) REAL time: 5 secs 
+=======
+Phase 3.31  Local Placement Optimization (Checksum:f3c30dd2) REAL time: 4 secs 
+>>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
+>>>>>>> b05042131424c56b29116a4c0f45329ed8e5fc44
 
 Phase 4.2  Initial Placement for Architecture Specific Features
 
 Phase 4.2  Initial Placement for Architecture Specific Features
+<<<<<<< HEAD
 (Checksum:55b97690) REAL time: 7 secs 
+=======
+<<<<<<< HEAD
+(Checksum:2537fc79) REAL time: 4 secs 
+
+Phase 5.36  Local Placement Optimization
+Phase 5.36  Local Placement Optimization (Checksum:2537fc79) REAL time: 4 secs 
+
+Phase 6.30  Global Clock Region Assignment
+Phase 6.30  Global Clock Region Assignment (Checksum:2537fc79) REAL time: 4 secs 
+
+Phase 7.3  Local Placement Optimization
+Phase 7.3  Local Placement Optimization (Checksum:2537fc79) REAL time: 4 secs 
+
+Phase 8.5  Local Placement Optimization
+Phase 8.5  Local Placement Optimization (Checksum:2537fc79) REAL time: 4 secs 
+
+Phase 9.8  Global Placement
+.....................
+..................
+Phase 9.8  Global Placement (Checksum:ee17c3ae) REAL time: 4 secs 
+
+Phase 10.5  Local Placement Optimization
+Phase 10.5  Local Placement Optimization (Checksum:ee17c3ae) REAL time: 4 secs 
+
+Phase 11.18  Placement Optimization
+Phase 11.18  Placement Optimization (Checksum:8f52188e) REAL time: 4 secs 
+
+Phase 12.5  Local Placement Optimization
+Phase 12.5  Local Placement Optimization (Checksum:8f52188e) REAL time: 4 secs 
+
+Phase 13.34  Placement Validation
+Phase 13.34  Placement Validation (Checksum:8e5814d9) REAL time: 4 secs 
+=======
+(Checksum:420b37a2) REAL time: 6 secs 
+>>>>>>> b05042131424c56b29116a4c0f45329ed8e5fc44
 
 Phase 5.36  Local Placement Optimization
 Phase 5.36  Local Placement Optimization (Checksum:55b97690) REAL time: 7 secs 
@@ -73,10 +135,18 @@ Phase 12.5  Local Placement Optimization
 Phase 12.5  Local Placement Optimization (Checksum:907eed2c) REAL time: 8 secs 
 
 Phase 13.34  Placement Validation
+<<<<<<< HEAD
 Phase 13.34  Placement Validation (Checksum:89443566) REAL time: 8 secs 
 
 Total REAL time to Placer completion: 8 secs 
 Total CPU  time to Placer completion: 8 secs 
+=======
+Phase 13.34  Placement Validation (Checksum:9b2bb3c8) REAL time: 6 secs 
+>>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
+
+Total REAL time to Placer completion: 4 secs 
+Total CPU  time to Placer completion: 4 secs 
+>>>>>>> b05042131424c56b29116a4c0f45329ed8e5fc44
 Running post-placement packing...
 Writing output files...
 
@@ -87,6 +157,7 @@ Design Summary:
 Number of errors:      0
 Number of warnings:    6
 Slice Logic Utilization:
+<<<<<<< HEAD
   Number of Slice Registers:                   395 out of  11,440    3%
     Number used as Flip Flops:                 315
     Number used as Latches:                      0
@@ -97,6 +168,31 @@ Slice Logic Utilization:
       Number using O6 output only:             219
       Number using O5 output only:             104
       Number using O5 and O6:                  161
+=======
+<<<<<<< HEAD
+  Number of Slice Registers:                   161 out of  11,440    1%
+    Number used as Flip Flops:                 121
+    Number used as Latches:                      0
+    Number used as Latch-thrus:                  0
+    Number used as AND/OR logics:               40
+  Number of Slice LUTs:                        301 out of   5,720    5%
+    Number used as logic:                      295 out of   5,720    5%
+      Number using O6 output only:             157
+      Number using O5 output only:              68
+      Number using O5 and O6:                   70
+=======
+  Number of Slice Registers:                   132 out of  11,440    1%
+    Number used as Flip Flops:                 100
+    Number used as Latches:                      0
+    Number used as Latch-thrus:                  0
+    Number used as AND/OR logics:               32
+  Number of Slice LUTs:                        238 out of   5,720    4%
+    Number used as logic:                      231 out of   5,720    4%
+      Number using O6 output only:             102
+      Number using O5 output only:              68
+      Number using O5 and O6:                   61
+>>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
+>>>>>>> b05042131424c56b29116a4c0f45329ed8e5fc44
       Number used as ROM:                        0
     Number used as Memory:                       0 out of   1,440    0%
     Number used exclusively as route-thrus:     23
@@ -105,6 +201,7 @@ Slice Logic Utilization:
       Number with other load:                    0
 
 Slice Logic Distribution:
+<<<<<<< HEAD
   Number of occupied Slices:                   179 out of   1,430   12%
   Number of MUXCYs used:                       292 out of   2,860   10%
   Number of LUT Flip Flop pairs used:          538
@@ -114,6 +211,29 @@ Slice Logic Distribution:
     Number of unique control sets:              17
     Number of slice register sites lost
       to control set restrictions:              61 out of  11,440    1%
+=======
+<<<<<<< HEAD
+  Number of occupied Slices:                   103 out of   1,430    7%
+  Number of MUXCYs used:                       180 out of   2,860    6%
+  Number of LUT Flip Flop pairs used:          304
+    Number with an unused Flip Flop:           144 out of     304   47%
+    Number with an unused LUT:                   3 out of     304    1%
+    Number of fully used LUT-FF pairs:         157 out of     304   51%
+    Number of unique control sets:               8
+    Number of slice register sites lost
+      to control set restrictions:              31 out of  11,440    1%
+=======
+  Number of occupied Slices:                    73 out of   1,430    5%
+  Number of MUXCYs used:                       156 out of   2,860    5%
+  Number of LUT Flip Flop pairs used:          243
+    Number with an unused Flip Flop:           120 out of     243   49%
+    Number with an unused LUT:                   5 out of     243    2%
+    Number of fully used LUT-FF pairs:         118 out of     243   48%
+    Number of unique control sets:               9
+    Number of slice register sites lost
+      to control set restrictions:              36 out of  11,440    1%
+>>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
+>>>>>>> b05042131424c56b29116a4c0f45329ed8e5fc44
 
   A LUT Flip Flop pair for this architecture represents one LUT paired with
   one Flip Flop within a slice.  A control set is a unique combination of
@@ -124,6 +244,7 @@ Slice Logic Distribution:
 IO Utilization:
   Number of bonded IOBs:                        26 out of     102   25%
     Number of LOCed IOBs:                       26 out of      26  100%
+    IOB Flip Flops:                              1
 
 Specific Feature Utilization:
   Number of RAMB16BWERs:                         0 out of      32    0%
@@ -134,7 +255,9 @@ Specific Feature Utilization:
     Number used as BUFGs:                        1
     Number used as BUFGMUX:                      0
   Number of DCM/DCM_CLKGENs:                     0 out of       4    0%
-  Number of ILOGIC2/ISERDES2s:                   0 out of     200    0%
+  Number of ILOGIC2/ISERDES2s:                   1 out of     200    1%
+    Number used as ILOGIC2s:                     1
+    Number used as ISERDES2s:                    0
   Number of IODELAY2/IODRP2/IODRP2_MCBs:         0 out of     200    0%
   Number of OLOGIC2/OSERDES2s:                   0 out of     200    0%
   Number of BSCANs:                              0 out of       4    0%
@@ -150,11 +273,27 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of SUSPEND_SYNCs:                       0 out of       1    0%
 
+<<<<<<< HEAD
 Average Fanout of Non-Clock Nets:                3.11
 
 Peak Memory Usage:  814 MB
 Total REAL time to MAP completion:  8 secs 
 Total CPU time to MAP completion (all processors):   8 secs 
+=======
+<<<<<<< HEAD
+Average Fanout of Non-Clock Nets:                3.17
+
+Peak Memory Usage:  351 MB
+Total REAL time to MAP completion:  5 secs 
+Total CPU time to MAP completion (all processors):   5 secs 
+=======
+Average Fanout of Non-Clock Nets:                2.93
+
+Peak Memory Usage:  743 MB
+Total REAL time to MAP completion:  7 secs 
+Total CPU time to MAP completion (all processors):   6 secs 
+>>>>>>> 15905c84366596e4d896036833bdbc7d29eac06b
+>>>>>>> b05042131424c56b29116a4c0f45329ed8e5fc44
 
 Mapping completed.
 See MAP report file "mojo_top_0.mrp" for details.
