@@ -38,6 +38,7 @@ module mojo_top (
     dff pixel[11];
     dff line[11];
     
+    edge_detector edge_detector(#RISE(1), #FALL(0));
     // this is for the user position
     dff userX[11](#INIT(400), .rst(rst));
     dff userY[11](#INIT(480), .rst(rst));
@@ -48,6 +49,7 @@ module mojo_top (
   
   user userChar;
   enemy enemyChar;
+  projectile projChar;
 
   always {
     
@@ -60,6 +62,9 @@ module mojo_top (
     avr_rx = bz;            // not using serial port
 
     
+    // prepare edge detector for a_button
+    edge_detector.in = a_button;
+    
     // Controlling Position enemy
     enemyChar.cursorX = pixel.q;
     enemyChar.cursorY = line.q;
@@ -67,9 +72,21 @@ module mojo_top (
     enemyChar.rst = rst;
     
     
+    //Projectile Parameters
+    projChar.clk = clk;
+    projChar.rst = rst;
+    projChar.cursorX = pixel.q;
+    projChar.cursorY = line.q;
+    projChar.hit = 0;
+    projChar.shot = 0;
+
+    
+    
     // Controlling Position User
     userChar.cursorX = pixel.q;
     userChar.cursorY = line.q;
+    
+    
     
     // Button control
     // Use timer to prevent the values from skyrocketting
@@ -92,15 +109,24 @@ module mojo_top (
         userX.d = userX.q + 1;
       } 
     }
+    
+    projChar.startX = userX.q;
+    projChar.startY = userY.q;
+
+    if(edge_detector.out){
+      projChar.shot = 1;
+    }
+    
+
   
     userChar.charX = userX.q;
     userChar.charY = userY.q;
     
     
     if (pixel.q < 800 && line.q < 600) {
-      red = userChar.r + enemyChar.r ;
-      green = userChar.g + enemyChar.g;
-      blue = userChar.b + enemyChar.b;
+      red = userChar.r + enemyChar.r + projChar.r;
+      green = userChar.g + enemyChar.g + projChar.g;
+      blue = userChar.b + enemyChar.b + projChar.b;
 
 
     } else {

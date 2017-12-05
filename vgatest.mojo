@@ -3,11 +3,13 @@
   <files>
     <src>enemy.luc</src>
     <src top="true">mojo_top.luc</src>
+    <src>projectile.luc</src>
     <src>user.luc</src>
     <ucf>button.ucf</ucf>
     <ucf lib="true">mojo.ucf</ucf>
     <ucf>vga.ucf</ucf>
-    <component>counter.luc</component>
     <component>reset_conditioner.luc</component>
+    <component>counter.luc</component>
+    <component>edge_detector.luc</component>
   </files>
 </project>
