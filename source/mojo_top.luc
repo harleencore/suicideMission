@@ -28,8 +28,6 @@ module mojo_top (
   
   sig rst;                  // reset signal
 
-  // User sprite    
-
   
   .clk(clk){
     // The reset conditioner is used to synchronize the reset signal to the FPGA
@@ -43,22 +41,36 @@ module mojo_top (
     dff userY[11](#INIT(480), .rst(rst));
     
     
-    dff timer[18](.rst(rst));
+    dff timer[23](.rst(rst));
+    dff scheduler[20](.rst(rst));
+    //fsm scheduler(#INIT(U_BUTTON)) = {U_BUTTON, D_BUTTON, L_BUTTON, R_BUTTON};
   }
   
-  user userChar;
-  enemy enemyChar;
+  aluLogic alu;               // alu
+  user userChar;              // user sprite
+  enemy enemyChar;            // enemy sprite
 
   always {
+    alu.a = 0;
+    alu.b = 0;
+    alu.alufn = 0;
     
-    reset_cond.in = ~rst_n; // input raw inverted reset signal
-    rst = reset_cond.out;   // conditioned reset
+    reset_cond.in = ~rst_n;   // input raw inverted reset signal
+    rst = reset_cond.out;     // conditioned reset
     
-    led = 8h00;             // turn LEDs off
-    spi_miso = bz;          // not using SPI
-    spi_channel = bzzzz;   // not using flags
-    avr_rx = bz;            // not using serial port
-
+    led = 8h00;               // turn LEDs off
+    spi_miso = bz;            // not using SPI
+    spi_channel = bzzzz;      // not using flags
+    avr_rx = bz;              // not using serial port
+    
+    
+    // Scheduler
+    // To change the value depending on the number of operations we are doing
+    //if(scheduler.q[5] == 1){
+    //  scheduler.d = 0;
+    //} else {
+    scheduler.d = scheduler.q + 1; 
+    //}
     
     // Controlling Position enemy
     enemyChar.cursorX = pixel.q;
@@ -67,40 +79,69 @@ module mojo_top (
     enemyChar.rst = rst;
     
     
-    // Controlling Position User
+    // User Controls
     userChar.cursorX = pixel.q;
     userChar.cursorY = line.q;
+    timer.d = timer.q + 1;          // Use timer to prevent the values from skyrocketting
+
     
-    // Button control
-    // Use timer to prevent the values from skyrocketting
-    // TODO: control boundaries
-    timer.d = timer.q + 1;
-    if(timer.q == 1){
-      if(u_button == 1){
-        userY.d = userY.q - 1;
-      } 
-      
-      if(d_button == 1){
-        userY.d = userY.q + 1;
-      } 
-      
-      if(l_button == 1){
-        userX.d = userX.q - 1;
-      } 
-      
-      if(r_button == 1){
-        userX.d = userX.q + 1;
-      } 
-    }
-  
     userChar.charX = userX.q;
     userChar.charY = userY.q;
     
+    //if(timer.q[22] == 1){
+      // Scheduler 1
+    if(scheduler.q == 524288){
+      if(u_button == 1 && userY.q >= 340){
+        // userY.d = userY.q - 1;
+        alu.a = c{21b0, userY.q};
+        alu.b = 2;
+        alu.alufn = b000001;
+        userY.d = alu.aluOUT[10:0];
+        scheduler.d = 11;
+      }
+    }
+      
+    // Scheduler 2
+    if(scheduler.q == 524287){
+      if(d_button == 1 && userY.q <= 550){
+        //userY.d = userY.q + 1;
+        alu.a = c{21b0, userY.q};
+        alu.b = 2;
+        alu.alufn = b000000;
+        userY.d = alu.aluOUT[10:0];
+        scheduler.d = 10;
+      } 
+    }
+      
+      // Scheduler 3
+    if(scheduler.q ==  524286){
+      if(l_button == 1 && userX.q >= 40){
+        //userX.d = userX.q - 1;
+        alu.a = c{21b0, userX.q};
+        alu.b = 2;
+        alu.alufn = b0000001;
+        userX.d = alu.aluOUT[10:0];
+        scheduler.d = 9;
+         
+      }
+    } 
+      
+    if(scheduler.q ==  524285){
+      if(r_button == 1 && userX.q <= 770){
+        // userX.d = userX.q + 1;
+        alu.a = c{21b0, userX.q};
+        alu.b = 2;
+        alu.alufn = b000000;
+        userX.d = alu.aluOUT[10:0];
+        scheduler.d = 8;
+      } 
+    }
+  
     
     if (pixel.q < 800 && line.q < 600) {
-      red = userChar.r + enemyChar.r ;
-      green = userChar.g + enemyChar.g;
-      blue = userChar.b + enemyChar.b;
+      red = userChar.r || enemyChar.r ;
+      green = userChar.g || enemyChar.g;
+      blue = userChar.b || enemyChar.b;
 
 
     } else {

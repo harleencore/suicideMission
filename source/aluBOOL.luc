@@ -1,0 +1,37 @@
+module aluBOOL (
+    input a[32],
+    input b[32],
+    input alufn[6],
+    output out[32]
+  ) 
+
+{
+always{
+  case(alufn[3:0]){
+
+/*=======NECC=========*/
+    b1000: out = a & b; //AND
+    b1110: out = a | b; //OR
+    b0110: out = a ^ b; //XOR
+    b1010: out = a; //A
+/*=======NECC=========*/
+
+/*=======EXTRA=========*/
+    b0100: out = (~a) & b; //NOT A AND B
+    b1100: out = b; //B
+    b0010: out = a & (~b); //A AND NOT B
+    b0001: out = ~(a | b); //A NOR B
+    b1001: out = ~(a ^ b); //A XNOR B
+    b0101: out = ~a; //NOT A
+    b1101: out = (~a) | b; // NOT A OR B
+    b0011: out = ~b; //NOT B
+    b1011: out = a | (~b); //A OR NOT B
+    b0111: out = ~(a & b); //NAND
+    b1111: out = b11111111111111111111111111111111; //JUST 1
+/*=======EXTRA=========*/
+
+    default: out = 0;
+    
+  }
+ }
+}

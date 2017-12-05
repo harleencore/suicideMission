@@ -1,0 +1,43 @@
+module aluADD (
+    input a[32],
+    input b[32],
+    input alufn[6],
+    
+    output out[32],
+    output z,
+    output v,
+    output n
+  ) {
+
+  sig temp[33];
+  sig over[33];
+  
+  always {
+    case (alufn[1:0]) {
+      b00:
+          temp = a + b;
+          over = a - b;
+          
+      b01:
+          temp = a - b;
+          over = a - b;
+          
+      b10:
+          temp = a * b;
+          over =  a - b;
+      
+      b11:         
+          temp = a - (a/b * b);
+          over = a - b;
+      
+      default:
+          temp = a + b;
+          over = a - b;
+    }
+    
+    out = temp[31:0];
+    v = (a[31] & ~b[31] & (~over[31])) | ((~a[31])&(b[31])&over[31]);
+    n = over[31];
+    z = ~|over;
+  }
+}

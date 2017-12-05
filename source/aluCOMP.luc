@@ -1,0 +1,24 @@
+module aluCOMP (
+    input alufn[6],
+    input z[1],
+    input n[1],
+    input v[1],
+    output out[32]
+)
+{
+ always {
+  
+  out[31:1] = 31b0;
+
+  case(alufn[2:1]){
+    b01: 
+        out[0] = z; //A = B
+    b10: 
+        out[0] = n ^ v; //A < B
+    b11: 
+        out[0] = z + (n^v); // A <=B
+    default: 
+        out[0] = b0;
+  }
+ }
+}

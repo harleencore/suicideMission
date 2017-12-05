@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module user_2 (
+module user_3 (
     input [10:0] charX,
     input [10:0] charY,
     input [10:0] cursorX,

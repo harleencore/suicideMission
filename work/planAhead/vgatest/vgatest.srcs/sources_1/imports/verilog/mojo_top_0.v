@@ -44,7 +44,25 @@ module mojo_top_0 (
   reg [10:0] M_line_d, M_line_q = 1'h0;
   reg [10:0] M_userX_d, M_userX_q = 9'h190;
   reg [10:0] M_userY_d, M_userY_q = 9'h1e0;
-  reg [17:0] M_timer_d, M_timer_q = 1'h0;
+  reg [22:0] M_timer_d, M_timer_q = 1'h0;
+  reg [19:0] M_scheduler_d, M_scheduler_q = 1'h0;
+  
+  wire [32-1:0] M_alu_aluOUT;
+  wire [1-1:0] M_alu_z;
+  wire [1-1:0] M_alu_v;
+  wire [1-1:0] M_alu_n;
+  reg [6-1:0] M_alu_alufn;
+  reg [32-1:0] M_alu_a;
+  reg [32-1:0] M_alu_b;
+  aluLogic_2 alu (
+    .alufn(M_alu_alufn),
+    .a(M_alu_a),
+    .b(M_alu_b),
+    .aluOUT(M_alu_aluOUT),
+    .z(M_alu_z),
+    .v(M_alu_v),
+    .n(M_alu_n)
+  );
   
   wire [1-1:0] M_userChar_r;
   wire [1-1:0] M_userChar_g;
@@ -53,7 +71,7 @@ module mojo_top_0 (
   reg [11-1:0] M_userChar_charY;
   reg [11-1:0] M_userChar_cursorX;
   reg [11-1:0] M_userChar_cursorY;
-  user_2 userChar (
+  user_3 userChar (
     .charX(M_userChar_charX),
     .charY(M_userChar_charY),
     .cursorX(M_userChar_cursorX),
@@ -72,7 +90,7 @@ module mojo_top_0 (
   reg [1-1:0] M_enemyChar_rst;
   reg [11-1:0] M_enemyChar_cursorX;
   reg [11-1:0] M_enemyChar_cursorY;
-  enemy_3 enemyChar (
+  enemy_4 enemyChar (
     .clk(M_enemyChar_clk),
     .rst(M_enemyChar_rst),
     .cursorX(M_enemyChar_cursorX),
@@ -85,18 +103,23 @@ module mojo_top_0 (
   );
   
   always @* begin
+    M_scheduler_d = M_scheduler_q;
     M_timer_d = M_timer_q;
     M_line_d = M_line_q;
     M_userY_d = M_userY_q;
     M_userX_d = M_userX_q;
     M_pixel_d = M_pixel_q;
     
+    M_alu_a = 1'h0;
+    M_alu_b = 1'h0;
+    M_alu_alufn = 1'h0;
     M_reset_cond_in = ~rst_n;
     rst = M_reset_cond_out;
     led = 8'h00;
     spi_miso = 1'bz;
     spi_channel = 4'bzzzz;
     avr_rx = 1'bz;
+    M_scheduler_d = M_scheduler_q + 1'h1;
     M_enemyChar_cursorX = M_pixel_q;
     M_enemyChar_cursorY = M_line_q;
     M_enemyChar_clk = clk;
@@ -104,26 +127,48 @@ module mojo_top_0 (
     M_userChar_cursorX = M_pixel_q;
     M_userChar_cursorY = M_line_q;
     M_timer_d = M_timer_q + 1'h1;
-    if (M_timer_q == 1'h1) begin
-      if (u_button == 1'h1) begin
-        M_userY_d = M_userY_q - 1'h1;
-      end
-      if (d_button == 1'h1) begin
-        M_userY_d = M_userY_q + 1'h1;
-      end
-      if (l_button == 1'h1) begin
-        M_userX_d = M_userX_q - 1'h1;
-      end
-      if (r_button == 1'h1) begin
-        M_userX_d = M_userX_q + 1'h1;
-      end
-    end
     M_userChar_charX = M_userX_q;
     M_userChar_charY = M_userY_q;
+    if (M_scheduler_q == 20'h80000) begin
+      if (u_button == 1'h1 && M_userY_q >= 9'h154) begin
+        M_alu_a = {21'h000000, M_userY_q};
+        M_alu_b = 2'h2;
+        M_alu_alufn = 6'h01;
+        M_userY_d = M_alu_aluOUT[0+10-:11];
+        M_scheduler_d = 4'hb;
+      end
+    end
+    if (M_scheduler_q == 19'h7ffff) begin
+      if (d_button == 1'h1 && M_userY_q <= 10'h226) begin
+        M_alu_a = {21'h000000, M_userY_q};
+        M_alu_b = 2'h2;
+        M_alu_alufn = 6'h00;
+        M_userY_d = M_alu_aluOUT[0+10-:11];
+        M_scheduler_d = 4'ha;
+      end
+    end
+    if (M_scheduler_q == 19'h7fffe) begin
+      if (l_button == 1'h1 && M_userX_q >= 6'h28) begin
+        M_alu_a = {21'h000000, M_userX_q};
+        M_alu_b = 2'h2;
+        M_alu_alufn = 7'h01;
+        M_userX_d = M_alu_aluOUT[0+10-:11];
+        M_scheduler_d = 4'h9;
+      end
+    end
+    if (M_scheduler_q == 19'h7fffd) begin
+      if (r_button == 1'h1 && M_userX_q <= 10'h302) begin
+        M_alu_a = {21'h000000, M_userX_q};
+        M_alu_b = 2'h2;
+        M_alu_alufn = 6'h00;
+        M_userX_d = M_alu_aluOUT[0+10-:11];
+        M_scheduler_d = 4'h8;
+      end
+    end
     if (M_pixel_q < 10'h320 && M_line_q < 10'h258) begin
-      red = M_userChar_r + M_enemyChar_r;
-      green = M_userChar_g + M_enemyChar_g;
-      blue = M_userChar_b + M_enemyChar_b;
+      red = M_userChar_r || M_enemyChar_r;
+      green = M_userChar_g || M_enemyChar_g;
+      blue = M_userChar_b || M_enemyChar_b;
     end else begin
       red = 1'h0;
       blue = 1'h0;
@@ -157,15 +202,21 @@ module mojo_top_0 (
     M_line_q <= M_line_d;
     
     if (rst == 1'b1) begin
+      M_timer_q <= 1'h0;
+    end else begin
+      M_timer_q <= M_timer_d;
+    end
+    
+    if (rst == 1'b1) begin
       M_userY_q <= 9'h1e0;
     end else begin
       M_userY_q <= M_userY_d;
     end
     
     if (rst == 1'b1) begin
-      M_timer_q <= 1'h0;
+      M_scheduler_q <= 1'h0;
     end else begin
-      M_timer_q <= M_timer_d;
+      M_scheduler_q <= M_scheduler_d;
     end
     
     if (rst == 1'b1) begin

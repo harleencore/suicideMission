@@ -1,0 +1,24 @@
+module aluSHIFT (
+input a[32],
+input b[32],
+input alufn[6],
+//outputs
+output out[32])
+   {
+
+  always {
+    case(alufn[1:0]){
+  		b00:
+  		  out = a << b[2:0]; 			//shift left
+        
+  		b01:
+  		  out = a >> b[2:0]; 			//shift right
+  		
+      b11:
+  		  out = $signed(a) >>> b[2:0]; //arithmetic shift right
+        
+  		default:
+  		  out = a;
+  }
+}
+}

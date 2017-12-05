@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module enemy_3 (
+module enemy_4 (
     input clk,
     input rst,
     input [10:0] cursorX,
