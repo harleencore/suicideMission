@@ -3,6 +3,7 @@
   <files>
     <src>enemy.luc</src>
     <src>aluSHIFT.luc</src>
+    <src>enemy_hit.luc</src>
     <src top="true">mojo_top.luc</src>
     <src>aluLogic.luc</src>
     <src>aluBOOL.luc</src>
