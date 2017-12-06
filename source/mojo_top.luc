@@ -23,7 +23,7 @@ module mojo_top (
     input d_button,
     input r_button,
     input l_button
-     
+         
   ) {
   
   sig rst;                  // reset signal
@@ -39,11 +39,11 @@ module mojo_top (
     // User Variables
     dff userX[11](#INIT(400), .rst(rst));
     dff userY[11](#INIT(480), .rst(rst));
-    dff hp[4](#INIT(3), .rst(rst));
+    dff hpCounter[4](#INIT(3), .rst(rst));
     
     
-    dff timer[18](.rst(rst));
-    fsm aluState(#INIT(U_BUTTON))= {U_BUTTON, D_BUTTON, L_BUTTON, R_BUTTON, A_BUTTON};
+    dff timer[17](.rst(rst));
+    fsm aluState(#INIT(STOP))= {U_BUTTON, D_BUTTON, L_BUTTON, R_BUTTON, A_BUTTON, STOP};
     
   }
   
@@ -97,7 +97,10 @@ module mojo_top (
     //healthbar parameters
     health.clk = clk;
     health.rst = rst;
-    health.lives = hp.q; 
+    health.cursorX = pixel.q;
+    health.cursorY = line.q;
+    health.hp = hpCounter.q; 
+    
 
     
     // Controlling Position User
@@ -116,6 +119,12 @@ module mojo_top (
     // ALU States
     // Button controls
     if(u_button == 1){
+      if(hpCounter.q > 0){  
+        hpCounter.d = hpCounter.q - 1;
+      } else {
+        hpCounter.d = 3;
+      }
+     
       aluState.d = aluState.U_BUTTON;
     }
     
@@ -145,6 +154,7 @@ module mojo_top (
             alu.alufn = b000001;
             userY.d = alu.aluOUT[10:0];
           }
+          aluState.d = aluState.STOP;
           
         aluState.D_BUTTON:
           if(userY.q <= 550){
@@ -153,6 +163,7 @@ module mojo_top (
             alu.alufn = b000000;
             userY.d = alu.aluOUT[10:0];
           }  
+          aluState.d = aluState.STOP;
           
         aluState.L_BUTTON:
           if(userX.q >= 40){
@@ -161,6 +172,7 @@ module mojo_top (
             alu.alufn = b0000001;
             userX.d = alu.aluOUT[10:0];          
           } 
+          aluState.d = aluState.STOP;
           
         aluState.R_BUTTON:
           if(userX.q <= 770){
@@ -169,6 +181,7 @@ module mojo_top (
             alu.alufn = b000000;
             userX.d = alu.aluOUT[10:0];
           }
+          aluState.d = aluState.STOP;
           
         aluState.A_BUTTON:
           alu.a = a_button;
@@ -180,15 +193,14 @@ module mojo_top (
             projChar.startY = userY.q;
             projChar.shot = 1;
           }
+          aluState.d = aluState.STOP;
           
+        aluState.STOP:
           userX.d = userX.q;
           userY.d = userY.q;
+          
       }
     }
-    
-
-    
-    
 
   
     // Displaying Graphics

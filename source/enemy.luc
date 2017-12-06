@@ -177,12 +177,12 @@ module enemy (
           } 
             
         state.RANDOM_L:
-          if(charX.q >= 45){
+          if(charX.q >= 80){
             charX.d = charX.q + rand.num[0] + difficultyLevel.q;
           }
             
         state.RANDOM_R:
-          if(charX.q <= 780){
+          if(charX.q <= 720){
             charX.d = charX.q - rand.num[0] - difficultyLevel.q;
           }  
       }

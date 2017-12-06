@@ -2,10 +2,10 @@ module healthbar (
     input clk,
     input rst,
     
-    input cursorX,
-    input cursorY,
+    input cursorX[11],
+    input cursorY[11],
     
-    input lives[4],
+    input hp[4],
     
     output r,
     output g,
@@ -16,76 +16,55 @@ module healthbar (
 
   .clk(clk){
     .rst(rst){
-      dff charX[11](#INIT(500));
-      dff charY[11](#INIT(700));
-  
-      fsm state(.clk(clk), #INIT(THREE)) = {THREE, TWO, ONE, ZERO};
     }   
   }
   
+  healthbox box1;
+  healthbox box2;
+  healthbox box3;
   
-  always {
-    // Draw enemy
+  always {    
     r = 0;
     g = 0;
     b = 0;
-
-    case (lives) {
-      0: state.d = state.ZERO;
-      1: state.d = state.ONE;
-      2: state.d = state.TWO;
-      3: state.d = state.THREE;
-      default: state.d = state.ONE;
+    
+    box1.cursorX = cursorX;
+    box1.cursorY = cursorY;
+    box1.charX = 780;
+    box1.charY = 550;
+    
+    box2.cursorX = cursorX;
+    box2.cursorY = cursorY;
+    box2.charX = 780;
+    box2.charY = 500;
+    
+    box3.cursorX = cursorX;
+    box3.cursorY = cursorY;
+    box3.charX = 780;
+    box3.charY = 450;
+    
+    if(hp == 0){
+      r = 0;
+      g = 0;
+      b = 0;
     }
     
-    if((state.q == state.ONE) || (state.q == state.TWO) || (state.q == state.THREE)){
-
-      if((cursorX - charX.q + 26) > 0 && (cursorX - charX.q + 26) < 15 ){
-        if((cursorY - charY.q + 26) > 0 && (cursorY - charY.q + 26) < 15){
-          r = 1;
-          g = 0;
-          b = 0;
-        }
-      }else{
-        r = 0;
-        b = 0;
-        g = 0;
-      }
-
-      if((state.q == state.TWO) || (state.q == state.THREE)){
-        if((cursorX - charX.q + 26) > 0 && (cursorX - charX.q + 26) < 15 ){
-          if((cursorY - (charY.q + 20) + 26) > 0 && (cursorY - (charY.q + 20) + 26) < 15){
-            r = 1;
-            g = 0;
-            b = 0;
-          }
-        }else{
-          r = 0;
-          b = 0;
-          g = 0;
-        }
-      }
-
-      if((state.q == state.THREE)){
-        if((cursorX - charX.q + 26) > 0 && (cursorX - charX.q + 26) < 15 ){
-          if((cursorY - (charY.q + 40) + 26) > 0 && (cursorY - (charY.q + 40) + 26) < 15){
-            r = 1;
-            g = 0;
-            b = 0;
-          }
-        }else{
-          r = 0;
-          b = 0;
-          g = 0;
-        }
-      }
-      
-      if((state.q == state.ZERO)){
-        r = 0;
-        b = 0;
-        g = 0;
-      }
-
+    else if (hp == 1){
+      r = box1.r;
+      g = box1.g;
+      b = box1.b;
+    }
+    
+    else if (hp == 2){
+      r = box1.r || box2.r;
+      g = box1.g || box2.g;
+      b = box1.b || box2.b;         
+    }
+    
+    else if(hp >= 3){
+      r = box1.r || box2.r || box3.r;
+      g = box1.g || box2.g || box3.g;
+      b = box1.b || box2.b || box3.b;   
     }
   }
 }
