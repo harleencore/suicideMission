@@ -52,7 +52,8 @@ module mojo_top (
   user userChar;              // user sprite
   background bg;            // enemy sprite
 
-
+  healthbar health;         // health bar on the side
+   
   always {
     alu.a = 0;
     alu.b = 0;
@@ -90,6 +91,11 @@ module mojo_top (
     projChar.startY = userY.q;
     projChar.hit = 0;
     projChar.shot = 0;
+    
+    //healthbar parameters
+    healthb.clk = clk;
+    health.rst = rst;
+    // health.lives = ??; 
 
     
     // Controlling Position User
@@ -188,9 +194,9 @@ module mojo_top (
   
     
     if (pixel.q < 800 && line.q < 600) {
-      red = bg.r || userChar.r || enemyChar.r || projChar.r;
-      green = bg.g || userChar.g || enemyChar.g || projChar.g;
-      blue = bg.b || userChar.b || enemyChar.b || projChar.b;
+      red = bg.r || userChar.r || enemyChar.r || projChar.r || health.r;
+      green = bg.g || userChar.g || enemyChar.g || projChar.g || health.g;
+      blue = bg.b || userChar.b || enemyChar.b || projChar.b || health.b;
 
 
     } else {
