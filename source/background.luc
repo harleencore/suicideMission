@@ -1,0 +1,116 @@
+module background (
+    input clk,
+    input rst,
+    
+    input cursorX[11],
+    input cursorY[11],
+
+
+    output r,
+    output g,
+    output b
+
+  ) {
+
+  .clk(clk){
+    .rst(rst){
+      dff charX[11](#INIT(400));
+      dff charY[11](#INIT(110));
+  
+      fsm state(.clk(clk), #INIT(RANDOM_R)) = {RANDOM_R, RANDOM_L, RANDOM_U, RANDOM_D};
+      
+      dff timer[18];
+      
+      dff difficultyTimer[32];
+    }
+    
+    dff difficultyLevel[20];
+  }
+  
+  pn_gen rand;
+  
+  always {
+    // initialize rand
+    timer.d = timer.q + 1;
+    rand.seed= 1337;
+    rand.next = timer.q[0];
+    rand.clk = clk;
+    rand.rst = rst;
+    
+    // difficulty increaser, make enemy move faster over time
+    difficultyTimer.d = difficultyTimer.q + 1;
+    
+    if(difficultyTimer.q[31] == 1){
+      difficultyLevel.d = difficultyLevel.q + 1;
+      difficultyTimer.d = 0;
+    }
+    
+    
+    r = 0;
+    g = 0;
+    b = 0;
+    
+    if((cursorX - charX.q + 26) > 0 && (cursorX - charX.q + 26) < 80 ){
+      if((cursorY - charY.q + 26) > 0 && (cursorY - charY.q + 26) < 100){
+        if(difficultyLevel.q >= 0 && difficultyLevel.q < 2){
+          r = 0;
+          g = 1;
+          b = 1;
+        } else if (difficultyLevel.q >= 2 && difficultyLevel.q < 4){
+          r = 0;
+          g = 0;
+          b = 1;
+        } else if (difficultyLevel.q >= 4 && difficultyLevel.q < 6){
+          r = 1;
+          g = 1;
+          b = 0;
+        } else if (difficultyLevel.q >= 6 && difficultyLevel.q < 7) {
+          r = 1;
+          g = 0;
+          b = 0;
+        } else {
+          r = rand.num[0];
+          g = rand.num[1];
+          b = rand.num[2];
+        }
+      }
+    } else {
+      r = 0;
+      g = 0;
+      b = 0;  
+    }
+      
+    // Randomly transition between states    
+    if(rand.num[1] == 1){
+      state.d = state.RANDOM_U;
+    }
+    
+    if(rand.num[2] == 1){
+      state.d = state.RANDOM_D;
+    }
+      
+    if(rand.num[3] == 1){
+      state.d = state.RANDOM_L;
+    }
+      
+    if(rand.num[4] == 1){
+      state.d = state.RANDOM_R;
+    }
+  
+    
+    case (state.q){      
+      state.RANDOM_U:
+        charY.d = charY.q - rand.num[1:0] - difficultyLevel.q;
+         
+      state.RANDOM_D:
+        charY.d = charY.q + rand.num[1:0] + difficultyLevel.q;
+          
+      state.RANDOM_L:
+        charX.d = charX.q + rand.num[1:0] + difficultyLevel.q;
+          
+      state.RANDOM_R:
+        charX.d = charX.q - rand.num[1:0] - difficultyLevel.q;
+                  
+    }
+  }
+}

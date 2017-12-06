@@ -6,14 +6,18 @@
     <src>enemy_hit.luc</src>
     <src top="true">mojo_top.luc</src>
     <src>aluLogic.luc</src>
+    <src>projectile.luc</src>
     <src>aluBOOL.luc</src>
     <src>user.luc</src>
     <src>aluADD.luc</src>
     <src>aluCOMP.luc</src>
+    <src>background.luc</src>
     <ucf>button.ucf</ucf>
     <ucf lib="true">mojo.ucf</ucf>
     <ucf>vga.ucf</ucf>
     <component>counter.luc</component>
+    <component>pn_gen.luc</component>
     <component>reset_conditioner.luc</component>
+    <component>edge_detector.luc</component>
   </files>
 </project>

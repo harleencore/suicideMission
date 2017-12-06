@@ -4,28 +4,52 @@ module enemy (
     
     input cursorX[11],
     input cursorY[11],
-    
+        
     output enemyPosX[11],
     output enemyPosY[11],
-
+    
     output r,
     output g,
     output b
 
   ) {
 
-  .clk(clk), .rst(rst){
-    dff charX[11](#INIT(400));
-    dff charY[11](#INIT(110));
 
-    fsm state(.clk(clk), #INIT(RIGHT)) = {RIGHT, LEFT};
+  .clk(clk){
+    .rst(rst){
+      dff charX[11](#INIT(400));
+      dff charY[11](#INIT(110));
+  
+      fsm state(.clk(clk), #INIT(RANDOM_R)) = {RANDOM_R, RANDOM_L, RANDOM_U, RANDOM_D};
+      
+      dff timer[18];
+      dff statecounter[20];
+      
+      dff difficultyTimer[32];
+    }
+
     
-    dff timer[16];
-    
+    dff difficultyLevel[20];
   }
   
+  pn_gen rand;
   
   always {
+    // initialize rand
+    rand.seed = 1337;
+    rand.next = timer.q[0];
+    rand.clk = clk;
+    rand.rst = rst;
+    
+    // difficulty increaser, make enemy move faster over time
+    difficultyTimer.d = difficultyTimer.q + 1;
+    
+    if(difficultyTimer.q[31] == 1){
+      difficultyLevel.d = difficultyLevel.q + 1;
+      difficultyTimer.d = 0;
+    }
+    
+    
     // Draw enemy
     r = 0;
     g = 0;
@@ -33,10 +57,27 @@ module enemy (
     
     if((cursorX - charX.q + 26) > 0 && (cursorX - charX.q + 26) < 80 ){
       if((cursorY - charY.q + 26) > 0 && (cursorY - charY.q + 26) < 100){
-        r = 1;
-        g = 0;
-        b = 0;
-
+        if(difficultyLevel.q >= 0 && difficultyLevel.q < 2){
+          r = 0;
+          g = 1;
+          b = 1;
+        } else if (difficultyLevel.q >= 2 && difficultyLevel.q < 4){
+          r = 0;
+          g = 0;
+          b = 1;
+        } else if (difficultyLevel.q >= 4 && difficultyLevel.q < 5){
+          r = 1;
+          g = 1;
+          b = 0;
+        } else if (difficultyLevel.q >=5 && difficultyLevel.q < 6) {
+          r = 1;
+          g = 0;
+          b = 0;
+        } else {
+          r = rand.num[0];
+          g = rand.num[1];
+          b = rand.num[2];
+        }
       }
     } else {
       r = 0;
@@ -45,39 +86,61 @@ module enemy (
     }
       
 
-    
 
 
-    // // Maybe use some fsm to determine movement?
-    // if(timer.q == 1){
-    //   // Need to find some way to randomly generate numbers 
-    //   charX.d = charX.q + 1; // + ?
-    //   charY.d = charY.q + 1; // + ?
-    // }
+    timer.d = timer.q + 1;
+
     
-    // if(timer.q == 2){
-    //   charX.d = charX.q + 0;
-    //   charY.d = charY.q + 1;
+    if(timer.q == 1){
+      statecounter.d = statecounter.q + 1;
+      // Randomly transition between states
+      if(statecounter.q  >= 0 && statecounter.q < 10){
+        state.d = state.RANDOM_U;
+      }
+       
+      else if(statecounter.q  >= 10 && statecounter.q < 20){
+        state.d = state.RANDOM_D;
+      }
+        
+            
+      else if(statecounter.q  >= 20 && statecounter.q < 30){
+        state.d = state.RANDOM_L;
+      }
+        
+            
+      else if(statecounter.q  >= 30 && statecounter.q < 40){
+        state.d = state.RANDOM_R;
+      } 
       
-    // }
+      else{
+        statecounter.d = 0;
+      }
+      
     
-    // timer.d = timer.q + 1;
-
-    if((state.q == state.RIGHT) && (charX.d == 720)){
-      state.d = state.LEFT;
+      
+      case (state.q){      
+        state.RANDOM_U:
+          if(charY.q >= 40){
+            charY.d = charY.q - rand.num[0] - difficultyLevel.q;
+          } 
+          
+        state.RANDOM_D:
+          if(charY.q <= 530){
+            charY.d = charY.q + rand.num[0] + difficultyLevel.q;
+          } 
+            
+        state.RANDOM_L:
+          if(charX.q >= 45){
+            charX.d = charX.q + rand.num[0] + difficultyLevel.q;
+          }
+            
+        state.RANDOM_R:
+          if(charX.q <= 780){
+            charX.d = charX.q - rand.num[0] - difficultyLevel.q;
+          } 
+      }
     }
-
-    if((state.q == state.LEFT) && (charX.d == 80)){
-      state.d = state.RIGHT;
-    }
-
-    if(state.q == state.LEFT){
-      charX.d = charX.q - 1; 
-    }
-    if(state.q == state.RIGHT){
-      charX.d = charX.q + 1; 
-    }
-    
+   
     enemyPosX = charX.q;
     enemyPosY = charY.q;
   }
