@@ -1,0 +1,21 @@
+module userCollision (
+    input clk,  // clock
+    input rst,  // reset
+
+    // User Variable
+    input userPosX,
+    input userPosY,
+    
+    // Enemy Variable
+    input enemyPosX,
+    input enemyPosY,
+    
+    output out
+    
+    // TODO add comparison for projectiles
+  ) {
+
+  always {
+    out = 0;
+  }
+}

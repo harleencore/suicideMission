@@ -36,15 +36,13 @@ module mojo_top (
     dff pixel[11];
     dff line[11];
     
-    edge_detector edge_detector(#RISE(1), #FALL(0));
     // this is for the user position
     dff userX[11](#INIT(400), .rst(rst));
     dff userY[11](#INIT(480), .rst(rst));
     
     
-    dff timer[23](.rst(rst));
-    dff scheduler[20](.rst(rst));
-    //fsm scheduler(#INIT(U_BUTTON)) = {U_BUTTON, D_BUTTON, L_BUTTON, R_BUTTON};
+    dff timer[18](.rst(rst));
+    fsm aluState(#INIT(U_BUTTON))= {U_BUTTON, D_BUTTON, L_BUTTON, R_BUTTON, A_BUTTON};
   }
   
 
@@ -68,24 +66,12 @@ module mojo_top (
     spi_channel = bzzzz;      // not using flags
     avr_rx = bz;              // not using serial port
     
-    
-    // Scheduler
-    // To change the value depending on the number of operations we are doing
-    //if(scheduler.q[5] == 1){
-    //  scheduler.d = 0;
-    //} else {
-    scheduler.d = scheduler.q + 1; 
-    //}
-    
 
     // BG element
     bg.clk = clk;
     bg.rst = rst;
     bg.cursorX = 300;
     bg.cursorY = 300;
-
-    // prepare edge detector for a_button
-    edge_detector.in = a_button;
 
     
     // Controlling Position enemy
@@ -94,17 +80,17 @@ module mojo_top (
     enemyChar.clk = clk;
     enemyChar.rst = rst;
     
-    
 
     //Projectile Parameters
     projChar.clk = clk;
     projChar.rst = rst;
     projChar.cursorX = pixel.q;
     projChar.cursorY = line.q;
+    projChar.startX = userX.q;
+    projChar.startY = userY.q;
     projChar.hit = 0;
     projChar.shot = 0;
 
-    
     
     // Controlling Position User
     // User Controls
@@ -112,8 +98,8 @@ module mojo_top (
     userChar.cursorX = pixel.q;
     userChar.cursorY = line.q;
     timer.d = timer.q + 1;          // Use timer to prevent the values from skyrocketting
-
     
+        
     
     
     // Button control
@@ -121,60 +107,82 @@ module mojo_top (
     userChar.charX = userX.q;
     userChar.charY = userY.q;
     
-    // Scheduler M.1
-    if(scheduler.q == 524288){
-      if(u_button == 1 && userY.q >= 45){
-        // userY.d = userY.q - 1;
-        alu.a = c{21b0, userY.q};
-        alu.b = 2;
-        alu.alufn = b000001;
-        userY.d = alu.aluOUT[10:0];
-        scheduler.d = 11;
-      }
-    }
-      
-    // Scheduler M.2
-    if(scheduler.q == 524287){
-      if(d_button == 1 && userY.q <= 550){
-        //userY.d = userY.q + 1;
-        alu.a = c{21b0, userY.q};
-        alu.b = 2;
-        alu.alufn = b000000;
-        userY.d = alu.aluOUT[10:0];
-        scheduler.d = 10;
-      } 
-    }
-      
-      // Scheduler 3
-    if(scheduler.q ==  524286){
-      if(l_button == 1 && userX.q >= 40){
-        //userX.d = userX.q - 1;
-        alu.a = c{21b0, userX.q};
-        alu.b = 2;
-        alu.alufn = b0000001;
-        userX.d = alu.aluOUT[10:0];
-        scheduler.d = 9;
-         
-      }
-    } 
-      
-    if(scheduler.q ==  524285){
-      if(r_button == 1 && userX.q <= 770){
-        // userX.d = userX.q + 1;
-        alu.a = c{21b0, userX.q};
-        alu.b = 2;
-        alu.alufn = b000000;
-        userX.d = alu.aluOUT[10:0];
-        scheduler.d = 8;
-      } 
+    // ALU State
+    
+    // Button controls
+    if(u_button == 1){
+      aluState.d = aluState.U_BUTTON;
     }
     
-    projChar.startX = userX.q;
-    projChar.startY = userY.q;
-
-    if(edge_detector.out){
-      projChar.shot = 1;
+    if(d_button == 1){
+      aluState.d = aluState.D_BUTTON;
     }
+    
+    if(l_button == 1){
+      aluState.d = aluState.L_BUTTON;
+    }
+    
+    if(r_button == 1){
+      aluState.d = aluState.R_BUTTON;
+    }
+    
+    if(a_button == 1){
+      aluState.d = aluState.A_BUTTON;
+    }
+      
+    
+    if(timer.q == 1){
+      case(aluState.q){
+        aluState.U_BUTTON:
+          if(userY.q >= 45){
+            alu.a = c{21b0, userY.q};
+            alu.b = 2;
+            alu.alufn = b000001;
+            userY.d = alu.aluOUT[10:0];
+          }
+          
+        aluState.D_BUTTON:
+          if(userY.q <= 550){
+            alu.a = c{21b0, userY.q};
+            alu.b = 2;
+            alu.alufn = b000000;
+            userY.d = alu.aluOUT[10:0];
+          }  
+          
+        aluState.L_BUTTON:
+          if(userX.q >= 40){
+            alu.a = c{21b0, userX.q};
+            alu.b = 2;
+            alu.alufn = b0000001;
+            userX.d = alu.aluOUT[10:0];          
+          } 
+          
+        aluState.R_BUTTON:
+          if(userX.q <= 770){
+            alu.a = c{21b0, userX.q};
+            alu.b = 2;
+            alu.alufn = b000000;
+            userX.d = alu.aluOUT[10:0];
+          }
+          
+        aluState.A_BUTTON:
+          alu.a = a_button;
+          alu.b = 1;
+          alu.alufn = b110011;
+          
+          if(alu.aluOUT == 1){
+            projChar.startX = userX.q;
+            projChar.startY = userY.q;
+            projChar.shot = 1;
+          }
+          
+          userX.d = userX.q;
+          userY.d = userY.q;
+      }
+    }
+    
+
+    
     
 
   

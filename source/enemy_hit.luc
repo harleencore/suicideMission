@@ -27,8 +27,12 @@ module enemy_hit (
         alu.b = pellet_x1;
         alu.alufn = 6b110011;
         zVal.d = alu.z;
-        if (alu.z == 1){ state.d = state.CHECK_Y1;}
-        else{state.d = state.CHECK_X2;}
+        if (alu.aluOUT == 1){ 
+          state.d = state.CHECK_Y1;
+        }
+        else{
+          state.d = state.CHECK_X2;
+        }
         
       state.CHECK_X2:
         alu.a = enemy_x;

@@ -40,7 +40,9 @@ module background (
     difficultyTimer.d = difficultyTimer.q + 1;
     
     if(difficultyTimer.q[31] == 1){
-      difficultyLevel.d = difficultyLevel.q + 1;
+      if(difficultyLevel.q <= 8){
+        difficultyLevel.d = difficultyLevel.q + 1;
+      }
       difficultyTimer.d = 0;
     }
     

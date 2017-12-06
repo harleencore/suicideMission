@@ -10,8 +10,8 @@ module projectile (
     input hit,
     input shot,
     
-    output enemyPosX[11],
-    output enemyPosY[11],
+    output projPosX[11],
+    output projPosY[11],
 
     output r,
     output g,
@@ -27,9 +27,9 @@ module projectile (
     dff charY[11];
     dff start(#INIT(0));
     
-    fsm state(.clk(clk), #INIT(NOTEXIST)) = {EXIST, NOTEXIST};
+    fsm state(#INIT(NOTEXIST)) = {EXIST, NOTEXIST};
     
-    dff timer[18];
+    dff timer[16];
     
   }
   
@@ -45,18 +45,16 @@ module projectile (
       start.d = start.q + 1;
     }      
     else{
-      charX.d = startX;
-      charY.d = startY;
       if((state.q == state.NOTEXIST) && (shot == 1)){
         state.d = state.EXIST;
       }
       
       if(state.q == state.EXIST){
-        if((cursorX - charX.q + 26) > 0 && (cursorX - charX.q + 26) < 15){
-          if((cursorY - charY.q + 26) > 0 && (cursorY - charY.q + 26 ) < 30){
+        if((cursorX - charX.q + 26) > 11 && (cursorX - charX.q + 26) < 19){
+          if((cursorY - charY.q + 26) > 0 && (cursorY - charY.q + 26 ) < 20){
             r = 0;
-            g = 0;
-            b = 1;
+            g = 1;
+            b = 0;
           }
         } 
          else {
@@ -75,7 +73,7 @@ module projectile (
       timer.d = timer.q + 1;
       
       if(timer.q == 1){
-          if((state.q == state.EXIST) && (charY.q < 15)){ 
+          if((state.q == state.EXIST) && (charY.q < 40)){ 
             state.d = state.NOTEXIST;      
             charX.d = startX;
             charY.d = startY;
@@ -88,12 +86,14 @@ module projectile (
           }
   
           if(state.q == state.EXIST){
-            charY.d = charY.q - 2; 
+            charY.d = charY.q - 3; 
           }
       }
       
     }
-    enemyPosX = charX.q;
-    enemyPosY = charY.q;
+    
+    
+    projPosX = charX.q;
+    projPosY = charY.q;
   }
 }
