@@ -1,0 +1,46 @@
+module user_hit (
+    input clk,  // clock
+    //input rst,  // reset
+    input user_x, //user x coordintate
+    input user_y, //user y coordinate    
+    input enemy_x, //enemy x coordintate
+    input enemy_y, //enemy y coordinate
+    
+    output user_hit_status
+  ) {
+  
+  aluLogic alu;
+  fsm state(.clk(clk), #INIT(CHECK_X)) = {CHECK_X, CHECK_Y};
+  dff zVal[1](.clk(clk)) ;
+  
+  always {
+    alu.a = 0;
+    alu.b = 0;
+    alu.alufn = 0;
+    
+    case(state.q){
+      state.CHECK_X: 
+        alu.a = user_x;
+        alu.b = enemy_x;
+        alu.alufn = 6b110011;
+        zVal.d = alu.aluOUT;
+        if (alu.aluOUT == 1){ state.d = state.CHECK_Y;}
+        else{state.d = state.CHECK_X;}
+        
+        
+    
+      state.CHECK_Y:
+        alu.a = user_y;
+        alu.b = enemy_y;
+        alu.alufn = 6b110011;
+        if (alu.aluOUT == zVal.q){user_hit_status = 1;}
+        else{user_hit_status = 0;}
+        state.d = state.CHECK_X;
+        
+      
+      
+      }      
+  }
+    
+    
+}

@@ -1,15 +1,15 @@
-module enemy_hit (
+module user_hit (
     input clk,  // clock
     //input rst,  // reset
-    input enemy_x, //enemy x coordintate
-    input enemy_y, //enemy y coordinate
+    input user_x, //user x coordintate
+    input user_y, //user y coordinate
     input pellet_x1,
     input pellet_y1,
     input pellet_x2,
     input pellet_y2,
     input pellet_x3,
     input pellet_y3,
-    output enemy_hit_status
+    output user_hit_status
   ) {
   
   aluLogic alu;
@@ -23,7 +23,7 @@ module enemy_hit (
     
     case(state.q){
       state.CHECK_X1: 
-        alu.a = enemy_x;
+        alu.a = user_x;
         alu.b = pellet_x1;
         alu.alufn = 6b110011;
         zVal.d = alu.aluOUT;
@@ -31,7 +31,7 @@ module enemy_hit (
         else{state.d = state.CHECK_X2;}
         
       state.CHECK_X2:
-        alu.a = enemy_x;
+        alu.a = user_x;
         alu.b = pellet_x2;
         alu.alufn = 6b110011;
         zVal.d = alu.aluOUT;
@@ -39,37 +39,37 @@ module enemy_hit (
         else{state.d = state.CHECK_X3;}
         
       state.CHECK_X3:
-        alu.a = enemy_x;
+        alu.a = user_x;
         alu.b = pellet_x3;
         alu.alufn = 6b110011;
         zVal.d = alu.aluOUT;
         if (alu.aluOUT == 1){ state.d = state.CHECK_Y3;}
-        else{enemy_hit_status = 0;}
+        else{user_hit_status = 0;}
         state.d = state.CHECK_X1;  
         
       state.CHECK_Y1:
-        alu.a = enemy_y;
+        alu.a = user_y;
         alu.b = pellet_y1;
         alu.alufn = 6b110011;
-        if (alu.aluOUT == zVal.q){enemy_hit_status = 1;}
-        else{enemy_hit_status = 0;}
+        if (alu.aluOUT == zVal.q){user_hit_status = 1;}
+        else{user_hit_status = 0;}
         state.d = state.CHECK_X1;
         
       state.CHECK_Y2:
-        alu.a = enemy_y;
+        alu.a = user_y;
         alu.b = pellet_y2;
         alu.alufn = 6b110011;
-        if (alu.aluOUT == zVal.q){enemy_hit_status = 1;}
-        else{enemy_hit_status = 0;}
+        if (alu.aluOUT == zVal.q){user_hit_status = 1;}
+        else{user_hit_status = 0;}
         state.d = state.CHECK_X1;
       
     
       state.CHECK_Y3:
-        alu.a = enemy_y;
+        alu.a = user_y;
         alu.b = pellet_y3;
         alu.alufn = 6b110011;
-        if (alu.aluOUT == zVal.q){enemy_hit_status = 1;}
-        else{enemy_hit_status = 0;}
+        if (alu.aluOUT == zVal.q){user_hit_status = 1;}
+        else{user_hit_status = 0;}
         state.d = state.CHECK_X1;
       
       }      
