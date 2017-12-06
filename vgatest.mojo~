@@ -9,6 +9,7 @@
     <src>aluBOOL.luc</src>
     <src>user.luc</src>
     <src>aluADD.luc</src>
+    <src>enemy_hit.luc</src>
     <src>aluCOMP.luc</src>
     <src>background.luc</src>
     <ucf>button.ucf</ucf>
