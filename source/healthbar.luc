@@ -2,7 +2,10 @@ module healthbar (
     input clk,
     input rst,
     
-    input lives,
+    input cursorX,
+    input cursorY,
+    
+    input lives[4],
     
     output r,
     output g,
@@ -16,26 +19,19 @@ module healthbar (
       dff charX[11](#INIT(500));
       dff charY[11](#INIT(700));
   
-      fsm state(.clk(clk), #INIT(THREE)) = {THREE,TWO,ONE};
-      
-      dff timer[18];
-      dff statecounter[20];
-      
-      dff difficultyTimer[32];
-      dff difficultyLevel[20];
+      fsm state(.clk(clk), #INIT(THREE)) = {THREE, TWO, ONE, ZERO};
     }   
-
   }
   
   
   always {
-    
     // Draw enemy
     r = 0;
     g = 0;
     b = 0;
 
     case (lives) {
+      0: state.d = state.ZERO;
       1: state.d = state.ONE;
       2: state.d = state.TWO;
       3: state.d = state.THREE;
@@ -82,6 +78,12 @@ module healthbar (
           b = 0;
           g = 0;
         }
+      }
+      
+      if((state.q == state.ZERO)){
+        r = 0;
+        b = 0;
+        g = 0;
       }
 
     }

@@ -10,6 +10,7 @@
     <src>aluCOMP.luc</src>
     <src>aluSHIFT.luc</src>
     <src>enemy_hit.luc</src>
+    <src>healthbar.luc</src>
     <src>aluBOOL.luc</src>
     <src>user.luc</src>
     <src>background.luc</src>
