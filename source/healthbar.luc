@@ -1,0 +1,89 @@
+module healthbar (
+    input clk,
+    input rst,
+    
+    input lives,
+    
+    output r,
+    output g,
+    output b
+
+  ) {
+
+
+  .clk(clk){
+    .rst(rst){
+      dff charX[11](#INIT(500));
+      dff charY[11](#INIT(700));
+  
+      fsm state(.clk(clk), #INIT(THREE)) = {THREE,TWO,ONE};
+      
+      dff timer[18];
+      dff statecounter[20];
+      
+      dff difficultyTimer[32];
+      dff difficultyLevel[20];
+    }   
+
+  }
+  
+  
+  always {
+    
+    // Draw enemy
+    r = 0;
+    g = 0;
+    b = 0;
+
+    case (lives) {
+      1: state.d = state.ONE;
+      2: state.d = state.TWO;
+      3: state.d = state.THREE;
+      default: state.d = state.ONE;
+    }
+    
+    if((state.q == state.ONE) || (state.q == state.TWO) || (state.q == state.THREE)){
+
+      if((cursorX - charX.q + 26) > 0 && (cursorX - charX.q + 26) < 15 ){
+        if((cursorY - charY.q + 26) > 0 && (cursorY - charY.q + 26) < 15){
+          r = 1;
+          g = 0;
+          b = 0;
+        }
+      }else{
+        r = 0;
+        b = 0;
+        g = 0;
+      }
+
+      if((state.q == state.TWO) || (state.q == state.THREE)){
+        if((cursorX - charX.q + 26) > 0 && (cursorX - charX.q + 26) < 15 ){
+          if((cursorY - (charY.q + 20) + 26) > 0 && (cursorY - (charY.q + 20) + 26) < 15){
+            r = 1;
+            g = 0;
+            b = 0;
+          }
+        }else{
+          r = 0;
+          b = 0;
+          g = 0;
+        }
+      }
+
+      if((state.q == state.THREE)){
+        if((cursorX - charX.q + 26) > 0 && (cursorX - charX.q + 26) < 15 ){
+          if((cursorY - (charY.q + 40) + 26) > 0 && (cursorY - (charY.q + 40) + 26) < 15){
+            r = 1;
+            g = 0;
+            b = 0;
+          }
+        }else{
+          r = 0;
+          b = 0;
+          g = 0;
+        }
+      }
+
+    }
+  }
+}
