@@ -123,7 +123,7 @@ module mojo_top (
     
     // Scheduler M.1
     if(scheduler.q == 524288){
-      if(u_button == 1 && userY.q >= 340){
+      if(u_button == 1 && userY.q >= 45){
         // userY.d = userY.q - 1;
         alu.a = c{21b0, userY.q};
         alu.b = 2;

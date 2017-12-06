@@ -22,9 +22,8 @@ module background (
       dff timer[18];
       
       dff difficultyTimer[32];
+      dff difficultyLevel[20];
     }
-    
-    dff difficultyLevel[20];
   }
   
   pn_gen rand;

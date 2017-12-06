@@ -20,16 +20,15 @@ module enemy (
       dff charX[11](#INIT(400));
       dff charY[11](#INIT(110));
   
-      fsm state(.clk(clk), #INIT(RANDOM_R)) = {RANDOM_R, RANDOM_L, RANDOM_U, RANDOM_D};
+      fsm state(.clk(clk), #INIT(RANDOM_R)) = {RANDOM_R, RANDOM_L, RANDOM_U, RANDOM_D, HARD_R, HARD_L};
       
       dff timer[18];
       dff statecounter[20];
       
       dff difficultyTimer[32];
-    }
+      dff difficultyLevel[20];
+    }   
 
-    
-    dff difficultyLevel[20];
   }
   
   pn_gen rand;
@@ -65,11 +64,11 @@ module enemy (
           r = 0;
           g = 0;
           b = 1;
-        } else if (difficultyLevel.q >= 4 && difficultyLevel.q < 5){
+        } else if (difficultyLevel.q >= 4 && difficultyLevel.q < 6){
           r = 1;
           g = 1;
           b = 0;
-        } else if (difficultyLevel.q >=5 && difficultyLevel.q < 6) {
+        } else if (difficultyLevel.q >= 6 && difficultyLevel.q < 7) {
           r = 1;
           g = 0;
           b = 0;
@@ -90,32 +89,80 @@ module enemy (
 
     timer.d = timer.q + 1;
 
+    // Enemy Motion
+    // TODO to refine the motion
     
     if(timer.q == 1){
       statecounter.d = statecounter.q + 1;
       // Randomly transition between states
-      if(statecounter.q  >= 0 && statecounter.q < 10){
+      if(statecounter.q  >= 0 && statecounter.q < 100){
         state.d = state.RANDOM_U;
       }
        
-      else if(statecounter.q  >= 10 && statecounter.q < 20){
+      else if(statecounter.q  >= 100 && statecounter.q < 200){
         state.d = state.RANDOM_D;
       }
-        
             
-      else if(statecounter.q  >= 20 && statecounter.q < 30){
+      else if(statecounter.q  >= 200 && statecounter.q < 300){
         state.d = state.RANDOM_L;
       }
-        
             
-      else if(statecounter.q  >= 30 && statecounter.q < 40){
+      else if(statecounter.q  >= 300 && statecounter.q < 400){
         state.d = state.RANDOM_R;
       } 
       
-      else{
-        statecounter.d = 0;
+      else if (statecounter.q >= 500 && statecounter.q < 600) {
+        state.d = state.RANDOM_R;
+      } 
+      
+      else if (statecounter.q >= 600 && statecounter.q < 700){
+        state.d = state.RANDOM_U;
+      }
+        
+      else if (statecounter.q >= 700 && statecounter.q < 800){
+        state.d = state.RANDOM_D;
+      }
+        
+      else if (statecounter.q >= 800 && statecounter.q < 900){
+        state.d = state.RANDOM_U;
+      }
+
+      else if (statecounter.q >= 900 && statecounter.q < 1000){
+        state.d = state.RANDOM_L;
+      }
+       
+      else if (statecounter.q >= 1000 && statecounter.q < 1100){
+        state.d = state.RANDOM_R;
+      }
+        
+      else if (statecounter.q >= 1100 && statecounter.q < 1200){
+        state.d = state.RANDOM_L;
+      } 
+        
+      else if (statecounter.q >= 1200 && statecounter.q < 1300){
+        state.d = state.RANDOM_D;
+      } 
+        
+      else if (statecounter.q >= 1300 && statecounter.q < 1320){
+        state.d = state.RANDOM_U;
+      } 
+        
+      else if (statecounter.q >= 1320 && statecounter.q < 1340){
+        state.d = state.RANDOM_D;
+      }
+        
+      else if (statecounter.q >= 1340 && statecounter.q < 1360){
+        state.d = state.RANDOM_L;
       }
       
+      else if (statecounter.q >= 1360 && statecounter.q < 1380){
+        state.d = state.RANDOM_R;
+      }    
+       
+      else {
+        statecounter.d = 0;
+      }
+
     
       
       case (state.q){      
@@ -137,7 +184,7 @@ module enemy (
         state.RANDOM_R:
           if(charX.q <= 780){
             charX.d = charX.q - rand.num[0] - difficultyLevel.q;
-          } 
+          }  
       }
     }
    
