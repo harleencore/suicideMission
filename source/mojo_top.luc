@@ -48,8 +48,10 @@ module mojo_top (
     dff timeKeeper[24](#INIT(0), .rst(rst));
     dff scoreShow[20](#INIT(0), .rst(rst));
 
-    dff timer[18](.rst(rst));
+    dff timer[17](.rst(rst));
     fsm aluState(#INIT(STOP))= {U_BUTTON, D_BUTTON, L_BUTTON, R_BUTTON, A_BUTTON, STOP};
+    
+    
    
   }
   
@@ -63,11 +65,12 @@ module mojo_top (
   digits dig1;   
   digits dig2;
   digits dig3;
-  
+
   enemyProjU enemyU;
   enemyProjD enemyD;
-  enemyProjL enemyL;
-  enemyProjR enemyR;   
+
+  enemy_hit enemyhits;   
+  user_hit userhits;
   
   always {    
     reset_cond.in = ~rst_n;   // input raw inverted reset signal
@@ -114,26 +117,17 @@ module mojo_top (
     enemyD.hit = 0;
     enemyD.shot = enemyShoot.q;
     
-    enemyL.clk = clk;
-    enemyL.rst = rst;
-    enemyL.cursorX = pixel.q;
-    enemyL.cursorY = line.q;
-    enemyL.startX = enemyChar.enemyPosX;
-    enemyL.startY = enemyChar.enemyPosY;
-    enemyL.hit = 0;
-    enemyL.shot = enemyShoot.q;
-    
-    enemyR.clk = clk;
-    enemyR.rst = rst;
-    enemyR.cursorX = pixel.q;
-    enemyR.cursorY = line.q;
-    enemyR.startX = enemyChar.enemyPosX;
-    enemyR.startY = enemyChar.enemyPosY;
-    enemyR.hit = 0;
-    enemyR.shot = enemyShoot.q;
-    
     if(timer.q == 1){
       enemyShoot.d = enemyShoot.q + 1;
+      if(enemyhits.enemy_hit_status == 1){
+        scoreShow.d = scoreShow.q + 50; // Increase score
+        projChar.hit = 1;
+      }
+      if(userhits.user_hit_status == 1){
+        hpCounter.d = hpCounter.q - 1;
+        enemyU.hit = 1;
+        enemyD.hit = 1;
+      }
     }
 
     //Projectile Parameters
@@ -180,6 +174,23 @@ module mojo_top (
     dig3.charX = 710;
     dig3.dig = (scoreShow.q/100) - (((scoreShow.q/100)/10) * 10);
     
+    //Collision Detection Variable Enemy
+    enemyhits.enemy_x = enemyChar.enemyPosX;
+    enemyhits.enemy_y = enemyChar.enemyPosY;
+    enemyhits.pellet_x = projChar.projPosX;
+    enemyhits.pellet_y = projChar.projPosY;
+    
+    // Collision Detection Variable user
+    userhits.user_x = userX.q;
+    userhits.user_y = userY.q;
+    userhits.pellet1_x = enemyU.projPosX;
+    userhits.pellet1_y = enemyU.projPosY;
+    userhits.pellet2_x = enemyD.projPosX;
+    userhits.pellet2_y = enemyD.projPosY;
+    userhits.enemy_x = enemyChar.enemyPosX;
+    userhits.enemy_y = enemyChar.enemyPosY; 
+    
+     
     // Controlling Position User
     // User Controls
 
@@ -194,14 +205,22 @@ module mojo_top (
     userChar.charY = userY.q;
 
 
-    //Score Display
+    // Score Display
     timeKeeper.d = timeKeeper.q + 1;
     if(timeKeeper.q == 1){
-      if(scoreShow.q != 999){
+      if(scoreShow.q <= 999){
         scoreShow.d = scoreShow.q + 1;
-      }
+      }//  else end game
+     
     }
+    
+    // User hit Enemy
+    if(timer.q == 2){
 
+    }
+    
+    // if hp == 0 end game
+    
     
     // ALU States
     // Button controls
@@ -286,10 +305,9 @@ module mojo_top (
   
     // Displaying Graphics
     if (pixel.q < 800 && line.q < 600) {
-      red = bg.r || userChar.r || enemyChar.r || projChar.r || health.r || dig1.r || dig2.r || dig3.r || enemyU.r || enemyD.r || enemyL.r || enemyR.r;
-      green = bg.g || userChar.g || enemyChar.g || projChar.g || health.g || dig1.g || dig2.g || dig3.g || enemyU.g || enemyD.g || enemyL.g || enemyR.g;
-      blue = bg.b || userChar.b || enemyChar.b || projChar.b || health.b || dig1.b || dig2.b || dig3.b || enemyU.b || enemyD.b || enemyL.b || enemyR.b;
-
+      red = bg.r || userChar.r || enemyChar.r || projChar.r || health.r || dig1.r || dig2.r || dig3.r || enemyU.r || enemyD.r;
+      green = bg.g || userChar.g || enemyChar.g || projChar.g || health.g || dig1.g || dig2.g || dig3.g || enemyU.g || enemyD.g;
+      blue = bg.b || userChar.b || enemyChar.b || projChar.b || health.b || dig1.b || dig2.b || dig3.b || enemyU.b || enemyD.b;
 
     } else {
       // outside visible frame

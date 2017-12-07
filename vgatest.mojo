@@ -7,11 +7,9 @@
     <src>enemyProjD.luc</src>
     <src>aluLogic.luc</src>
     <src>projectile.luc</src>
-    <src>enemyProjR.luc</src>
     <src>aluADD.luc</src>
     <src>aluCOMP.luc</src>
     <src>horizont.luc</src>
-    <src>enemyProjL.luc</src>
     <src>aluSHIFT.luc</src>
     <src>enemy_hit.luc</src>
     <src>healthbox.luc</src>

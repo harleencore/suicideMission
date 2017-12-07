@@ -1,10 +1,34 @@
+//checks if the user has been hit
 module user_hit (
-    input clk,  // clock
-    input rst,  // reset
-    output out
+    //input rst,  // reset
+    input user_x[11], //enemy x coordintate
+    input user_y[11], //enemy y coordinate
+    input pellet1_x[11],
+    input pellet1_y[11],
+    input pellet2_x[11],
+    input pellet2_y[11],   
+    input enemy_x[11],
+    input enemy_y[11],        
+    output user_hit_status
   ) {
-
+  
+  const HEIGHT = 50;
+  const WIDTH = 40;
+  
+  
   always {
-    out = 0;
+    
+    user_hit_status = 0;
+    
+    if (pellet1_y > user_y && pellet1_y < (user_y + HEIGHT) 
+      && pellet2_y > user_y && pellet2_y < (user_y + HEIGHT) 
+      && enemy_y > user_y && enemy_y < (user_y + HEIGHT)){
+
+      if(pellet1_x > user_x && pellet1_x < (user_x + WIDTH)
+          && pellet2_x > user_x && pellet2_x < (user_x + HEIGHT) 
+          && enemy_x > user_x && enemy_x < (user_x + HEIGHT)){
+        user_hit_status = 1;
+      }
+    }
   }
 }
