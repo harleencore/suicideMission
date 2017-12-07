@@ -40,6 +40,10 @@ module mojo_top (
     dff userX[11](#INIT(400), .rst(rst));
     dff userY[11](#INIT(480), .rst(rst));
     dff hpCounter[4](#INIT(3), .rst(rst));
+
+    dff timeKeeper[23](#INIT(0), .rst(rst));
+    dff scoreShow[10](#INIT(0), .rst(rst));
+
     
     
     dff timer[17](.rst(rst));
@@ -51,7 +55,7 @@ module mojo_top (
 
   enemy enemyChar;
   projectile projChar;
-  aluLogic alu;               // alu
+  aluLogic alu;               // alu             
   user userChar;              // user sprite
   background bg;              // enemy sprite
   healthbar health;           // health bar on the side
@@ -102,14 +106,14 @@ module mojo_top (
     health.cursorY = line.q;
     health.hp = hpCounter.q; 
     
-    // digits  
+    // digits  (a - (a/b * b))
     dig1.clk = clk;
     dig1.rst = rst;
     dig1.cursorX = pixel.q;
     dig1.cursorY = line.q;
     dig1.charY = 40;
     dig1.charX = 770;
-    dig1.dig = 8;
+    dig1.dig = (scoreShow/1000) - (((scoreShow/1000)/10) * 10);
     
     
     dig2.clk = clk;
@@ -118,7 +122,7 @@ module mojo_top (
     dig2.cursorY = line.q;
     dig2.charY = 40;
     dig2.charX = 740;
-    dig2.dig = 8;
+    dig2.dig = (scoreShow/100) - (((scoreShow/100)/10) * 10);
     
     
     dig3.clk = clk;
@@ -127,7 +131,7 @@ module mojo_top (
     dig3.cursorY = line.q;
     dig3.charY = 40;
     dig3.charX = 710;
-    dig3.dig = 8;
+    dig3.dig = (scoreShow/10) - (((scoreShow/10)/10) * 10);
     
     // Controlling Position User
     // User Controls
@@ -141,6 +145,14 @@ module mojo_top (
     // Use timer to prevent the values from skyrocketting
     userChar.charX = userX.q;
     userChar.charY = userY.q;
+
+
+    //Score Display
+    timeKeeper = timeKeeper + 1;
+    if(timeKeeper == 1){
+      scoreShow = scoreShow + 1;
+    }
+
     
     // ALU States
     // Button controls
