@@ -47,6 +47,8 @@ module projectile (
     else{
       if((state.q == state.NOTEXIST) && (shot == 1)){
         state.d = state.EXIST;
+        charX.d = startX;
+        charY.d = startY;
       }
       
       if(state.q == state.EXIST){
