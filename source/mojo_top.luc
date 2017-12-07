@@ -39,16 +39,17 @@ module mojo_top (
     // User Variables
     dff userX[11](#INIT(400), .rst(rst));
     dff userY[11](#INIT(480), .rst(rst));
-    dff hpCounter[4](#INIT(3), .rst(rst));
+    dff hpCounter[3](#INIT(3), .rst(rst));
     
     // Enemy Variables
     dff enemyShoot[1];
 
     // Score Show
     dff timeKeeper[24](#INIT(0), .rst(rst));
-    dff scoreShow[20](#INIT(0), .rst(rst));
+    dff scoreShow[11](#INIT(0), .rst(rst));
 
     dff timer[17](.rst(rst));
+    dff timer2[21](.rst(rst));
     fsm aluState(#INIT(STOP))= {U_BUTTON, D_BUTTON, L_BUTTON, R_BUTTON, A_BUTTON, STOP};
     
     
@@ -117,19 +118,6 @@ module mojo_top (
     enemyD.hit = 0;
     enemyD.shot = enemyShoot.q;
     
-    if(timer.q == 1){
-      enemyShoot.d = enemyShoot.q + 1;
-      if(enemyhits.enemy_hit_status == 1){
-        scoreShow.d = scoreShow.q + 50; // Increase score
-        projChar.hit = 1;
-      }
-      if(userhits.user_hit_status == 1){
-        hpCounter.d = hpCounter.q - 1;
-        enemyU.hit = 1;
-        enemyD.hit = 1;
-      }
-    }
-
     //Projectile Parameters
     projChar.clk = clk;
     projChar.rst = rst;
@@ -208,18 +196,25 @@ module mojo_top (
     // Score Display
     timeKeeper.d = timeKeeper.q + 1;
     if(timeKeeper.q == 1){
-      if(scoreShow.q <= 999){
+      if(scoreShow.q < 999){
         scoreShow.d = scoreShow.q + 1;
-      }//  else end game
-     
+      }
+      //  else end game
     }
     
-    // User hit Enemy
-    if(timer.q == 2){
-
+    timer2.d = timer2.q + 1;
+    if(timer2.q == 1){
+      if(enemyhits.enemy_hit_status == 1){
+        if(scoreShow.q < 968){
+          scoreShow.d = scoreShow.q + 30; // Increase score
+        }
+      }
+      if(userhits.user_hit_status == 1){
+        if(hpCounter.q > 0){
+          hpCounter.d = hpCounter.q - 1;
+        }
+      }
     }
-    
-    // if hp == 0 end game
     
     
     // ALU States
@@ -246,6 +241,9 @@ module mojo_top (
       
     
     if(timer.q == 1){
+
+      enemyShoot.d = enemyShoot.q + 1; // enemy shoot
+
       case(aluState.q){
         aluState.U_BUTTON:
           if(userY.q >= 45){

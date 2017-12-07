@@ -25,8 +25,8 @@ module enemy (
       dff timer[18];
       dff statecounter[20];
       
-      dff difficultyTimer[32];
-      dff difficultyLevel[20];
+      dff difficultyTimer[31];
+      dff difficultyLevel[5];
     }   
 
   }
@@ -43,8 +43,10 @@ module enemy (
     // difficulty increaser, make enemy move faster over time
     difficultyTimer.d = difficultyTimer.q + 1;
     
-    if(difficultyTimer.q[31] == 1){
-      difficultyLevel.d = difficultyLevel.q + 1;
+    if(difficultyTimer.q[30] == 1){
+      if(difficultyLevel.q < 20){
+        difficultyLevel.d = difficultyLevel.q + 1;
+      }
       difficultyTimer.d = 0;
     }
     
@@ -95,19 +97,19 @@ module enemy (
     if(timer.q == 1){
       statecounter.d = statecounter.q + 1;
       // Randomly transition between states
-      if(statecounter.q  >= 0 && statecounter.q < 150){
+      if(statecounter.q  >= 0 && statecounter.q < 200){
         state.d = state.MOVE_U;
       }
         
-      else if(statecounter.q  >= 150 && statecounter.q < 300){
+      else if(statecounter.q  >= 200 && statecounter.q < 400){
         state.d = state.MOVE_R;
       }
        
-      else if(statecounter.q  >= 300 && statecounter.q < 450){
+      else if(statecounter.q  >= 400 && statecounter.q < 600){
         state.d = state.MOVE_D;
       }
             
-      else if(statecounter.q  >= 450 && statecounter.q < 600){
+      else if(statecounter.q  >= 600 && statecounter.q < 800){
         state.d = state.MOVE_L;
       }
             

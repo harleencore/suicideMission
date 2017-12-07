@@ -75,7 +75,7 @@ module enemyProjD (
       timer.d = timer.q + 1;
       
       if(timer.q == 1){
-          if((state.q == state.EXIST) && (charX.q > 580)){ 
+          if((state.q == state.EXIST) && (charY.q > 580)){ 
             state.d = state.NOTEXIST;      
             charX.d = startX;
             charY.d = startY;

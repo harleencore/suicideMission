@@ -2,7 +2,7 @@ module digits (
     input clk,
     input rst,
 
-    input dig[6],
+    input dig[4],
     
     input cursorX[11],
     input cursorY[11],

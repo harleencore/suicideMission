@@ -5,7 +5,7 @@ module healthbar (
     input cursorX[11],
     input cursorY[11],
     
-    input hp[4],
+    input hp[3],
     
     output r,
     output g,

@@ -12,21 +12,21 @@ module user_hit (
     output user_hit_status
   ) {
   
-  const HEIGHT = 50;
-  const WIDTH = 40;
+  const HEIGHT = 70;
+  const WIDTH = 60;
   
   
   always {
     
     user_hit_status = 0;
     
-    if (pellet1_y > user_y && pellet1_y < (user_y + HEIGHT) 
-      && pellet2_y > user_y && pellet2_y < (user_y + HEIGHT) 
-      && enemy_y > user_y && enemy_y < (user_y + HEIGHT)){
+    if ((pellet1_y > user_y && pellet1_y < (user_y + HEIGHT)) 
+      || (pellet2_y > user_y && pellet2_y < (user_y + HEIGHT)) 
+      || (enemy_y > user_y && enemy_y < (user_y + HEIGHT))){
 
-      if(pellet1_x > user_x && pellet1_x < (user_x + WIDTH)
-          && pellet2_x > user_x && pellet2_x < (user_x + HEIGHT) 
-          && enemy_x > user_x && enemy_x < (user_x + HEIGHT)){
+      if((pellet1_x > user_x && pellet1_x < (user_x + WIDTH))
+          || (pellet2_x > user_x && pellet2_x < (user_x + HEIGHT)) 
+          || (enemy_x > user_x && enemy_x < (user_x + HEIGHT))){
         user_hit_status = 1;
       }
     }
