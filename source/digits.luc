@@ -126,7 +126,13 @@ module digits (
       9: 
         r = vert1.r || horizont1.r || vert2.r || horizont2.r || vert4.r;        
         b = vert1.b || horizont1.b || vert2.b || horizont2.b || vert4.b;
-        g = vert1.g || horizont1.g || vert2.g || horizont2.g || vert4.g;        
+        g = vert1.g || horizont1.g || vert2.g || horizont2.g || vert4.g;
+        
+      // g
+      15:
+        r = vert1.r || horizont1.r || vert2.r || horizont2.r || vert4.r || horizont3.r;        
+        b = vert1.b || horizont1.b || vert2.b || horizont2.b || vert4.b || horizont3.b;
+        g = vert1.g || horizont1.g || vert2.g || horizont2.g || vert4.g || horizont3.g;        
         
       default:
         r = 0; 

@@ -66,6 +66,9 @@ module mojo_top (
   digits dig1;   
   digits dig2;
   digits dig3;
+  
+  digits g1;
+  digits g2;
 
   enemyProjU enemyU;
   enemyProjD enemyD;
@@ -163,6 +166,23 @@ module mojo_top (
     dig3.charY = 40;
     dig3.charX = 710;
     dig3.dig = 13; //blank default
+    
+    // display gg
+    g1.clk = clk;
+    g1.rst = rst;
+    g1.cursorX = pixel.q;
+    g1.cursorY = line.q;
+    g1.charY = 300;
+    g1.charX = 380;
+    g1.dig = 15;
+    
+    g2.clk = clk;
+    g2.rst = rst;
+    g2.cursorX = pixel.q;
+    g2.cursorY = line.q;
+    g2.charY = 300;
+    g2.charX = 410;
+    g2.dig = 15;
         
     //Collision Detection Variable Enemy
     enemyhits.enemy_x = enemyChar.enemyPosX;
@@ -211,6 +231,24 @@ module mojo_top (
         bg.play = 0;
         hpCounter.d = 0;
         scoreShow.d = 0;
+        
+        // display gg
+        g1.clk = clk;
+        g1.rst = rst;
+        g1.cursorX = pixel.q;
+        g1.cursorY = line.q;
+        g1.charY = 300;
+        g1.charX = 380;
+        g1.dig = 15;
+        
+        g2.clk = clk;
+        g2.rst = rst;
+        g2.cursorX = pixel.q;
+        g2.cursorY = line.q;
+        g2.charY = 300;
+        g2.charX = 410;
+        g2.dig = 15;
+        
         if(a_button == 1){
           gameState.d = gameState.PLAY;
           hpCounter.d = 3;
@@ -218,6 +256,8 @@ module mojo_top (
           userChar.charY = 480;
           enemyChar.play = 1;
           bg.play = 1;
+          g1.dig = 13;
+          g2.dig = 13;
         }
         
 
@@ -305,6 +345,10 @@ module mojo_top (
         dig3.charX = 710;
         dig3.dig = (scoreShow.q/100) - (((scoreShow.q/100)/10) * 10);
         
+        // don't display gg
+        g1.dig = 13;
+        g2.dig = 13;
+        
         //Collision Detection Variable Enemy
         enemyhits.enemy_x = enemyChar.enemyPosX;
         enemyhits.enemy_y = enemyChar.enemyPosY;
@@ -343,6 +387,8 @@ module mojo_top (
             gameState.d = gameState.START;
             enemyChar.play = 0;
             bg.play = 0;
+            g1.dig = 15;
+            g2.dig = 15;            
           }
         }
         
@@ -359,6 +405,8 @@ module mojo_top (
               gameState.d = gameState.START;
               enemyChar.play = 0;
               bg.play = 0;
+              g1.dig = 15;
+              g2.dig = 15;
             }
           }
         }
@@ -450,9 +498,9 @@ module mojo_top (
   
     // Displaying Graphics
     if (pixel.q < 800 && line.q < 600) {
-      red = bg.r || userChar.r || enemyChar.r || projChar.r || health.r || dig1.r || dig2.r || dig3.r || enemyU.r || enemyD.r;
-      green = bg.g || userChar.g || enemyChar.g || projChar.g || health.g || dig1.g || dig2.g || dig3.g || enemyU.g || enemyD.g;
-      blue = bg.b || userChar.b || enemyChar.b || projChar.b || health.b || dig1.b || dig2.b || dig3.b || enemyU.b || enemyD.b;
+      red = bg.r || userChar.r || enemyChar.r || projChar.r || health.r || dig1.r || dig2.r || dig3.r || enemyU.r || enemyD.r || g1.r || g2.r;
+      green = bg.g || userChar.g || enemyChar.g || projChar.g || health.g || dig1.g || dig2.g || dig3.g || enemyU.g || enemyD.g || g1.g || g2.g;
+      blue = bg.b || userChar.b || enemyChar.b || projChar.b || health.b || dig1.b || dig2.b || dig3.b || enemyU.b || enemyD.b ||| g1.b || g2.b;
 
     } else {
       // outside visible frame
