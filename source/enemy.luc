@@ -20,7 +20,7 @@ module enemy (
       dff charX[11](#INIT(400));
       dff charY[11](#INIT(110));
   
-      fsm state(.clk(clk), #INIT(RANDOM_R)) = {RANDOM_R, RANDOM_L, RANDOM_U, RANDOM_D, HARD_R, HARD_L};
+      fsm state(.clk(clk), #INIT(MOVE_R)) = {MOVE_R, MOVE_L, MOVE_U, MOVE_D};
       
       dff timer[18];
       dff statecounter[20];
@@ -96,69 +96,21 @@ module enemy (
       statecounter.d = statecounter.q + 1;
       // Randomly transition between states
       if(statecounter.q  >= 0 && statecounter.q < 100){
-        state.d = state.RANDOM_U;
+        state.d = state.MOVE_U;
+      }
+        
+      else if(statecounter.q  >= 100 && statecounter.q < 200){
+        state.d = state.MOVE_R;
       }
        
-      else if(statecounter.q  >= 100 && statecounter.q < 200){
-        state.d = state.RANDOM_D;
-      }
-            
       else if(statecounter.q  >= 200 && statecounter.q < 300){
-        state.d = state.RANDOM_L;
+        state.d = state.MOVE_D;
       }
             
       else if(statecounter.q  >= 300 && statecounter.q < 400){
-        state.d = state.RANDOM_R;
-      } 
-      
-      else if (statecounter.q >= 500 && statecounter.q < 600) {
-        state.d = state.RANDOM_R;
-      } 
-      
-      else if (statecounter.q >= 600 && statecounter.q < 700){
-        state.d = state.RANDOM_U;
+        state.d = state.MOVE_L;
       }
-        
-      else if (statecounter.q >= 700 && statecounter.q < 800){
-        state.d = state.RANDOM_D;
-      }
-        
-      else if (statecounter.q >= 800 && statecounter.q < 900){
-        state.d = state.RANDOM_U;
-      }
-
-      else if (statecounter.q >= 900 && statecounter.q < 1000){
-        state.d = state.RANDOM_L;
-      }
-       
-      else if (statecounter.q >= 1000 && statecounter.q < 1100){
-        state.d = state.RANDOM_R;
-      }
-        
-      else if (statecounter.q >= 1100 && statecounter.q < 1200){
-        state.d = state.RANDOM_L;
-      } 
-        
-      else if (statecounter.q >= 1200 && statecounter.q < 1300){
-        state.d = state.RANDOM_D;
-      } 
-        
-      else if (statecounter.q >= 1300 && statecounter.q < 1320){
-        state.d = state.RANDOM_U;
-      } 
-        
-      else if (statecounter.q >= 1320 && statecounter.q < 1340){
-        state.d = state.RANDOM_D;
-      }
-        
-      else if (statecounter.q >= 1340 && statecounter.q < 1360){
-        state.d = state.RANDOM_L;
-      }
-      
-      else if (statecounter.q >= 1360 && statecounter.q < 1380){
-        state.d = state.RANDOM_R;
-      }    
-       
+            
       else {
         statecounter.d = 0;
       }
@@ -166,24 +118,24 @@ module enemy (
     
       
       case (state.q){      
-        state.RANDOM_U:
+        state.MOVE_U:
           if(charY.q >= 40){
-            charY.d = charY.q - rand.num[0] - difficultyLevel.q;
+            charY.d = charY.q - rand.num[1:0]/2 - difficultyLevel.q/2;
           } 
           
-        state.RANDOM_D:
+        state.MOVE_D:
           if(charY.q <= 530){
-            charY.d = charY.q + rand.num[0] + difficultyLevel.q;
+            charY.d = charY.q + rand.num[1:0]/2 + difficultyLevel.q/2;
           } 
             
-        state.RANDOM_L:
-          if(charX.q >= 80){
-            charX.d = charX.q + rand.num[0] + difficultyLevel.q;
+        state.MOVE_L:
+          if(charX.q <= 720){
+            charX.d = charX.q + rand.num[1:0]/2 + difficultyLevel.q/2;
           }
             
-        state.RANDOM_R:
-          if(charX.q <= 720){
-            charX.d = charX.q - rand.num[0] - difficultyLevel.q;
+        state.MOVE_R:
+          if(charX.q >= 80){
+            charX.d = charX.q - rand.num[1:0]/2 - difficultyLevel.q/2  ;
           }  
       }
     }

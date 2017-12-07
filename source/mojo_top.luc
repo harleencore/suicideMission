@@ -52,9 +52,8 @@ module mojo_top (
   projectile projChar;
   aluLogic alu;               // alu
   user userChar;              // user sprite
-  background bg;            // enemy sprite
-
-  healthbar health;         // health bar on the side
+  background bg;              // enemy sprite
+  healthbar health;           // health bar on the side
    
   always {
     alu.a = 0;
@@ -151,7 +150,7 @@ module mojo_top (
           if(userY.q >= 45){
             alu.a = c{21b0, userY.q};
             alu.b = 2;
-            alu.alufn = b000001;
+            alu.alufn = b000001; // -
             userY.d = alu.aluOUT[10:0];
           }
           aluState.d = aluState.STOP;
@@ -160,7 +159,7 @@ module mojo_top (
           if(userY.q <= 550){
             alu.a = c{21b0, userY.q};
             alu.b = 2;
-            alu.alufn = b000000;
+            alu.alufn = b000000; // +
             userY.d = alu.aluOUT[10:0];
           }  
           aluState.d = aluState.STOP;
@@ -169,7 +168,7 @@ module mojo_top (
           if(userX.q >= 40){
             alu.a = c{21b0, userX.q};
             alu.b = 2;
-            alu.alufn = b0000001;
+            alu.alufn = b0000001; // -
             userX.d = alu.aluOUT[10:0];          
           } 
           aluState.d = aluState.STOP;
@@ -178,7 +177,7 @@ module mojo_top (
           if(userX.q <= 770){
             alu.a = c{21b0, userX.q};
             alu.b = 2;
-            alu.alufn = b000000;
+            alu.alufn = b000000; // + 
             userX.d = alu.aluOUT[10:0];
           }
           aluState.d = aluState.STOP;
@@ -186,7 +185,7 @@ module mojo_top (
         aluState.A_BUTTON:
           alu.a = a_button;
           alu.b = 1;
-          alu.alufn = b110011;
+          alu.alufn = b110011; //CMPEQ
           
           if(alu.aluOUT == 1){
             projChar.startX = userX.q;

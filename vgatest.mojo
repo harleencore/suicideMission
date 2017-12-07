@@ -2,11 +2,6 @@
 <project name="vgatest" board="Mojo V3" language="Lucid">
   <files>
     <src>enemy.luc</src>
-<<<<<<< HEAD
-=======
-    <src>aluSHIFT.luc</src>
-    <src>enemy_hit.luc</src>
->>>>>>> 7a30fe1ac8ae7be081d6438405fa505994b760f5
     <src top="true">mojo_top.luc</src>
     <src>aluLogic.luc</src>
     <src>projectile.luc</src>
@@ -15,7 +10,9 @@
     <src>aluCOMP.luc</src>
     <src>aluSHIFT.luc</src>
     <src>enemy_hit.luc</src>
+    <src>healthbox.luc</src>
     <src>healthbar.luc</src>
+    <src>user_hit.luc</src>
     <src>aluBOOL.luc</src>
     <src>user.luc</src>
     <src>background.luc</src>
