@@ -47,6 +47,8 @@ module mojo_top (
 
     dff timer[17](.rst(rst));
     fsm aluState(#INIT(STOP))= {U_BUTTON, D_BUTTON, L_BUTTON, R_BUTTON, A_BUTTON, STOP};
+    
+    
    
   }
   
@@ -59,7 +61,8 @@ module mojo_top (
   healthbar health;           // health bar on the side
   digits dig1;   
   digits dig2;
-  digits dig3;   
+  digits dig3;
+  enemy_hit enemyhits;   
   
   always {    
     reset_cond.in = ~rst_n;   // input raw inverted reset signal
@@ -86,6 +89,7 @@ module mojo_top (
     enemyChar.cursorY = line.q;
     enemyChar.clk = clk;
     enemyChar.rst = rst;
+    
 
     //Projectile Parameters
     projChar.clk = clk;
@@ -152,7 +156,21 @@ module mojo_top (
         scoreShow.d = scoreShow.q + 1;
       }
     }
+    
+    //Collision Detection variables
+    enemyhits.enemy_x = enemyChar.enemyPosX;
+    enemyhits.enemy_y = enemyChar.enemyPosY;
+    enemyhits.pellet_x = projChar.projPosX;
+    enemyhits.pellet_y = projChar.projPosY;
+    
+    if(timer.q == 2){
+      if(enemyhits.enemy_hit_status == 1){
+        // score to go up
+      }
+    }
 
+    
+    
     
     // ALU States
     // Button controls
