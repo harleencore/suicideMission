@@ -48,7 +48,7 @@ module mojo_top (
     dff timeKeeper[24](#INIT(0), .rst(rst));
     dff scoreShow[20](#INIT(0), .rst(rst));
 
-    dff timer[17](.rst(rst));
+    dff timer[18](.rst(rst));
     fsm aluState(#INIT(STOP))= {U_BUTTON, D_BUTTON, L_BUTTON, R_BUTTON, A_BUTTON, STOP};
    
   }
@@ -103,7 +103,7 @@ module mojo_top (
     enemyU.startX = enemyChar.enemyPosX;
     enemyU.startY = enemyChar.enemyPosY;
     enemyU.hit = 0;
-    enemyU.shot = enemyShoot.q`;
+    enemyU.shot = enemyShoot.q;
     
     enemyD.clk = clk;
     enemyD.rst = rst;

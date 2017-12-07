@@ -95,19 +95,19 @@ module enemy (
     if(timer.q == 1){
       statecounter.d = statecounter.q + 1;
       // Randomly transition between states
-      if(statecounter.q  >= 0 && statecounter.q < 100){
+      if(statecounter.q  >= 0 && statecounter.q < 150){
         state.d = state.MOVE_U;
       }
         
-      else if(statecounter.q  >= 100 && statecounter.q < 200){
+      else if(statecounter.q  >= 150 && statecounter.q < 300){
         state.d = state.MOVE_R;
       }
        
-      else if(statecounter.q  >= 200 && statecounter.q < 300){
+      else if(statecounter.q  >= 300 && statecounter.q < 450){
         state.d = state.MOVE_D;
       }
             
-      else if(statecounter.q  >= 300 && statecounter.q < 400){
+      else if(statecounter.q  >= 450 && statecounter.q < 600){
         state.d = state.MOVE_L;
       }
             
@@ -134,7 +134,7 @@ module enemy (
           }
             
         state.MOVE_R:
-          if(charX.q >= 100){
+          if(charX.q >= 70){
             charX.d = charX.q - 1 - difficultyLevel.q/2  ;
           }  
       }

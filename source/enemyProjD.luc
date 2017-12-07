@@ -52,7 +52,7 @@ module enemyProjD (
       }
       
       if(state.q == state.EXIST){
-        if((cursorX - charX.q + 26) > 11 && (cursorX - charX.q + 26) < 19){
+        if((cursorX - charX.q + 26) > 40 && (cursorX - charX.q + 26) < 50){
           if((cursorY - charY.q + 26) > 0 && (cursorY - charY.q + 26 ) < 20){
             r = 1;
             g = 0;
@@ -75,7 +75,7 @@ module enemyProjD (
       timer.d = timer.q + 1;
       
       if(timer.q == 1){
-          if((state.q == state.EXIST) && (charY.q > 580)){ 
+          if((state.q == state.EXIST) && (charX.q > 580)){ 
             state.d = state.NOTEXIST;      
             charX.d = startX;
             charY.d = startY;

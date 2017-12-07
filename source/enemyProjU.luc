@@ -52,7 +52,7 @@ module enemyProjU (
       }
       
       if(state.q == state.EXIST){
-        if((cursorX - charX.q + 26) > 11 && (cursorX - charX.q + 26) < 19){
+        if((cursorX - charX.q + 26) > 40 && (cursorX - charX.q + 26) < 50){
           if((cursorY - charY.q + 26) > 0 && (cursorY - charY.q + 26 ) < 20){
             r = 1;
             g = 0;
