@@ -44,7 +44,8 @@ module mojo_top (
     
     dff timer[17](.rst(rst));
     fsm aluState(#INIT(STOP))= {U_BUTTON, D_BUTTON, L_BUTTON, R_BUTTON, A_BUTTON, STOP};
-    
+   
+    dff digitcheck[10](.rst(rst));
   }
   
 
@@ -54,12 +55,11 @@ module mojo_top (
   user userChar;              // user sprite
   background bg;              // enemy sprite
   healthbar health;           // health bar on the side
-   
-  always {
-    alu.a = 0;
-    alu.b = 0;
-    alu.alufn = 0;
-    
+  digits dig1;   
+  digits dig2;
+  digits dig3;   
+  
+  always {    
     reset_cond.in = ~rst_n;   // input raw inverted reset signal
     rst = reset_cond.out;     // conditioned reset
     
@@ -68,6 +68,10 @@ module mojo_top (
     spi_channel = bzzzz;      // not using flags
     avr_rx = bz;              // not using serial port
     
+    // ALU INPUTS
+    alu.a = 0;
+    alu.b = 0;
+    alu.alufn = 0;
 
     // BG element
     bg.clk = clk;
@@ -75,13 +79,11 @@ module mojo_top (
     bg.cursorX = 300;
     bg.cursorY = 300;
 
-    
     // Controlling Position enemy
     enemyChar.cursorX = pixel.q;
     enemyChar.cursorY = line.q;
     enemyChar.clk = clk;
     enemyChar.rst = rst;
-    
 
     //Projectile Parameters
     projChar.clk = clk;
@@ -100,7 +102,32 @@ module mojo_top (
     health.cursorY = line.q;
     health.hp = hpCounter.q; 
     
-
+    // digits  
+    dig1.clk = clk;
+    dig1.rst = rst;
+    dig1.cursorX = pixel.q;
+    dig1.cursorY = line.q;
+    dig1.charY = 40;
+    dig1.charX = 770;
+    dig1.dig = 8;
+    
+    
+    dig2.clk = clk;
+    dig2.rst = rst;
+    dig2.cursorX = pixel.q;
+    dig2.cursorY = line.q;
+    dig2.charY = 40;
+    dig2.charX = 740;
+    dig2.dig = 8;
+    
+    
+    dig3.clk = clk;
+    dig3.rst = rst;
+    dig3.cursorX = pixel.q;
+    dig3.cursorY = line.q;
+    dig3.charY = 40;
+    dig3.charX = 710;
+    dig3.dig = 8;
     
     // Controlling Position User
     // User Controls
@@ -131,7 +158,7 @@ module mojo_top (
       aluState.d = aluState.D_BUTTON;
     }
     
-    if(l_button == 1){
+    if(l_button == 1){    
       aluState.d = aluState.L_BUTTON;
     }
     
@@ -201,12 +228,13 @@ module mojo_top (
       }
     }
 
+    
   
     // Displaying Graphics
     if (pixel.q < 800 && line.q < 600) {
-      red = bg.r || userChar.r || enemyChar.r || projChar.r || health.r;
-      green = bg.g || userChar.g || enemyChar.g || projChar.g || health.g;
-      blue = bg.b || userChar.b || enemyChar.b || projChar.b || health.b;
+      red = bg.r || userChar.r || enemyChar.r || projChar.r || health.r || dig1.r || dig2.r || dig3.r;
+      green = bg.g || userChar.g || enemyChar.g || projChar.g || health.g || dig1.g || dig2.g || dig3.g;
+      blue = bg.b || userChar.b || enemyChar.b || projChar.b || health.b || dig1.b || dig2.b || dig3.b;
 
 
     } else {

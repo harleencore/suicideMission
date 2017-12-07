@@ -120,22 +120,22 @@ module enemy (
       case (state.q){      
         state.MOVE_U:
           if(charY.q >= 40){
-            charY.d = charY.q - rand.num[1:0]/2 - difficultyLevel.q/2;
+            charY.d = charY.q - 1 - difficultyLevel.q/2;
           } 
           
         state.MOVE_D:
-          if(charY.q <= 530){
-            charY.d = charY.q + rand.num[1:0]/2 + difficultyLevel.q/2;
+          if(charY.q <= 500){
+            charY.d = charY.q + 1 + difficultyLevel.q/2;
           } 
             
         state.MOVE_L:
           if(charX.q <= 720){
-            charX.d = charX.q + rand.num[1:0]/2 + difficultyLevel.q/2;
+            charX.d = charX.q + 1 + difficultyLevel.q/2;
           }
             
         state.MOVE_R:
-          if(charX.q >= 80){
-            charX.d = charX.q - rand.num[1:0]/2 - difficultyLevel.q/2  ;
+          if(charX.q >= 100){
+            charX.d = charX.q - 1 - difficultyLevel.q/2  ;
           }  
       }
     }

@@ -2,7 +2,7 @@ module digits (
     input clk,
     input rst,
 
-    input dig,
+    input dig[4],
     
     input cursorX[11],
     input cursorY[11],
@@ -22,14 +22,14 @@ module digits (
     }   
   }
   
-  horizont h1;
-  horizont h2;
-  horizont h3;
+  horizont horizont1;
+  horizont horizont2;
+  horizont horizont3;
 
-  vertic v1;
-  vertic v2;
-  vertic v3;
-  vertic v4;
+  vertic vert1;
+  vertic vert2;
+  vertic vert3;
+  vertic vert4;
   
   always {
 
@@ -39,56 +39,99 @@ module digits (
 
     //3 HORIZONTAL SEGMENTS
 
-    h1.cursorX = cursorX;
-    h1.cursorY = cursorY;
-    h1.charX = charX;
-    h1.charY = charY + 25; 
+    horizont1.cursorX = cursorX;
+    horizont1.cursorY = cursorY;
+    horizont1.charX = charX;
+    horizont1.charY = charY; 
 
-    h2.cursorX = cursorX;
-    h2.cursorY = cursorY;
-    h2.charX = charX;
-    h2.charY = charY; 
+    horizont2.cursorX = cursorX;
+    horizont2.cursorY = cursorY;
+    horizont2.charX = charX;
+    horizont2.charY = charY + 25; 
 
-    h3.cursorX = cursorX;
-    h3.cursorY = cursorY;
-    h3.charX = charX;
-    h3.charY = charY + 50; 
+    horizont3.cursorX = cursorX;
+    horizont3.cursorY = cursorY;
+    horizont3.charX = charX;
+    horizont3.charY = charY + 50; 
 
     //4 VERTICAL SEGMENTS
 
-    v1.cursorX = cursorX;
-    v1.cursorY = cursorY;
-    v1.charX = charX;
-    v1.charY = charY + 5; 
+    vert1.cursorX = cursorX;
+    vert1.cursorY = cursorY;
+    vert1.charX = charX;
+    vert1.charY = charY + 5; 
 
-    v2.cursorX = cursorX;
-    v2.cursorY = cursorY;
-    v2.charX = charX + 15;
-    v2.charY = charY + 5;
+    vert2.cursorX = cursorX;
+    vert2.cursorY = cursorY;
+    vert2.charX = charX + 15;
+    vert2.charY = charY + 5;
 
-    v3.cursorX = cursorX;
-    v3.cursorY = cursorY;
-    v3.charX = charX;
-    v3.charY = charY + 30;  
+    vert3.cursorX = cursorX;
+    vert3.cursorY = cursorY;
+    vert3.charX = charX;
+    vert3.charY = charY + 30;  
 
-    v4.cursorX = cursorX;
-    v4.cursorY = cursorY;
-    v4.charX = charX + 15;
-    v4.charY = charY + 30; 
+    vert4.cursorX = cursorX;
+    vert4.cursorY = cursorY;
+    vert4.charX = charX + 15;
+    vert4.charY = charY + 30; 
 
     
     case(dig){
-      0: b = h1.b || h3.b || v1.b || v2.b || v3.b || v4.b;
-      1: b = v2.b || v4.b;
-      2: b = h1.b || v2.b || h2.b || v3.b || h3.b;
-      3: b = h1.b || v2.b || h2.b || v4.b || h3.b;
-      4: b = v1.b || v2.b || h2.b || v4.b;
-      5: b = h1.b || h2.b || h3.b || v1.b || v4.b;
-      6: b = h1.b || v1.b || h2.b || v3.b || v4.b || h3.b;
-      7: b = h1.b || v2.b || v4.b;
-      8: b = h1.b || v1.b || h2.b || v3.b || v4.b || h3.b || v2.b;
-      9: b = v1.b || h1.b || v2.b || h2.b || v4.b;
-      default: b = 0;
+      0: 
+        r = horizont1.r || horizont3.r || vert1.r || vert2.r || vert3.r || vert4.r;
+        b = horizont1.b || horizont3.b || vert1.b || vert2.b || vert3.b || vert4.b;
+        g = horizont1.g || horizont3.g || vert1.g || vert2.g || vert3.g || vert4.g;
+        
+      1: 
+        r = vert2.r || vert4.r;
+        b = vert2.b || vert4.b;
+        g = vert2.g || vert4.g;
+        
+      2: 
+        r = horizont1.r || vert2.r || horizont2.r || vert3.r || horizont3.r;        
+        b = horizont1.b || vert2.b || horizont2.b || vert3.b || horizont3.b;
+        g = horizont1.g || vert2.g || horizont2.g || vert3.g || horizont3.g;
+                
+      3: 
+        r = horizont1.r || vert2.r || horizont2.r || vert4.r || horizont3.r;        
+        b = horizont1.b || vert2.b || horizont2.b || vert4.b || horizont3.b;
+        g = horizont1.g || vert2.g || horizont2.g || vert4.g || horizont3.g;
+        
+      4: 
+        r = vert1.r || vert2.r || horizont2.r || vert4.r;        
+        b = vert1.b || vert2.b || horizont2.b || vert4.b;
+        g = vert1.g || vert2.g || horizont2.g || vert4.g;
+        
+      5: 
+        r = horizont1.r || horizont2.r || horizont3.r || vert1.r || vert4.r;        
+        b = horizont1.b || horizont2.b || horizont3.b || vert1.b || vert4.b;
+        g = horizont1.g || horizont2.g || horizont3.g || vert1.g || vert4.g;        
+        
+      6: 
+        r = horizont1.r || vert1.r || horizont2.r || vert3.r || vert4.r || horizont3.r;        
+        b = horizont1.b || vert1.b || horizont2.b || vert3.b || vert4.b || horizont3.b;
+        g = horizont1.g || vert1.g || horizont2.g || vert3.g || vert4.g || horizont3.g;
+        
+      7: 
+        r = horizont1.r || vert2.r || vert4.r;        
+        b = horizont1.b || vert2.b || vert4.b;
+        g = horizont1.g || vert2.g || vert4.g;
+        
+      8: 
+        r = horizont1.r || vert1.r || horizont2.r || vert3.r || vert4.r || horizont3.r || vert2.r;        
+        b = horizont1.b || vert1.b || horizont2.b || vert3.b || vert4.b || horizont3.b || vert2.b;
+        g = horizont1.g || vert1.g || horizont2.g || vert3.g || vert4.g || horizont3.g || vert2.g;
+
+      9: 
+        r = vert1.r || horizont1.r || vert2.r || horizont2.r || vert4.r;        
+        b = vert1.b || horizont1.b || vert2.b || horizont2.b || vert4.b;
+        g = vert1.g || horizont1.g || vert2.g || horizont2.g || vert4.g;        
+        
+      default:
+        r = 0; 
+        b = 0;
+        g = 0;
     }
 
   }

@@ -8,14 +8,17 @@
     <src>userCollision.luc</src>
     <src>aluADD.luc</src>
     <src>aluCOMP.luc</src>
+    <src>horizont.luc</src>
     <src>aluSHIFT.luc</src>
     <src>enemy_hit.luc</src>
     <src>healthbox.luc</src>
+    <src>digits.luc</src>
     <src>healthbar.luc</src>
     <src>user_hit.luc</src>
     <src>aluBOOL.luc</src>
     <src>user.luc</src>
     <src>background.luc</src>
+    <src>vertic.luc</src>
     <ucf>button.ucf</ucf>
     <ucf lib="true">mojo.ucf</ucf>
     <ucf>vga.ucf</ucf>

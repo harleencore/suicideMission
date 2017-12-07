@@ -17,8 +17,8 @@ module vertic (
 
     if((cursorX - charX + 26) > 0 && (cursorX - charX + 26) < 5 ){
       if((cursorY - charY + 26) > 0 && (cursorY - charY + 26) < 20){
-        r = 0;
-        g = 0;
+        r = 1;
+        g = 1;
         b = 1;
       }
     } else {
