@@ -5,7 +5,6 @@
     <src top="true">mojo_top.luc</src>
     <src>aluLogic.luc</src>
     <src>projectile.luc</src>
-    <src>userCollision.luc</src>
     <src>aluADD.luc</src>
     <src>aluCOMP.luc</src>
     <src>horizont.luc</src>

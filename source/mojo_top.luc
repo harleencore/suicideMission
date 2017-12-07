@@ -41,15 +41,13 @@ module mojo_top (
     dff userY[11](#INIT(480), .rst(rst));
     dff hpCounter[4](#INIT(3), .rst(rst));
 
-    dff timeKeeper[23](#INIT(0), .rst(rst));
-    dff scoreShow[10](#INIT(0), .rst(rst));
+    // Score Show
+    dff timeKeeper[24](#INIT(0), .rst(rst));
+    dff scoreShow[20](#INIT(0), .rst(rst));
 
-    
-    
     dff timer[17](.rst(rst));
     fsm aluState(#INIT(STOP))= {U_BUTTON, D_BUTTON, L_BUTTON, R_BUTTON, A_BUTTON, STOP};
    
-    dff digitcheck[10](.rst(rst));
   }
   
 
@@ -113,7 +111,7 @@ module mojo_top (
     dig1.cursorY = line.q;
     dig1.charY = 40;
     dig1.charX = 770;
-    dig1.dig = (scoreShow.q/1000) - (((scoreShow.q/1000)/10) * 10);
+    dig1.dig = (scoreShow.q/10) - (((scoreShow.q/10)/10) * 10);
     
     
     dig2.clk = clk;
@@ -131,7 +129,7 @@ module mojo_top (
     dig3.cursorY = line.q;
     dig3.charY = 40;
     dig3.charX = 710;
-    dig3.dig = (scoreShow.q/10) - (((scoreShow.q/10)/10) * 10);
+    dig3.dig = (scoreShow.q/1000);
     
     // Controlling Position User
     // User Controls
@@ -150,19 +148,15 @@ module mojo_top (
     //Score Display
     timeKeeper.d = timeKeeper.q + 1;
     if(timeKeeper.q == 1){
-      scoreShow.d = scoreShow.q + 1;
+      if(scoreShow.q != 999){
+        scoreShow.d = scoreShow.q + 1;
+      }
     }
 
     
     // ALU States
     // Button controls
     if(u_button == 1){
-      if(hpCounter.q > 0){  
-        hpCounter.d = hpCounter.q - 1;
-      } else {
-        hpCounter.d = 3;
-      }
-     
       aluState.d = aluState.U_BUTTON;
     }
     
