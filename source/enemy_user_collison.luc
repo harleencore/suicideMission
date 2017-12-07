@@ -9,38 +9,19 @@ module user_hit (
     output user_hit_status
   ) {
   
-  aluLogic alu;
-  fsm state(.clk(clk), #INIT(CHECK_X)) = {CHECK_X, CHECK_Y};
-  dff zVal[1](.clk(clk)) ;
+  const HEIGHT = 60;
+  const WIDTH = 60;
   
-  always {
-    alu.a = 0;
-    alu.b = 0;
-    alu.alufn = 0;
+  
+  always {  
     
-    case(state.q){
-      state.CHECK_X: 
-        alu.a = user_x;
-        alu.b = enemy_x;
-        alu.alufn = 6b110011;
-        zVal.d = alu.aluOUT;
-        if (alu.aluOUT == 1){ state.d = state.CHECK_Y;}
-        else{state.d = state.CHECK_X;}
-        
-        
+    user_hit_status = 0;
     
-      state.CHECK_Y:
-        alu.a = user_y;
-        alu.b = enemy_y;
-        alu.alufn = 6b110011;
-        if (alu.aluOUT == zVal.q){user_hit_status = 1;}
-        else{user_hit_status = 0;}
-        state.d = state.CHECK_X;
-        
-      
-      
-      }      
-  }
-    
+    if (user_x > enemy_x & user_x < enemy_x + WIDTH){
+      if (user_y > enemy_y & user_y < enemy_y + HEIGHT){
+        user_hit_status = 1;
+        }
+      }
+       
     
 }

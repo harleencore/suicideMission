@@ -12,67 +12,30 @@ module user_hit (
     output user_hit_status
   ) {
   
-  aluLogic alu;
-  fsm state(.clk(clk), #INIT(CHECK_X1)) = {CHECK_X1, CHECK_X2, CHECK_X3, CHECK_Y1, CHECK_Y2, CHECK_Y3};
-  dff zVal[1](.clk(clk)) ;
+  const HEIGHT = 60;
+  const WIDTH = 60;
   
   always {
-    alu.a = 0;
-    alu.b = 0;
-    alu.alufn = 0;
+    user_hit_status = 0;
     
-    case(state.q){
-      state.CHECK_X1: 
-        alu.a = user_x;
-        alu.b = pellet_x1;
-        alu.alufn = 6b110011;
-        zVal.d = alu.aluOUT;
-        if (alu.aluOUT == 1){ state.d = state.CHECK_Y1;}
-        else{state.d = state.CHECK_X2;}
-        
-      state.CHECK_X2:
-        alu.a = user_x;
-        alu.b = pellet_x2;
-        alu.alufn = 6b110011;
-        zVal.d = alu.aluOUT;
-        if (alu.aluOUT == 1){ state.d = state.CHECK_Y2;}
-        else{state.d = state.CHECK_X3;}
-        
-      state.CHECK_X3:
-        alu.a = user_x;
-        alu.b = pellet_x3;
-        alu.alufn = 6b110011;
-        zVal.d = alu.aluOUT;
-        if (alu.aluOUT == 1){ state.d = state.CHECK_Y3;}
-        else{user_hit_status = 0;}
-        state.d = state.CHECK_X1;  
-        
-      state.CHECK_Y1:
-        alu.a = user_y;
-        alu.b = pellet_y1;
-        alu.alufn = 6b110011;
-        if (alu.aluOUT == zVal.q){user_hit_status = 1;}
-        else{user_hit_status = 0;}
-        state.d = state.CHECK_X1;
-        
-      state.CHECK_Y2:
-        alu.a = user_y;
-        alu.b = pellet_y2;
-        alu.alufn = 6b110011;
-        if (alu.aluOUT == zVal.q){user_hit_status = 1;}
-        else{user_hit_status = 0;}
-        state.d = state.CHECK_X1;
+    if (pellet_y1 > user_y & pellet_y1 < user_y + HEIGHT){
+      if(pellet_x1 > user_x & pellet_x1 < user_x + WIDTH){
+        user_hit_status = 1;
+        }
+    }
+    if (pellet_y2 > user_y & pellet_y2 < user_y + HEIGHT){
+      if(pellet_x2 > user_x & pellet_x2 < user_x + WIDTH){
+        user_hit_status = 1;
+        }
       
+    }
     
-      state.CHECK_Y3:
-        alu.a = user_y;
-        alu.b = pellet_y3;
-        alu.alufn = 6b110011;
-        if (alu.aluOUT == zVal.q){user_hit_status = 1;}
-        else{user_hit_status = 0;}
-        state.d = state.CHECK_X1;
+    if (pellet_y3 > user_y & pellet_y3 < user_y + HEIGHT){
+      if(pellet_x3 > user_x & pellet_x3 < user_x + WIDTH){
+        user_hit_status = 1;
+        }
       
-      }      
+    }       
   }
     
     
