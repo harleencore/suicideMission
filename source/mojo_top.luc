@@ -154,6 +154,9 @@ module mojo_top (
     if(timeKeeper.q == 1){
       if(scoreShow.q != 999){
         scoreShow.d = scoreShow.q + 1;
+        if(enemyhits.enemy_hit_status == 1){
+          scoreShow.d = scoreShow.q + 10;
+        }
       }
     }
     
@@ -163,11 +166,7 @@ module mojo_top (
     enemyhits.pellet_x = projChar.projPosX;
     enemyhits.pellet_y = projChar.projPosY;
     
-    if(timer.q == 2){
-      if(enemyhits.enemy_hit_status == 1){
-        // score to go up
-      }
-    }
+ 
 
     
     
