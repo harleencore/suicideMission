@@ -40,6 +40,9 @@ module mojo_top (
     dff userX[11](#INIT(400), .rst(rst));
     dff userY[11](#INIT(480), .rst(rst));
     dff hpCounter[4](#INIT(3), .rst(rst));
+    
+    // Enemy Variables
+    dff enemyShoot[1];
 
     // Score Show
     dff timeKeeper[24](#INIT(0), .rst(rst));
@@ -59,7 +62,12 @@ module mojo_top (
   healthbar health;           // health bar on the side
   digits dig1;   
   digits dig2;
-  digits dig3;   
+  digits dig3;
+  
+  enemyProjU enemyU;
+  enemyProjD enemyD;
+  enemyProjL enemyL;
+  enemyProjR enemyR;   
   
   always {    
     reset_cond.in = ~rst_n;   // input raw inverted reset signal
@@ -86,6 +94,47 @@ module mojo_top (
     enemyChar.cursorY = line.q;
     enemyChar.clk = clk;
     enemyChar.rst = rst;
+    
+    // Enemy Proj
+    enemyU.clk = clk;
+    enemyU.rst = rst;
+    enemyU.cursorX = pixel.q;
+    enemyU.cursorY = line.q;
+    enemyU.startX = enemyChar.enemyPosX;
+    enemyU.startY = enemyChar.enemyPosY;
+    enemyU.hit = 0;
+    enemyU.shot = enemyShoot.q`;
+    
+    enemyD.clk = clk;
+    enemyD.rst = rst;
+    enemyD.cursorX = pixel.q;
+    enemyD.cursorY = line.q;
+    enemyD.startX = enemyChar.enemyPosX;
+    enemyD.startY = enemyChar.enemyPosY;
+    enemyD.hit = 0;
+    enemyD.shot = enemyShoot.q;
+    
+    enemyL.clk = clk;
+    enemyL.rst = rst;
+    enemyL.cursorX = pixel.q;
+    enemyL.cursorY = line.q;
+    enemyL.startX = enemyChar.enemyPosX;
+    enemyL.startY = enemyChar.enemyPosY;
+    enemyL.hit = 0;
+    enemyL.shot = enemyShoot.q;
+    
+    enemyR.clk = clk;
+    enemyR.rst = rst;
+    enemyR.cursorX = pixel.q;
+    enemyR.cursorY = line.q;
+    enemyR.startX = enemyChar.enemyPosX;
+    enemyR.startY = enemyChar.enemyPosY;
+    enemyR.hit = 0;
+    enemyR.shot = enemyShoot.q;
+    
+    if(timer.q == 1){
+      enemyShoot.d = enemyShoot.q + 1;
+    }
 
     //Projectile Parameters
     projChar.clk = clk;
@@ -234,13 +283,12 @@ module mojo_top (
       }
     }
 
-    
   
     // Displaying Graphics
     if (pixel.q < 800 && line.q < 600) {
-      red = bg.r || userChar.r || enemyChar.r || projChar.r || health.r || dig1.r || dig2.r || dig3.r;
-      green = bg.g || userChar.g || enemyChar.g || projChar.g || health.g || dig1.g || dig2.g || dig3.g;
-      blue = bg.b || userChar.b || enemyChar.b || projChar.b || health.b || dig1.b || dig2.b || dig3.b;
+      red = bg.r || userChar.r || enemyChar.r || projChar.r || health.r || dig1.r || dig2.r || dig3.r || enemyU.r || enemyD.r || enemyL.r || enemyR.r;
+      green = bg.g || userChar.g || enemyChar.g || projChar.g || health.g || dig1.g || dig2.g || dig3.g || enemyU.g || enemyD.g || enemyL.g || enemyR.g;
+      blue = bg.b || userChar.b || enemyChar.b || projChar.b || health.b || dig1.b || dig2.b || dig3.b || enemyU.b || enemyD.b || enemyL.b || enemyR.b;
 
 
     } else {

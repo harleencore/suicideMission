@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="vgatest" board="Mojo V3" language="Lucid">
   <files>
+    <src>enemyProjU.luc</src>
     <src>enemy.luc</src>
     <src top="true">mojo_top.luc</src>
+    <src>enemyProjD.luc</src>
     <src>aluLogic.luc</src>
     <src>projectile.luc</src>
+    <src>enemyProjR.luc</src>
     <src>aluADD.luc</src>
     <src>aluCOMP.luc</src>
     <src>horizont.luc</src>
+    <src>enemyProjL.luc</src>
     <src>aluSHIFT.luc</src>
     <src>enemy_hit.luc</src>
     <src>healthbox.luc</src>

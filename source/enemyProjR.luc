@@ -1,0 +1,101 @@
+module enemyProjR (
+    input clk,
+    input rst,
+    
+    input cursorX[11],
+    input cursorY[11],
+    
+    input startX[11],
+    input startY[11],
+    input hit,
+    input shot,
+    
+    output projPosX[11],
+    output projPosY[11],
+
+    output r,
+    output g,
+    output b
+
+  ) {
+
+  .clk(clk), .rst(rst){
+    // dff charX[11](#INIT(400));
+    // dff charY[11](#INIT(110));
+    
+    dff charX[11];
+    dff charY[11];
+    dff start(#INIT(0));
+    
+    fsm state(#INIT(NOTEXIST)) = {EXIST, NOTEXIST};
+    
+    dff timer[16];
+    
+  }
+  
+  
+  always {
+    // Draw projectile
+    r = 0;
+    g = 0;
+    b = 0;
+    
+    
+    if (start.q == 0){
+      start.d = start.q + 1;
+    }      
+    else{
+      if((state.q == state.NOTEXIST) && (shot == 1)){
+        state.d = state.EXIST;
+        charX.d = startX;
+        charY.d = startY;
+      }
+      
+      if(state.q == state.EXIST){
+        if((cursorX - charX.q + 26) > 11 && (cursorX - charX.q + 26) < 19){
+          if((cursorY - charY.q + 26) > 0 && (cursorY - charY.q + 26 ) < 20){
+            r = 1;
+            g = 0;
+            b = 0;
+          }
+        } 
+         else {
+          r = 0;
+          g = 0;
+          b = 0;  
+        }
+      } 
+      else {
+        r = 0;
+        g = 0;
+        b = 0;  
+      }
+        
+      
+      timer.d = timer.q + 1;
+      
+      if(timer.q == 1){
+          if((state.q == state.EXIST) && (charX.q < 760)){ 
+            state.d = state.NOTEXIST;      
+            charX.d = startX;
+            charY.d = startY;
+          }
+  
+          if((state.q == state.EXIST) && (hit == 1)){
+            state.d = state.NOTEXIST;
+            charX.d = startX;
+            charY.d = startY;
+          }
+  
+          if(state.q == state.EXIST){
+            charX.d = charX.q + 3; 
+          }
+      }
+      
+    }
+    
+    
+    projPosX = charX.q;
+    projPosY = charY.q;
+  }
+}
