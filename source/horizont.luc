@@ -1,0 +1,30 @@
+module horizont(
+    input charX[11],
+    input charY[11],
+    input cursorX[11],
+    input cursorY[11],
+    
+    output r,
+    output g,
+    output b
+
+  ) {
+
+  always {
+    r = 0;
+    g = 0;
+    b = 0;
+
+    if((cursorX - charX + 26) > 0 && (cursorX - charX + 26) < 20 ){
+      if((cursorY - charY + 26) > 0 && (cursorY - charY + 26) < 5){
+        r = 0;
+        g = 0;
+        b = 1;
+      }
+    } else {
+      r = 0;
+      g = 0;
+      b = 0;
+    }       
+  }
+}

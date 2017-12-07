@@ -1,0 +1,95 @@
+module digits (
+    input clk,
+    input rst,
+
+    input dig,
+    
+    input cursorX[11],
+    input cursorY[11],
+    
+    input charX[11],
+    input charY[11],
+    
+    output r,
+    output g,
+    output b
+
+  ) {
+
+
+  .clk(clk){
+    .rst(rst){
+    }   
+  }
+  
+  horizont h1;
+  horizont h2;
+  horizont h3;
+
+  vertic v1;
+  vertic v2;
+  vertic v3;
+  vertic v4;
+  
+  always {
+
+    r = 0;
+    g = 0;
+    b = 0;
+
+    //3 HORIZONTAL SEGMENTS
+
+    h1.cursorX = cursorX;
+    h1.cursorY = cursorY;
+    h1.charX = charX;
+    h1.charY = charY + 25; 
+
+    h2.cursorX = cursorX;
+    h2.cursorY = cursorY;
+    h2.charX = charX;
+    h2.charY = charY; 
+
+    h3.cursorX = cursorX;
+    h3.cursorY = cursorY;
+    h3.charX = charX;
+    h3.charY = charY + 50; 
+
+    //4 VERTICAL SEGMENTS
+
+    v1.cursorX = cursorX;
+    v1.cursorY = cursorY;
+    v1.charX = charX;
+    v1.charY = charY + 5; 
+
+    v2.cursorX = cursorX;
+    v2.cursorY = cursorY;
+    v2.charX = charX + 15;
+    v2.charY = charY + 5;
+
+    v3.cursorX = cursorX;
+    v3.cursorY = cursorY;
+    v3.charX = charX;
+    v3.charY = charY + 30;  
+
+    v4.cursorX = cursorX;
+    v4.cursorY = cursorY;
+    v4.charX = charX + 15;
+    v4.charY = charY + 30; 
+
+    
+    case(dig){
+      0: b = h1.b || h3.b || v1.b || v2.b || v3.b || v4.b;
+      1: b = v2.b || v4.b;
+      2: b = h1.b || v2.b || h2.b || v3.b || h3.b;
+      3: b = h1.b || v2.b || h2.b || v4.b || h3.b;
+      4: b = v1.b || v2.b || h2.b || v4.b;
+      5: b = h1.b || h2.b || h3.b || v1.b || v4.b;
+      6: b = h1.b || v1.b || h2.b || v3.b || v4.b || h3.b;
+      7: b = h1.b || v2.b || v4.b;
+      8: b = h1.b || v1.b || h2.b || v3.b || v4.b || h3.b || v2.b;
+      9: b = v1.b || h1.b || v2.b || h2.b || v4.b;
+      default: b = 0;
+    }
+
+  }
+}
