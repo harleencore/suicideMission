@@ -113,7 +113,7 @@ module mojo_top (
     dig1.cursorY = line.q;
     dig1.charY = 40;
     dig1.charX = 770;
-    dig1.dig = (scoreShow/1000) - (((scoreShow/1000)/10) * 10);
+    dig1.dig = (scoreShow.q/1000) - (((scoreShow.q/1000)/10) * 10);
     
     
     dig2.clk = clk;
@@ -122,7 +122,7 @@ module mojo_top (
     dig2.cursorY = line.q;
     dig2.charY = 40;
     dig2.charX = 740;
-    dig2.dig = (scoreShow/100) - (((scoreShow/100)/10) * 10);
+    dig2.dig = (scoreShow.q/100) - (((scoreShow.q/100)/10) * 10);
     
     
     dig3.clk = clk;
@@ -131,7 +131,7 @@ module mojo_top (
     dig3.cursorY = line.q;
     dig3.charY = 40;
     dig3.charX = 710;
-    dig3.dig = (scoreShow/10) - (((scoreShow/10)/10) * 10);
+    dig3.dig = (scoreShow.q/10) - (((scoreShow.q/10)/10) * 10);
     
     // Controlling Position User
     // User Controls
@@ -148,9 +148,9 @@ module mojo_top (
 
 
     //Score Display
-    timeKeeper = timeKeeper + 1;
-    if(timeKeeper == 1){
-      scoreShow = scoreShow + 1;
+    timeKeeper.d = timeKeeper.q + 1;
+    if(timeKeeper.q == 1){
+      scoreShow.d = scoreShow.q + 1;
     }
 
     
